@@ -1,6 +1,12 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { Dropdown } from '@nextui-org/react';
+import fireplace from '../public/fireplace.png';
+import tent from '../public/tent.png';
+import paintball from '../public/paintball.png';
+import fishing from '../public/fishing.png';
+import football from '../public/football.png';
 
 export default function Home() {
     return (
@@ -21,9 +27,9 @@ export default function Home() {
                         <a href="">KONTAKT</a>
                     </nav>
                     <div className="hamburger">
-                        <Dropdown placement='bottom-right'>
+                        <Dropdown placement="bottom-right">
                             <Dropdown.Button light iconRight={<span></span>}>
-                                <div className='hamburger__icon'>
+                                <div className="hamburger__icon">
                                     <svg className="w-8 h-8 text-gray-500" fill="none" strokeLinecap="round"
                                          strokeLinejoin="round" strokeWidth="2"
                                          viewBox="0 0 24 24" stroke="white">
@@ -61,6 +67,14 @@ export default function Home() {
                     </h2>
                     <h1>POZYTYWNĄ ENERGIĄ</h1>
                 </section>
+
+                <section id="icons">
+                    <Image src={fireplace} width={150} height={150} alt='fireplace icon'/>
+                    <Image src={tent} width={150} height={150} alt='tent icon'/>
+                    <Image src={paintball} width={150} height={150} alt='paintball icon'/>
+                    <Image src={fishing} width={150} height={150} alt='fishing icon'/>
+                    <Image src={football} width={150} height={150} alt='football icon'/>
+                </section>
                 <section id="paintball">Paintball</section>
                 <section>Łowienie</section>
             </main>
@@ -75,7 +89,7 @@ export default function Home() {
                 align-items: center;
               }
 
-              main img {
+              header img {
                 height: 50px;
                 z-index: 9;
               }
@@ -93,7 +107,7 @@ export default function Home() {
                 width: 40px;
                 z-index: 9;
               }
-              
+
               @media (max-width: 1110px) {
                 .hamburger {
                   display: flex;
@@ -101,12 +115,12 @@ export default function Home() {
               }
 
               @media (max-width: 500px) {
-                main img {
+                header img {
                   height: 30px;
                   margin-top: 10px;
                 }
               }
-              
+
               #main {
                 display: flex;
                 flex-direction: column;
@@ -118,7 +132,7 @@ export default function Home() {
                 background-position: 50% 50%;
                 background-size: cover;
               }
-              
+
               #main h1, #main h2 {
                 margin: 0;
                 text-align: center;
@@ -128,11 +142,11 @@ export default function Home() {
               #main h1 {
                 font-size: 7rem;
               }
-              
+
               #main h2 {
                 font-size: 4rem;
               }
-              
+
               #main h2 span {
                 width: 15%;
                 height: 4px;
@@ -141,7 +155,7 @@ export default function Home() {
                 position: relative;
                 top: -18px;
               }
-              
+
               @media (max-width: 940px) {
                 #main h1 {
                   font-size: 5rem;
@@ -178,6 +192,15 @@ export default function Home() {
                   top: -4px;
                 }
               }
+              
+              #icons {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                height: 200px;
+              }
             `}</style>
 
             <style jsx global>{`
@@ -199,6 +222,19 @@ export default function Home() {
                 color: #002902;
                 text-decoration: none;
                 cursor: pointer;
+              }
+
+              #icons img {
+                background-color: white;
+                border-radius: 80px;
+              }
+
+              @media (max-width: 800px) {
+                #icons img {
+                  border-radius: 40px;
+                  width: 50px;
+                  height: 50px;
+                }
               }
             `}</style>
         </div>
