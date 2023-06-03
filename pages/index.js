@@ -52,6 +52,15 @@ export default function Home() {
                     </div>
                 </header>
 
+                <section id="main">
+                    <h1>NATURA I ZABAWA</h1>
+                    <h2>
+                        <span></span>
+                        NAPEŁNIA TO MIEJSCE
+                        <span></span>
+                    </h2>
+                    <h1>POZYTYWNĄ ENERGIĄ</h1>
+                </section>
                 <section id="paintball">Paintball</section>
                 <section>Łowienie</section>
             </main>
@@ -95,6 +104,78 @@ export default function Home() {
                 main img {
                   height: 30px;
                   margin-top: 10px;
+                }
+              }
+              
+              #main {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                height: 600px;
+                background-image: url('/main-section.png');
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: cover;
+              }
+              
+              #main h1, #main h2 {
+                margin: 0;
+                text-align: center;
+                color: white;
+              }
+
+              #main h1 {
+                font-size: 7rem;
+              }
+              
+              #main h2 {
+                font-size: 4rem;
+              }
+              
+              #main h2 span {
+                width: 15%;
+                height: 4px;
+                display: inline-block;
+                background-color: white;
+                position: relative;
+                top: -18px;
+              }
+              
+              @media (max-width: 940px) {
+                #main h1 {
+                  font-size: 5rem;
+                }
+
+                #main h2 {
+                  font-size: 2rem;
+                }
+
+                #main h2 span {
+                  width: 20%;
+                  top: -10px;
+                }
+              }
+
+              @media (max-width: 545px) {
+                #main h2 span {
+                  width: 15%;
+                }
+              }
+
+              @media (max-width: 480px) {
+                #main h1 {
+                  font-size: 2rem;
+                }
+
+                #main h2 {
+                  font-size: 1rem;
+                }
+
+                #main h2 span {
+                  width: 10%;
+                  height: 2px;
+                  top: -4px;
                 }
               }
             `}</style>
