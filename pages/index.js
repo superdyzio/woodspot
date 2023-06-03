@@ -201,6 +201,12 @@ export default function Home() {
                 width: 100%;
                 height: 200px;
               }
+
+              @media (max-width: 800px) {
+                #icons {
+                  height: 100px;
+                }
+              }
             `}</style>
 
             <style jsx global>{`
