@@ -38,7 +38,7 @@ export default function Home() {
                                 </div>
                             </Dropdown.Button>
                             <Dropdown.Menu aria-label="navigation actions">
-                                <Dropdown.Item key="new">
+                                <Dropdown.Item key="paintball">
                                     <a href="#paintball1">PAINTBALL</a>
                                 </Dropdown.Item>
                                 <Dropdown.Item key="copy">
@@ -103,6 +103,26 @@ export default function Home() {
 
                         Markery, które wyglądają jak prawdziwy karabin M4 możecie wyposażyć w małe magazynki - 20 kul, jak i duże - 200 kul.<br/><br/>
                         Czas gry uzależniony jest od wykupionego pakietu i tempa, w jakim wykorzystacie swoją amunicję.
+                    </div>
+                </section>
+                <section id="paintball3" className="section-wrapper smaller">
+                    <div className="bar"></div>
+                    <div className="section-container"></div>
+                    <div className="rectangle"></div>
+                    <div className="triangle"></div>
+                    <div className="text">
+                        Rekreacyjna strefa dla osób, które nie grają, pozwala odpocząć w otoczeniu natury.<br/><br/>
+                        Nie odbiera to jednak emocji z rozgrywki, ponieważ dalej jest się blisko znajomych, którzy grają.<br/><br/><br/>
+
+                        Odpoczywając można kibicować wybranej drużynie i ekscytować się wynikiem.<br/><br/>
+                    </div>
+                </section>
+                <section id="paintball4" className="section-wrapper text-only">
+                    <div className="text">
+                        Jeśli nie macie pomysłu na grę, mamy w zanadrzu różne scenariusze rozgrywki.<br/><br/>
+                        Na pewno któryś z nich Wam się spodoba.<br/><br/>
+
+                        A tym z Was, którzy mają swój własny pomysł - pomożemy w jego przygotowaniu.<br/><br/>
                     </div>
                 </section>
 
@@ -260,6 +280,10 @@ export default function Home() {
                 background-image: url('/paintball-section-2.png');
               }
 
+              #paintball3 .section-container {
+                background-image: url('/paintball-section-3.png');
+              }
+
               .section-wrapper {
                 width: 100%;
                 height: 700px;
@@ -268,6 +292,16 @@ export default function Home() {
               
               .section-wrapper.smaller {
                 height: 650px;
+              }
+
+              .section-wrapper.text-only {
+                height: 250px;
+              }
+
+              .section-wrapper.text-only .text {
+                width: 100%;
+                text-align: center;
+                top: 0;
               }
               
               .section-wrapper .bar {
@@ -349,28 +383,48 @@ export default function Home() {
               @media (max-width: 1170px) {
                 .section-wrapper .text {
                   font-size: 1.5rem;
-                  width: 44%
+                  width: 43.5%
                 }
               }
               
               @media (max-width: 810px) {
                 .section-wrapper .text {
                   font-size: 1.2rem;
-                  width: 45%;
+                  width: 44%;
+                }
+              }
+              
+              @media (max-width: 750px) {
+                .section-wrapper .triangle {
+                  border-left: 250px solid transparent;
+                }
+
+                .section-wrapper .triangle.inverse {
+                  border-right: 250px solid transparent;
                 }
               }
 
               @media (max-width: 490px) {
                 .section-wrapper .text {
                   font-size: 1rem;
-                  width: 49%;
+                  width: 45%;
                 }
               }
 
-              @media (max-width: 350px) {
+              @media (max-width: 420px) {
+                .section-wrapper .triangle {
+                  border-left: 150px solid transparent;
+                }
+
+                .section-wrapper .triangle.inverse {
+                  border-right: 150px solid transparent;
+                }
+              }
+
+              @media (max-width: 375px) {
                 .section-wrapper .text {
                   font-size: 0.8rem;
-                  width: 49%;
+                  width: 45%;
                 }
               }
             `}</style>
