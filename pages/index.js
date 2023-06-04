@@ -20,7 +20,7 @@ export default function Home() {
                 <header className={styles.header}>
                     <img src={'/logo.svg'} alt={'woodspot logo'}/>
                     <nav>
-                        <a href="#paintball">PAINTBALL</a>
+                        <a href="#paintball1">PAINTBALL</a>
                         <a href="">ŁOWISKA</a>
                         <a href="">BUSH&FUN</a>
                         <a href="">O NAS</a>
@@ -39,7 +39,7 @@ export default function Home() {
                             </Dropdown.Button>
                             <Dropdown.Menu aria-label="navigation actions">
                                 <Dropdown.Item key="new">
-                                    <a href="#paintball">PAINTBALL</a>
+                                    <a href="#paintball1">PAINTBALL</a>
                                 </Dropdown.Item>
                                 <Dropdown.Item key="copy">
                                     <a href="">ŁOWISKA</a>
@@ -78,9 +78,9 @@ export default function Home() {
 
                 <hr />
 
-                <section id="paintball" className="section-wrapper">
+                <section id="paintball1" className="section-wrapper">
                     <h3>PAINTBALL</h3>
-                    <div className={styles.sectionContainer}></div>
+                    <div className="section-container"></div>
                     <Image src={paintball} width={150} height={150} alt='paintball icon'/>
                     <div className="rectangle"></div>
                     <div className="triangle"></div>
@@ -90,6 +90,19 @@ export default function Home() {
 
                         W centrum poligonu znajduje się fort, a oprócz niego zaaranżowane dwie strefy rozgrywki.<br/><br/>
                         Pierwsza - bardziej otwarta, a druga bardziej zamknięta, umiejscowiona w lesie.
+                    </div>
+                </section>
+                <section id="paintball2" className="section-wrapper smaller">
+                    <div className="bar"></div>
+                    <div className="section-container"></div>
+                    <div className="rectangle inverse"></div>
+                    <div className="triangle inverse"></div>
+                    <div className="text inverse">
+                        Rozgrywki różnią się od siebie liczbą graczy, ilością kul w magazynku i czasem trwania rundy.<br/><br/>
+                        Grać możecie u nas od dwóch osób 1vs1, aż do 12 w meczach 6vs6.<br/><br/><br/>
+
+                        Markery, które wyglądają jak prawdziwy karabin M4 możecie wyposażyć w małe magazynki - 20 kul, jak i duże - 200 kul.<br/><br/>
+                        Czas gry uzależniony jest od wykupionego pakietu i tempa, w jakim wykorzystacie swoją amunicję.
                     </div>
                 </section>
 
@@ -231,10 +244,36 @@ export default function Home() {
                 }
               }
 
+              .section-container {
+                width: 100%;
+                height: 600px;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: cover;
+              }
+
+              #paintball1 .section-container {
+                background-image: url('/paintball-section-1.png');
+              }
+
+              #paintball2 .section-container {
+                background-image: url('/paintball-section-2.png');
+              }
+
               .section-wrapper {
                 width: 100%;
                 height: 700px;
                 position: relative;
+              }
+              
+              .section-wrapper.smaller {
+                height: 650px;
+              }
+              
+              .section-wrapper .bar {
+                height: 50px;
+                width: 100%;
+                background-color: #002902;
               }
 
               .section-wrapper h3 {
@@ -259,6 +298,10 @@ export default function Home() {
                 position: absolute;
                 top: 100px;
                 right: 0;
+              }
+
+              .section-wrapper.smaller .rectangle, .section-wrapper.smaller .triangle, .section-wrapper.smaller .text {
+                top: 50px;
               }
 
               .section-wrapper .triangle {
@@ -293,6 +336,10 @@ export default function Home() {
                 padding: 2rem 1rem 1rem 1rem;
               }
               
+              .section-wrapper .text.inverse {
+                left: 0;
+              }
+              
               @media (max-width: 1700px) {
                 .section-wrapper .text {
                   font-size: 1.8rem;
@@ -302,7 +349,7 @@ export default function Home() {
               @media (max-width: 1170px) {
                 .section-wrapper .text {
                   font-size: 1.5rem;
-                  width: 43%
+                  width: 44%
                 }
               }
               
