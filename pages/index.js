@@ -21,8 +21,8 @@ export default function Home() {
                     <img src={'/logo.svg'} alt={'woodspot logo'}/>
                     <nav>
                         <a href="#paintball1">PAINTBALL</a>
-                        <a href="">ŁOWISKA</a>
-                        <a href="">BUSH&FUN</a>
+                        <a href="#fishing">ŁOWISKA</a>
+                        <a href="#bush">BUSH&FUN</a>
                         <a href="">O NAS</a>
                         <a href="">KONTAKT</a>
                     </nav>
@@ -42,10 +42,10 @@ export default function Home() {
                                     <a href="#paintball1">PAINTBALL</a>
                                 </Dropdown.Item>
                                 <Dropdown.Item key="copy">
-                                    <a href="">ŁOWISKA</a>
+                                    <a href="#fishing">ŁOWISKA</a>
                                 </Dropdown.Item>
                                 <Dropdown.Item key="edit">
-                                    <a href="">BUSH&FUN</a>
+                                    <a href="#bush">BUSH&FUN</a>
                                 </Dropdown.Item>
                                 <Dropdown.Item key="delete">
                                     <a href="">O NAS</a>
@@ -126,8 +126,30 @@ export default function Home() {
                     </div>
                 </section>
 
+                <hr />
+
                 <section id="fishing" className="section-wrapper">
                     <h3>ŁOWISKA</h3>
+                    <div className="section-container"></div>
+                    <Image src={fishing} width={150} height={150} alt='fishing icon'/>
+                    <div className="gradient-text">
+                        <b>Wpadnij do nas powędkować!<br/>
+                        Zabierz dzieci, dziadków czy kółko wędkarskie albo przyjedź solo!<br/><br/></b>
+
+                        Nasz przyjazny środowisku teren oferuje dwa stawy, w których możecie łowić w formule no-kill.<br/>
+                        Do dyspozycji jest wiele stanowisk wędkarskich jak i łódki do wynajęcia.
+                    </div>
+                    <div className="trapezoid-text">
+                        W stawach na Spocie znajdziecie:<br/>
+                        karpia królewskiego i pełnołuskiego,<br/>
+                        lina, sandacza, amura i szczupaka.
+                    </div>
+                </section>
+
+                <hr />
+
+                <section id="bush" className="section-wrapper">
+                    <h3>BUSH & FUN</h3>
                 </section>
             </main>
 
@@ -284,6 +306,10 @@ export default function Home() {
                 background-image: url('/paintball-section-3.png');
               }
 
+              #fishing .section-container {
+                background-image: url('/fishing-section.png');
+              }
+
               .section-wrapper {
                 width: 100%;
                 height: 700px;
@@ -370,6 +396,31 @@ export default function Home() {
                 padding: 2rem 1rem 1rem 1rem;
               }
               
+              .section-wrapper .gradient-text {
+                position: absolute;
+                color: white;
+                top: 100px;
+                width: 100%;
+                padding: 0 10%;
+                font-size: 1.2rem;
+                background-image: linear-gradient(#002902, #002902, transparent);
+                text-align: center;
+                height: 300px;
+              }
+
+              .section-wrapper .trapezoid-text {
+                position: absolute;
+                height: 0;
+                width: 500px;
+                bottom: 0;
+                right: 0;
+                border-bottom: 100px solid #002902;
+                border-left: 100px solid transparent;
+                border-right: 0 solid transparent;
+                color: white;
+                font-size: 1.5rem;
+              }
+              
               .section-wrapper .text.inverse {
                 left: 0;
               }
@@ -409,6 +460,12 @@ export default function Home() {
                   font-size: 1rem;
                   width: 45%;
                 }
+
+                .section-wrapper .trapezoid-text {
+                  font-size: 1rem;
+                  width: 350px;
+                  border-bottom: 80px solid#002902;
+                }
               }
 
               @media (max-width: 420px) {
@@ -418,6 +475,10 @@ export default function Home() {
 
                 .section-wrapper .triangle.inverse {
                   border-right: 150px solid transparent;
+                }
+                
+                .section-wrapper .gradient-text {
+                  font-size: 0.8rem;
                 }
               }
 
@@ -473,6 +534,16 @@ export default function Home() {
                 left: 20px;
                 border: 5px solid #002902;
                 z-index: 9;
+              }
+              
+              #fishing img {
+                top: 10px;
+              }
+
+              @media (max-width: 930px) {
+                #fishing img {
+                  top: 300px;
+                }
               }
             `}</style>
         </div>
