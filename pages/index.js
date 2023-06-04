@@ -75,11 +75,34 @@ export default function Home() {
                     <Image src={fishing} width={150} height={150} alt='fishing icon'/>
                     <Image src={football} width={150} height={150} alt='football icon'/>
                 </section>
-                <section id="paintball">Paintball</section>
-                <section>Łowienie</section>
+
+                <hr />
+
+                <section id="paintball" className="section-wrapper">
+                    <h3>PAINTBALL</h3>
+                    <div className={styles.sectionContainer}></div>
+                    <Image src={paintball} width={150} height={150} alt='paintball icon'/>
+                    <div className="rectangle"></div>
+                    <div className="triangle"></div>
+                    <div className="text">
+                        Nasze boisko do paintballa w trakcie rozgrywki zmienia się w arenę idealną do wszelkiej rywalizacji.<br/><br/>
+                        Rozmieszczenie elementów na polu do gry zmusza do ciągłego myślenia i dynamicznych zmian pozycji.<br/><br/><br/>
+
+                        W centrum poligonu znajduje się fort, a oprócz niego zaaranżowane dwie strefy rozgrywki.<br/><br/>
+                        Pierwsza - bardziej otwarta, a druga bardziej zamknięta, umiejscowiona w lesie.
+                    </div>
+                </section>
+
+                <section id="fishing" className="section-wrapper">
+                    <h3>ŁOWISKA</h3>
+                </section>
             </main>
 
             <style jsx>{`
+              hr {
+                width: 100%;
+              }
+              
               main {
                 width: 100%;
                 flex: 1;
@@ -207,6 +230,102 @@ export default function Home() {
                   height: 100px;
                 }
               }
+
+              .section-wrapper {
+                width: 100%;
+                height: 700px;
+                position: relative;
+              }
+
+              .section-wrapper h3 {
+                height: 100px;
+                text-align: center;
+                color: white;
+                font-size: 5rem;
+                margin: 0;
+              }
+              
+              @media (max-width: 500px) {
+                .section-wrapper h3 {
+                  font-size: 3rem;
+                }
+              }
+              
+              .section-wrapper .rectangle {
+                height: 600px;
+                width: 40%;
+                background-color: #002902;
+                opacity: 0.8;
+                position: absolute;
+                top: 100px;
+                right: 0;
+              }
+
+              .section-wrapper .triangle {
+                opacity: 0.8;
+                position: absolute;
+                top: 100px;
+                right: 40%;
+                width: 0;
+                height: 0;
+                border-left: 450px solid transparent;
+                border-right: 0 solid transparent;
+                border-bottom: 600px solid #002902;
+              }
+
+              .section-wrapper .rectangle.inverse {
+                left: 0;
+              }
+
+              .section-wrapper .triangle.inverse {
+                left: 40%;
+                border-left: 0 solid transparent;
+                border-right: 450px solid transparent;
+              }
+              
+              .section-wrapper .text {
+                position: absolute;
+                right: 0;
+                top: 100px;
+                color: white;
+                font-size: 2rem;
+                width: 42%;
+                padding: 2rem 1rem 1rem 1rem;
+              }
+              
+              @media (max-width: 1700px) {
+                .section-wrapper .text {
+                  font-size: 1.8rem;
+                }
+              }
+
+              @media (max-width: 1170px) {
+                .section-wrapper .text {
+                  font-size: 1.5rem;
+                  width: 43%
+                }
+              }
+              
+              @media (max-width: 810px) {
+                .section-wrapper .text {
+                  font-size: 1.2rem;
+                  width: 45%;
+                }
+              }
+
+              @media (max-width: 490px) {
+                .section-wrapper .text {
+                  font-size: 1rem;
+                  width: 49%;
+                }
+              }
+
+              @media (max-width: 350px) {
+                .section-wrapper .text {
+                  font-size: 0.8rem;
+                  width: 49%;
+                }
+              }
             `}</style>
 
             <style jsx global>{`
@@ -241,6 +360,18 @@ export default function Home() {
                   width: 50px;
                   height: 50px;
                 }
+              }
+
+              .section-wrapper img {
+                width: 150px;
+                height: 150px;
+                position: absolute;
+                background-color: white;
+                border-radius: 80px;
+                top: 120px;
+                left: 20px;
+                border: 5px solid #002902;
+                z-index: 9;
               }
             `}</style>
         </div>

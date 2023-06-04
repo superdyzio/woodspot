@@ -50,3 +50,12 @@
         display: none;
     }
 }
+
+.sectionContainer {
+    width: 100%;
+    height: 600px;
+    background-image: url('/paintball-section-1.png');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
