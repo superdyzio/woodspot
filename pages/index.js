@@ -141,9 +141,9 @@ export default function Home() {
                         zapewnić animatorów, którzy wykorzystają nasze leśne obszary do przeróżnych aktywności. Ponadto
                         przygotowany dla nich plac zabaw zapewni zajęcie na więcej niż parę chwil.<br/><br/>Możecie
                         skorzystać z zajęć survivalowych dla dzieci jak i dorosłych przeprowadzanych przez&nbsp;
-                        <a href="https://www.sas.org.pl">Szkołę Przygody i Przetrwania SAS</a>, która jest jednym z
-                        programów realizujących cele Fundacji Hobbit. Zajmuje się organizacja czasu wolnego dzieci i
-                        młodzieży w sposób służący ich wszechstronnemu rozwojowi psychofizycznemu.
+                        <a target="_blank" href="https://www.sas.org.pl">Szkołę Przygody i Przetrwania SAS</a>, która
+                        jest jednym z programów realizujących cele Fundacji Hobbit. Zajmuje się organizacja czasu
+                        wolnego dzieci i młodzieży w sposób służący ich wszechstronnemu rozwojowi psychofizycznemu.
 
                     </div>
                 </section>
@@ -513,13 +513,13 @@ export default function Home() {
               }
               
               .section-wrapper .rectangle.section-with-subtitle {
-                top: 150px;
-                height: 550px;
+                top: 180px;
+                height: 520px;
               }
 
               .section-wrapper .triangle.section-with-subtitle {
-                top: 150px;
-                border-bottom: 550px solid #002902;
+                top: 180px;
+                border-bottom: 520px solid #002902;
               }
               
               .section-wrapper .text.section-with-subtitle {
@@ -604,6 +604,7 @@ export default function Home() {
               
               .contact-column {
                 display: flex;
+                height: 500px;
                 flex-direction: column;
                 justify-content: space-around;
               }
@@ -637,14 +638,28 @@ export default function Home() {
 
               @media (max-width: 1700px) {
                 .section-wrapper .text {
-                  font-size: 1.8rem;
+                  font-size: 1.6rem;
                 }
               }
 
               @media (max-width: 1170px) {
                 .section-wrapper .text {
-                  font-size: 1.5rem;
+                  font-size: 1.3rem;
                   width: 43.5%
+                }
+              }
+
+              @media (max-width: 1000px) {
+                .contact-map-container {
+                  height: 300px;
+                  width: 300px;
+                }
+              }
+
+              @media (max-width: 850px) {
+                .contact-container {
+                  flex-direction: column;
+                  align-items: center;
                 }
               }
 
@@ -665,9 +680,29 @@ export default function Home() {
                 }
               }
 
+              @media (max-width: 600px) {
+                .contact-column {
+                  height: 300px;
+                }
+
+                .contact-map-container {
+                  width: 200px;
+                  height: 200px;
+                }
+
+                .contact-address {
+                  font-size: 1rem;
+                  width: 250px;
+                }
+
+                .contact-socials {
+                  width: 250px;
+                }
+              }
+
               @media (max-width: 490px) {
                 .section-wrapper .text {
-                  font-size: 1rem;
+                  font-size: 0.9rem;
                   width: 45%;
                 }
 
@@ -675,6 +710,14 @@ export default function Home() {
                   font-size: 1rem;
                   width: 350px;
                   border-bottom: 80px solid #002902;
+                }
+
+                .section-wrapper .gradient-text {
+                  font-size: 0.7rem;
+                }
+
+                .section-wrapper .subheader-text {
+                  font-size: 0.7rem;
                 }
               }
 
@@ -686,17 +729,19 @@ export default function Home() {
                 .section-wrapper .triangle.inverse {
                   border-right: 150px solid transparent;
                 }
-
-                .section-wrapper .gradient-text {
-                  font-size: 0.8rem;
-                }
               }
 
               @media (max-width: 375px) {
                 .section-wrapper .text {
-                  font-size: 0.8rem;
+                  font-size: 0.7rem;
                   width: 45%;
                 }
+              }
+              
+              hr {
+                color: white;
+                height: 20px;
+                background-color: white;
               }
             `}</style>
 
@@ -730,8 +775,8 @@ export default function Home() {
               }
 
               .section-wrapper:not(.contact) img {
-                width: 150px;
-                height: 150px;
+                width: 100px;
+                height: 100px;
                 position: absolute;
                 background-color: white;
                 border-radius: 80px;
@@ -745,9 +790,9 @@ export default function Home() {
                 top: 10px;
               }
 
-              @media (max-width: 930px) {
+              @media (max-width: 630px) {
                 #fishing img {
-                  top: 300px;
+                  display: none;
                 }
               }
             `}</style>
