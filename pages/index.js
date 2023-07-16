@@ -733,7 +733,7 @@ export default function Home() {
 
               @media (max-width: 375px) {
                 .section-wrapper .text {
-                  font-size: 0.65rem;
+                  font-size: 0.6rem;
                   width: 45%;
                 }
               }
