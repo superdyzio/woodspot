@@ -20,11 +20,11 @@ export default function Home() {
                 <header className={styles.header}>
                     <img src={'/logo.svg'} alt={'woodspot logo'}/>
                     <nav>
+                        <a href="#about1">O NAS</a>
+                        <a href="#bush1">BUSH&FUN</a>
                         <a href="#paintball1">PAINTBALL</a>
                         <a href="#fishing">ŁOWISKA</a>
-                        <a href="#bush">BUSH&FUN</a>
-                        <a href="">O NAS</a>
-                        <a href="">KONTAKT</a>
+                        <a href="#contact">KONTAKT</a>
                     </nav>
                     <div className="hamburger">
                         <Dropdown placement="bottom-right">
@@ -38,20 +38,20 @@ export default function Home() {
                                 </div>
                             </Dropdown.Button>
                             <Dropdown.Menu aria-label="navigation actions">
+                                <Dropdown.Item key="about">
+                                    <a href="#about1">O NAS</a>
+                                </Dropdown.Item>
+                                <Dropdown.Item key="edit">
+                                    <a href="#bush1">BUSH&FUN</a>
+                                </Dropdown.Item>
                                 <Dropdown.Item key="paintball">
                                     <a href="#paintball1">PAINTBALL</a>
                                 </Dropdown.Item>
                                 <Dropdown.Item key="copy">
                                     <a href="#fishing">ŁOWISKA</a>
                                 </Dropdown.Item>
-                                <Dropdown.Item key="edit">
-                                    <a href="#bush">BUSH&FUN</a>
-                                </Dropdown.Item>
-                                <Dropdown.Item key="delete">
-                                    <a href="">O NAS</a>
-                                </Dropdown.Item>
                                 <Dropdown.Item key="contact">
-                                    <a href="">KONTAKT</a>
+                                    <a href="#contact">KONTAKT</a>
                                 </Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
@@ -78,6 +78,92 @@ export default function Home() {
 
                 <hr />
 
+                <section id="about1" className="section-wrapper">
+                    <h3>O NAS</h3>
+                    <div className="section-container"></div>
+                    <div className="rectangle"></div>
+                    <div className="triangle"></div>
+                    <div className="text">
+                        Woodspot to ogrodzony i w znacznym stopniu oświetlony teren niemal 10 hektarów przestrzeni
+                        plenerowej. Wypełniony lasami, polanami i stawami wędkarskimi stwarza pole do organizacji
+                        wydarzeń, imprez okolicznościowych czy weekendowego wypoczynku ze znajomymi.
+                    </div>
+                </section>
+                <section id="about2" className="section-wrapper smaller">
+                    <div className="bar"></div>
+                    <div className="section-container"></div>
+                    <div className="rectangle inverse"></div>
+                    <div className="triangle inverse"></div>
+                    <div className="text inverse">
+                        Staramy się żyć w zgodzie z otaczająca nas natura i dbać o nią. Z tego też powodu teren naszego
+                        obiektu zasilany jest wyłącznie odnawialnymi źródłami energii. Segregujemy odpady, a te możliwe
+                        do ponownego użycia, jak np. opony, zmieniamy w część Woodspota.<br/><br/>Czerpiemy z natury
+                        energię stając się jej częścią. Korzystając z jej bogactwa dajemy życie kolejnym pokoleniom ryb
+                        w naszych stawach i sadzimy młode drzewka, które zagęszczają szkółkę choinek.
+                    </div>
+                </section>
+
+                <hr />
+
+                <section id="bush1" className="section-wrapper">
+                    <h3>BUSH & FUN</h3>
+                    <div className="subheader-text">
+                        Wizja połączenia natury i zabawy jest tym, co napełnia to miejsce pozytywna energią.
+                    </div>
+                    <div className="section-container"></div>
+                    <div className="rectangle section-with-subheader"></div>
+                    <div className="triangle section-with-subheader"></div>
+                    <div className="text section-with-subheader">
+                        W lesie czekają przygotowane Spoty, które stają się Waszym kątem wśród drzew. Do dyspozycji w
+                        nich są hamaki, drewniane ławki i stoły. Dla chętnych na spędzenie nocy w otoczeniu natury na
+                        krawędzi lasu czeka pole namiotowe. Uzbrojone w prąd, a w razie potrzeby i gotowy namiot który
+                        pożyczając rozłożymy i złożymy za Was.
+                    </div>
+                </section>
+                <section id="bush2" className="section-wrapper smaller">
+                    <div className="bar"></div>
+                    <div className="section-container"></div>
+                    <div className="rectangle inverse"></div>
+                    <div className="triangle inverse"></div>
+                    <div className="text inverse">
+                        Na Woodspocie każdy może wykorzystać swoja energię na różne sposoby. Do zaoferowania mamy
+                        różnorodne sprzęty sportowe: frisbee, badminton, bule, darta, piłki i wiele innych.<br/><br/>
+                        Dodatkowo posiadamy także boiska plażowe - dwa do siatkówki i jedno do piłki nożnej.
+                    </div>
+                </section>
+                <section id="bush3" className="section-wrapper smaller">
+                    <div className="bar"></div>
+                    <div className="section-container"></div>
+                    <div className="rectangle"></div>
+                    <div className="triangle"></div>
+                    <div className="text">
+                        Dzieci na Woodspocie są bezpieczne, bo cały nasz teren jest ogrodzony. Na życzenie możemy
+                        zapewnić animatorów, którzy wykorzystają nasze leśne obszary do przeróżnych aktywności. Ponadto
+                        przygotowany dla nich plac zabaw zapewni zajęcie na więcej niż parę chwil.<br/><br/>Możecie
+                        skorzystać z zajęć survivalowych dla dzieci jak i dorosłych przeprowadzanych przez&nbsp;
+                        <a href="https://www.sas.org.pl">Szkołę Przygody i Przetrwania SAS</a>, która jest jednym z
+                        programów realizujących cele Fundacji Hobbit. Zajmuje się organizacja czasu wolnego dzieci i
+                        młodzieży w sposób służący ich wszechstronnemu rozwojowi psychofizycznemu.
+
+                    </div>
+                </section>
+                <section id="bush4" className="section-wrapper smaller">
+                    <div className="bar"></div>
+                    <div className="section-container"></div>
+                    <div className="rectangle inverse"></div>
+                    <div className="triangle inverse"></div>
+                    <div className="text inverse">
+                        Czas umilić może ognisko, na które miejsce przygotowane jest przy każdej z naszych wiat. To
+                        właśnie tam wieczory ze znajomymi i rodzina stają się klimatyczne.<br/><br/>Tak duży leśny
+                        teren daje jeszcze więcej przestrzeni do pomysłów na niezapomniane wydarzenia: urodziny,
+                        wieczory kawalerskie i panieńskie, baby shower, czy szkolne wycieczki to tylko niektóre z
+                        nich... Co najważniejsze, teren możesz mieć nawet na wyłączność i z naszą pomocą zorganizować
+                        na nim to, co będziesz miło wspominać przez długi czas.
+                    </div>
+                </section>
+
+                <hr />
+
                 <section id="paintball1" className="section-wrapper">
                     <h3>PAINTBALL</h3>
                     <div className="section-container"></div>
@@ -85,11 +171,13 @@ export default function Home() {
                     <div className="rectangle"></div>
                     <div className="triangle"></div>
                     <div className="text">
-                        Nasze boisko do paintballa w trakcie rozgrywki zmienia się w arenę idealną do wszelkiej rywalizacji.<br/><br/>
-                        Rozmieszczenie elementów na polu do gry zmusza do ciągłego myślenia i dynamicznych zmian pozycji.<br/><br/><br/>
-
-                        W centrum poligonu znajduje się fort, a oprócz niego zaaranżowane dwie strefy rozgrywki.<br/><br/>
-                        Pierwsza - bardziej otwarta, a druga bardziej zamknięta, umiejscowiona w lesie.
+                        Nasza strefa paintball mieści aż dwa poligony do gry zaaranżowane w naturalnym otoczeniu drzew.
+                        Duży pozwala na rywalizację nawet 12 osobom na raz, mały z kolei idealny jest do pojedynków 1v1.
+                        Nie potrzebujesz dużej grupy by rozegrać u nas kilka szybkich meczów, albo krótki turniej dla
+                        zaledwie kilku graczy.<br/><br/>W centrum dużego pola znajduje się fort, a wokół dwie strefy
+                        usiane zasłonami i przeszkodami. Pierwsza - bardziej otwarta, a druga, zamknięta, umiejscowiona
+                        w lesie. Ich układ i kształt pozwalają na przeprowadzenie rywalizacji według wielu różnych
+                        scenariuszy.
                     </div>
                 </section>
                 <section id="paintball2" className="section-wrapper smaller">
@@ -98,11 +186,9 @@ export default function Home() {
                     <div className="rectangle inverse"></div>
                     <div className="triangle inverse"></div>
                     <div className="text inverse">
-                        Rozgrywki różnią się od siebie liczbą graczy, ilością kul w magazynku i czasem trwania rundy.<br/><br/>
-                        Grać możecie u nas od dwóch osób 1vs1, aż do 12 w meczach 6vs6.<br/><br/><br/>
-
-                        Markery, które wyglądają jak prawdziwy karabin M4 możecie wyposażyć w małe magazynki - 20 kul, jak i duże - 200 kul.<br/><br/>
-                        Czas gry uzależniony jest od wykupionego pakietu i tempa, w jakim wykorzystacie swoją amunicję.
+                        Na rozgrzewkę dla początkujących przygotowaliśmy dwie strzelnice i tor przeszkód. To
+                        przestrzenie w których sprawdzicie swoja celność i sprawność bez ryzyka i konieczności
+                        strzelania do przeciwnika. To tez idealna alternatywa dla najmłodszych.
                     </div>
                 </section>
                 <section id="paintball3" className="section-wrapper smaller">
@@ -111,18 +197,21 @@ export default function Home() {
                     <div className="rectangle"></div>
                     <div className="triangle"></div>
                     <div className="text">
-                        Rekreacyjna strefa dla osób, które nie grają, pozwala odpocząć w otoczeniu natury.<br/><br/>
-                        Nie odbiera to jednak emocji z rozgrywki, ponieważ dalej jest się blisko znajomych, którzy grają.<br/><br/><br/>
-
-                        Odpoczywając można kibicować wybranej drużynie i ekscytować się wynikiem.<br/><br/>
+                        Nasze Markery, które wyglądają jak prawdziwy karabin M4, możecie wyposażyć w małe magazynki
+                        19-strzałowe, ładowane jak prawdziwe - od dołu broni, jak i duże - mieszczące aż 200 kul,
+                        bardziej praktyczne przy dłuższej potyczce. Czas gry uzależniony jest od wykupionego pakietu i
+                        tempa, w jakim wykorzystacie swoja amunicję.
                     </div>
                 </section>
-                <section id="paintball4" className="section-wrapper text-only">
-                    <div className="text">
-                        Jeśli nie macie pomysłu na grę, mamy w zanadrzu różne scenariusze rozgrywki.<br/><br/>
-                        Na pewno któryś z nich Wam się spodoba.<br/><br/>
-
-                        A tym z Was, którzy mają swój własny pomysł - pomożemy w jego przygotowaniu.<br/><br/>
+                <section id="paintball4" className="section-wrapper smaller">
+                    <div className="bar"></div>
+                    <div className="section-container"></div>
+                    <div className="rectangle inverse"></div>
+                    <div className="triangle inverse"></div>
+                    <div className="text inverse">
+                        Strefie towarzyszy przestrzeń idealna do kibicowania i odpoczynku po grze w otoczeniu natury.
+                        Nie odbiera to jednak emocji z rozgrywki, poniewaz dalej jest się blisko znajomych.
+                        Odpoczywając można nadal kibicować wybranej drużynie i ekscytować się wynikiem.
                     </div>
                 </section>
 
@@ -133,23 +222,50 @@ export default function Home() {
                     <div className="section-container"></div>
                     <Image src={fishing} width={150} height={150} alt='fishing icon'/>
                     <div className="gradient-text">
-                        <b>Wpadnij do nas powędkować!<br/>
-                        Zabierz dzieci, dziadków czy kółko wędkarskie albo przyjedź solo!<br/><br/></b>
-
-                        Nasz przyjazny środowisku teren oferuje dwa stawy, w których możecie łowić w formule no-kill.<br/>
-                        Do dyspozycji jest wiele stanowisk wędkarskich jak i łódki do wynajęcia.
+                        <b>Wpadnij do nas powędkować!</b><br/>Zabierz dzieci, dziadków czy kółko wędkarskie i wpadajcie
+                        sprawdzić co skrywa duma naszej miejscówki.
+                    </div>
+                    <div className="rectangle inverse section-with-subtitle"></div>
+                    <div className="triangle inverse section-with-subtitle"></div>
+                    <div className="text inverse section-with-subtitle">
+                        Nasz przyjazny środowisku teren oferuje dwa stawy o łącznej powierzchni 1,5 hektara, w których
+                        możecie łowić w formule no-kill. Do dyspozycji jest wiele stanowisk wędkarskich jak i łódki do
+                        wynajęcia.
                     </div>
                     <div className="trapezoid-text">
-                        W stawach na Spocie znajdziecie:<br/>
-                        karpia królewskiego i pełnołuskiego,<br/>
-                        lina, sandacza, amura i szczupaka.
+                        W stawach na Spocie znajdziecie: karpia królewskiego i pełnołuskiego, lina, sandacza, amura i
+                        szczupaka.
                     </div>
                 </section>
 
                 <hr />
 
-                <section id="bush" className="section-wrapper">
-                    <h3>BUSH & FUN</h3>
+                <section id="contact" className="section-wrapper contact">
+                    <h3>KONTAKT</h3>
+                    <div className="contact-container">
+                        <div className="contact-column">
+                            <div className="contact-map-container"></div>
+                        </div>
+                        <div className="contact-column">
+                            <div className="contact-address">
+                                WOODSPOT BUSH & FUN<br/>
+                                Poznańska, 55-120 Siemianice, gm. Oborniki Śląskie<br/><br/>
+                                nr tel. 576 000 246<br/>
+                                mail: woodspotpl@gmail.com
+                            </div>
+                            <div className="contact-socials">
+                                <a href="https://www.facebook.com/woodspotpl/" target="_blank">
+                                    <img src={'/facebook-logo.png'} alt={'facebook icon'}/>
+                                </a>
+                                <a href="https://www.instagram.com/explore/locations/101079862755451/woodspot-bush-fun/" target="_blank">
+                                    <img src={'/instagram-logo.png'} alt={'instagram icon'}/>
+                                </a>
+                                <a href="https://goo.gl/maps/ME1aduGAakvzNnbm8" target="_blank">
+                                    <img src={'/google-logo.png'} alt={'google icon'}/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
 
@@ -157,7 +273,7 @@ export default function Home() {
               hr {
                 width: 100%;
               }
-              
+
               main {
                 width: 100%;
                 flex: 1;
@@ -270,7 +386,7 @@ export default function Home() {
                   top: -4px;
                 }
               }
-              
+
               #icons {
                 display: flex;
                 flex-direction: row;
@@ -294,20 +410,48 @@ export default function Home() {
                 background-size: cover;
               }
 
+              #about1 .section-container {
+                background-image: url('/about-section-1.jpg');
+              }
+
+              #about2 .section-container {
+                background-image: url('/about-section-2.jpg');
+              }
+
+              #bush1 .section-container {
+                background-image: url('/bush-section-1.jpg');
+              }
+
+              #bush2 .section-container {
+                background-image: url('/bush-section-2.jpg');
+              }
+
+              #bush3 .section-container {
+                background-image: url('/bush-section-3.jpg');
+              }
+
+              #bush4 .section-container {
+                background-image: url('/bush-section-4.jpg');
+              }
+
               #paintball1 .section-container {
-                background-image: url('/paintball-section-1.png');
+                background-image: url('/paintball-section-1.jpg');
               }
 
               #paintball2 .section-container {
-                background-image: url('/paintball-section-2.png');
+                background-image: url('/paintball-section-2.jpg');
               }
 
               #paintball3 .section-container {
-                background-image: url('/paintball-section-3.png');
+                background-image: url('/paintball-section-3.jpg');
+              }
+
+              #paintball4 .section-container {
+                background-image: url('/paintball-section-4.jpg');
               }
 
               #fishing .section-container {
-                background-image: url('/fishing-section.png');
+                background-image: url('/fishing-section.jpg');
               }
 
               .section-wrapper {
@@ -315,7 +459,7 @@ export default function Home() {
                 height: 700px;
                 position: relative;
               }
-              
+
               .section-wrapper.smaller {
                 height: 650px;
               }
@@ -329,7 +473,7 @@ export default function Home() {
                 text-align: center;
                 top: 0;
               }
-              
+
               .section-wrapper .bar {
                 height: 50px;
                 width: 100%;
@@ -343,13 +487,13 @@ export default function Home() {
                 font-size: 5rem;
                 margin: 0;
               }
-              
+
               @media (max-width: 500px) {
                 .section-wrapper h3 {
                   font-size: 3rem;
                 }
               }
-              
+
               .section-wrapper .rectangle {
                 height: 600px;
                 width: 40%;
@@ -362,6 +506,24 @@ export default function Home() {
 
               .section-wrapper.smaller .rectangle, .section-wrapper.smaller .triangle, .section-wrapper.smaller .text {
                 top: 50px;
+              }
+
+              .section-wrapper .rectangle.section-with-subheader, .section-wrapper .triangle.section-with-subheader, .section-wrapper .text.section-with-subheader {
+                top: 150px;
+              }
+              
+              .section-wrapper .rectangle.section-with-subtitle {
+                top: 150px;
+                height: 550px;
+              }
+
+              .section-wrapper .triangle.section-with-subtitle {
+                top: 150px;
+                border-bottom: 550px solid #002902;
+              }
+              
+              .section-wrapper .text.section-with-subtitle {
+                top: 200px;
               }
 
               .section-wrapper .triangle {
@@ -385,7 +547,7 @@ export default function Home() {
                 border-left: 0 solid transparent;
                 border-right: 450px solid transparent;
               }
-              
+
               .section-wrapper .text {
                 position: absolute;
                 right: 0;
@@ -395,7 +557,11 @@ export default function Home() {
                 width: 42%;
                 padding: 2rem 1rem 1rem 1rem;
               }
-              
+
+              .section-wrapper .text a {
+                color: white;
+              }
+
               .section-wrapper .gradient-text {
                 position: absolute;
                 color: white;
@@ -405,7 +571,16 @@ export default function Home() {
                 font-size: 1.2rem;
                 background-image: linear-gradient(#002902, #002902, transparent);
                 text-align: center;
-                height: 300px;
+                height: 150px;
+              }
+
+              .section-wrapper .subheader-text {
+                color: white;
+                width: 100%;
+                padding: 0 10%;
+                font-size: 1.2rem;
+                text-align: center;
+                height: 50px;
               }
 
               .section-wrapper .trapezoid-text {
@@ -421,10 +596,45 @@ export default function Home() {
                 font-size: 1.5rem;
               }
               
+              .contact-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+              }
+              
+              .contact-column {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+              }
+              
+              .contact-map-container {
+                height: 500px;
+                width: 500px;
+                background-image: url('/contact-map.png');
+                background-size: contain;
+              }
+              
+              .contact-address {
+                height: 30px;
+                width: 500px;
+                color: white;
+                font-size: 2rem;
+                text-align: center;
+              }
+              
+              .contact-socials {
+                width: 500px;
+                padding: 0 25%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+              }
+
               .section-wrapper .text.inverse {
                 left: 0;
               }
-              
+
               @media (max-width: 1700px) {
                 .section-wrapper .text {
                   font-size: 1.8rem;
@@ -437,14 +647,14 @@ export default function Home() {
                   width: 43.5%
                 }
               }
-              
+
               @media (max-width: 810px) {
                 .section-wrapper .text {
                   font-size: 1.2rem;
                   width: 44%;
                 }
               }
-              
+
               @media (max-width: 750px) {
                 .section-wrapper .triangle {
                   border-left: 250px solid transparent;
@@ -464,7 +674,7 @@ export default function Home() {
                 .section-wrapper .trapezoid-text {
                   font-size: 1rem;
                   width: 350px;
-                  border-bottom: 80px solid#002902;
+                  border-bottom: 80px solid #002902;
                 }
               }
 
@@ -476,7 +686,7 @@ export default function Home() {
                 .section-wrapper .triangle.inverse {
                   border-right: 150px solid transparent;
                 }
-                
+
                 .section-wrapper .gradient-text {
                   font-size: 0.8rem;
                 }
@@ -511,11 +721,6 @@ export default function Home() {
                 cursor: pointer;
               }
 
-              #icons img {
-                background-color: white;
-                border-radius: 80px;
-              }
-
               @media (max-width: 800px) {
                 #icons img {
                   border-radius: 40px;
@@ -524,7 +729,7 @@ export default function Home() {
                 }
               }
 
-              .section-wrapper img {
+              .section-wrapper:not(.contact) img {
                 width: 150px;
                 height: 150px;
                 position: absolute;
