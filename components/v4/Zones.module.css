@@ -1,0 +1,570 @@
+.section {
+    background: #ECF0E8;
+    color: #0F1A10;
+}
+
+.inner {
+    padding-top: 56px;
+    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+}
+
+/* Intro */
+
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 64px;
+    align-items: flex-end;
+}
+
+.introMain {
+    flex: 1 1 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.eyebrow {
+    font-family: var(--font-mono), monospace;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: #3E4E40;
+}
+
+.heading {
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.02;
+    font-weight: 800;
+    font-stretch: 116%;
+    color: #002902;
+    text-wrap: balance;
+}
+
+.introText {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2B3A2D;
+    max-width: 640px;
+    text-wrap: pretty;
+}
+
+.quote {
+    flex: 1 1 380px;
+    margin: 0;
+    padding: 0;
+}
+
+.quote p {
+    font-size: 24px;
+    line-height: 1.35;
+    font-weight: 600;
+    font-stretch: 108%;
+    color: #002902;
+    text-wrap: balance;
+}
+
+/* Zone article: photo + text, alternating sides on desktop */
+
+.article {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 56px;
+    align-items: stretch;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.media {
+    position: relative;
+    flex: 1 1 560px;
+    min-height: var(--h-d);
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+}
+
+.reverse .media {
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--pos-d);
+}
+
+.placeholder {
+    position: absolute;
+    inset: 24px 24px 24px 90px;
+    border: 2px dashed rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-family: var(--font-mono), monospace;
+    font-size: 15px;
+    text-align: center;
+    padding: 16px;
+}
+
+.badge {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 72px;
+    height: 72px;
+    background: #002902;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono), monospace;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.reverse .badge {
+    left: auto;
+    right: 0;
+}
+
+.badgeAccent {
+    background: #E8742A;
+    color: #002902;
+}
+
+.body {
+    flex: 1 1 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.headText {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label {
+    font-family: var(--font-mono), monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: #3E4E40;
+}
+
+.showLink {
+    font-size: 14px;
+    font-weight: 700;
+    color: #002902;
+}
+
+.title {
+    font-size: clamp(30px, 3vw, 42px);
+    line-height: 1.05;
+    font-weight: 800;
+    font-stretch: 112%;
+    color: #002902;
+}
+
+.lead {
+    font-size: 19px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: #0F1A10;
+    text-wrap: pretty;
+}
+
+.text {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #2B3A2D;
+    text-wrap: pretty;
+}
+
+.text a {
+    font-weight: 700;
+    color: #002902;
+}
+
+.chipsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.chip {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    color: #1D3A20;
+    box-shadow: inset 0 0 0 1px #C9D3C5;
+}
+
+.price {
+    font-family: var(--font-mono), monospace;
+    font-size: 14px;
+    color: #2B3A2D;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: 10px;
+    background: #002902;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.ctaAccent {
+    background: #E8742A;
+    color: #002902;
+    font-weight: 800;
+}
+
+/* Zone F: paintball */
+
+.paintball {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 56px;
+    align-items: stretch;
+    padding: clamp(20px, 3vw, 40px);
+    border-radius: 24px;
+    background: #002902;
+    color: #FFFFFF;
+}
+
+.gallery {
+    position: relative;
+    flex: 1 1 560px;
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.galleryMain {
+    position: relative;
+    flex: 1;
+    min-height: 440px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+    background: #1D5222;
+}
+
+.galleryRow {
+    display: flex;
+    gap: 16px;
+}
+
+.galleryThumb {
+    position: relative;
+    flex: 1;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.paintballMedia {
+    background: #1D5222;
+}
+
+.paintballBody {
+    position: relative;
+    gap: 18px;
+}
+
+.paintball .label {
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.paintball .showLink {
+    color: #FFFFFF;
+}
+
+.miniDark {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.paintballTitle {
+    font-size: clamp(30px, 3vw, 44px);
+    color: #FFFFFF;
+}
+
+.paintballText {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 12px;
+}
+
+.feature {
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.featureKey {
+    font-family: var(--font-mono), monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #E8742A;
+}
+
+.featureTitle {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.featureText {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.markers {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.84);
+    text-wrap: pretty;
+}
+
+.mono {
+    font-family: var(--font-mono), monospace;
+}
+
+.paintballActions {
+    align-items: center;
+    gap: 12px 20px;
+    margin-top: 4px;
+}
+
+.paintballPrice {
+    font-family: var(--font-mono), monospace;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.paintballPriceM {
+    position: relative;
+    text-align: center;
+    font-family: var(--font-mono), monospace;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+@media (max-width: 640px) {
+    .inner {
+        padding-top: 28px;
+        padding-bottom: 64px;
+        gap: 44px;
+    }
+
+    .intro,
+    .introMain {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .introMain {
+        flex: none;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+    }
+
+    .heading {
+        font-size: 30px;
+        line-height: 1.04;
+        font-stretch: 110%;
+        text-wrap: wrap;
+    }
+
+    .introText {
+        font-size: 15px;
+        line-height: 1.55;
+        max-width: none;
+        text-wrap: wrap;
+    }
+
+    .article,
+    .reverse {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 12px;
+    }
+
+    .media {
+        flex: none;
+        min-height: 0;
+        height: var(--h-m);
+        clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%);
+    }
+
+    .reverse .media {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%);
+    }
+
+    .photo {
+        object-position: var(--pos-m);
+    }
+
+    .placeholder {
+        inset: 14px 14px 34px 60px;
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .badge {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .reverse .badge {
+        left: 0;
+        right: auto;
+    }
+
+    .body {
+        flex: none;
+        gap: 12px;
+    }
+
+    .headText {
+        flex: 1;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .label {
+        font-size: 11px;
+    }
+
+    .showLink {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+
+    .title {
+        font-size: 25px;
+        line-height: 1.08;
+        font-stretch: 110%;
+    }
+
+    .text {
+        font-size: 15px;
+        line-height: 1.55;
+        text-wrap: wrap;
+    }
+
+    .chip {
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+
+    .price {
+        font-size: 13px;
+    }
+
+    .actions {
+        display: block;
+        margin-top: 0;
+    }
+
+    .cta {
+        display: flex;
+        justify-content: center;
+    }
+
+    .paintball {
+        margin: 0 -16px;
+        padding: 24px 16px 28px;
+        border-radius: 0;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 12px;
+    }
+
+    .paintballMedia {
+        height: 200px;
+    }
+
+    .paintballTitle {
+        font-size: 26px;
+        line-height: 1.06;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .feature {
+        padding: 12px;
+        border-radius: 10px;
+        gap: 4px;
+    }
+
+    .featureKey {
+        font-size: 11px;
+    }
+
+    .featureTitle {
+        font-size: 15px;
+    }
+
+    .ctaAccent {
+        min-height: 50px;
+    }
+}

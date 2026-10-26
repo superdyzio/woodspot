@@ -1,0 +1,173 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #002902;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.inner {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+    flex: none;
+}
+
+.logo {
+    height: 42px;
+    width: auto;
+    display: block;
+}
+
+.nav {
+    display: flex;
+    gap: 28px;
+    flex: 1;
+    justify-content: center;
+}
+
+.navLink {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+    flex: none;
+}
+
+.phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: var(--font-mono), monospace;
+    font-size: 14px;
+    min-height: 44px;
+}
+
+.book {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 10px;
+    background: #E8742A;
+    color: #002902;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+/* Burger menu (not part of the design, which leaves the burger without a handler). */
+.menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 4px clamp(16px, 3.4vw, 48px) 12px;
+    background: #002902;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.menuLink {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.menuLink + .menuLink {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+@media (min-width: 981px) {
+    .menu {
+        display: none;
+    }
+}
+
+@media (max-width: 980px) {
+    .nav {
+        display: none;
+    }
+
+    .burger {
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 640px) {
+    .header {
+        position: relative;
+    }
+
+    .header .inner {
+        height: 63px;
+        padding: 0 12px 0 16px;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .logo {
+        height: 28px;
+    }
+
+    .actions {
+        gap: 6px;
+        margin-left: 0;
+    }
+
+    .phone {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .phone svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .phoneText,
+    .book {
+        display: none;
+    }
+}

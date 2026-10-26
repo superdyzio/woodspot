@@ -1,0 +1,57 @@
+/* Shared helpers for the V4 homepage. The mobile layout applies at 640px and below. */
+
+@media (min-width: 641px) {
+    .mOnly {
+        display: none !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .dOnly {
+        display: none !important;
+    }
+}
+
+/* Centered content column used by the desktop sections. */
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: clamp(16px, 3.4vw, 48px);
+    padding-right: clamp(16px, 3.4vw, 48px);
+    box-sizing: border-box;
+}
+
+/* Topographic texture used on the dark sections. */
+.contours {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url(/header-background.png);
+    background-repeat: repeat;
+    background-size: 1400px auto;
+    opacity: 0.08;
+}
+
+/* Inline confirmation shown by the preview-only form buttons. */
+.notice {
+    flex: 1 1 100%;
+    margin: 0;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #E6EDE3;
+    color: #1D3A20;
+    font-size: 14px;
+    line-height: 1.45;
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .contours {
+        background-size: 900px auto;
+    }
+}

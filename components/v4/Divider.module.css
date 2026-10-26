@@ -1,0 +1,18 @@
+.divider {
+    position: relative;
+    height: 80px;
+    background: #002902;
+}
+
+.slope {
+    position: absolute;
+    inset: 0;
+    background: #ECF0E8;
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+@media (max-width: 640px) {
+    .divider {
+        height: 44px;
+    }
+}

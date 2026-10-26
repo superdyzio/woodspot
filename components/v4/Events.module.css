@@ -1,0 +1,305 @@
+.section {
+    position: relative;
+    background: #002902;
+    color: #FFFFFF;
+    overflow: hidden;
+}
+
+.inner {
+    position: relative;
+    padding-top: 112px;
+    padding-bottom: 112px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px 64px;
+    align-items: flex-start;
+}
+
+.text {
+    flex: 1 1 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.eyebrow {
+    font-family: var(--font-mono), monospace;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.title {
+    font-size: clamp(36px, 4vw, 58px);
+    line-height: 1.02;
+    font-weight: 800;
+    font-stretch: 116%;
+    text-wrap: balance;
+}
+
+.lede {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+    text-wrap: pretty;
+}
+
+.types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.type {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 999px;
+    box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.45);
+}
+
+.extras {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.extrasLabel {
+    font-family: var(--font-mono), monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.extrasList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 10px 24px;
+    font-size: 16px;
+}
+
+.extra {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icons {
+    display: flex;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+/* Enquiry form */
+
+.form {
+    flex: 1 1 480px;
+    background: #FFFFFF;
+    color: #0F1A10;
+    border-radius: 20px;
+    padding: clamp(20px, 2.6vw, 36px);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.formHead {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formTitle {
+    font-size: 28px;
+    font-weight: 800;
+    font-stretch: 112%;
+    color: #002902;
+}
+
+.formIntro {
+    font-size: 15px;
+    color: #3E4E40;
+}
+
+.fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 14px 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2B3A2D;
+}
+
+.input,
+.select,
+.textarea {
+    border: 1.5px solid #C9D3C5;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.input {
+    height: 48px;
+    padding: 0 14px;
+}
+
+.select {
+    height: 48px;
+    padding: 0 12px;
+    background: #FFFFFF;
+}
+
+.textarea {
+    padding: 12px 14px;
+    resize: vertical;
+}
+
+.formFooter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 18px;
+}
+
+.submit {
+    min-height: 50px;
+    padding: 0 28px;
+    border: 0;
+    border-radius: 10px;
+    background: #E8742A;
+    color: #002902;
+    font-weight: 800;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.formNote {
+    font-size: 14px;
+    color: #3E4E40;
+}
+
+@media (max-width: 640px) {
+    .inner {
+        display: block;
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .text {
+        gap: 14px;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+    }
+
+    .title {
+        font-size: 32px;
+        font-stretch: 112%;
+        text-wrap: wrap;
+    }
+
+    .lede {
+        font-size: 15px;
+        line-height: 1.55;
+        text-wrap: wrap;
+    }
+
+    .type {
+        font-size: 14px;
+        padding: 9px 12px;
+    }
+
+    .form {
+        margin-top: 22px;
+        border-radius: 16px;
+        padding: 18px;
+        gap: 12px;
+        box-shadow: none;
+    }
+
+    .formTitle {
+        font-size: 22px;
+        font-stretch: 110%;
+    }
+
+    .fields {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px 10px;
+    }
+
+    .wide {
+        grid-column: 1 / -1;
+    }
+
+    .field {
+        gap: 5px;
+    }
+
+    .label {
+        font-size: 13px;
+    }
+
+    .input,
+    .select,
+    .textarea {
+        font-size: 15px;
+    }
+
+    .input {
+        width: 100%;
+        height: 46px;
+        padding: 0 10px;
+    }
+
+    .date {
+        padding: 0 8px;
+    }
+
+    .select {
+        height: 46px;
+        padding: 0 10px;
+    }
+
+    /* Height of rows="3" at 15px (the mobile design); the desktop design uses rows="4". */
+    .textarea {
+        padding: 10px;
+        height: 70px;
+    }
+
+    .formFooter {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .submit {
+        min-height: 52px;
+        padding: 0;
+    }
+
+    .formNote {
+        font-size: 13px;
+        text-align: center;
+    }
+}
