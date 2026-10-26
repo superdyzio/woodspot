@@ -1,0 +1,39 @@
+/* Archivo for the V4 homepage, self-hosted so it carries only what the page renders.
+   The files are Google Fonts' Archivo 2.001 "latin" and "latin-ext" faces (the ones next/font served),
+   limited to wdth 100–125 (the condensed half is never used: font-stretch here is 100–116%) and,
+   for latin-ext, subset to Latin Extended-A. Only default-on OpenType features are kept.
+   Shaping and outlines are identical to the Google faces for every weight/width the page uses.
+   The unicode-ranges and the Arial fallback metrics match what next/font generated. License: OFL.txt. */
+
+@font-face {
+    font-family: '__Archivo_v4';
+    font-style: normal;
+    font-weight: 100 900;
+    font-stretch: 100% 125%;
+    font-display: swap;
+    src: url(/fonts/v4/archivo-latin-ext.woff2) format('woff2');
+    unicode-range: U+0100-017F;
+}
+
+@font-face {
+    font-family: '__Archivo_v4';
+    font-style: normal;
+    font-weight: 100 900;
+    font-stretch: 100% 125%;
+    font-display: swap;
+    src: url(/fonts/v4/archivo-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: '__Archivo_Fallback_v4';
+    src: local('Arial');
+    ascent-override: 89.5%;
+    descent-override: 21.41%;
+    line-gap-override: 0%;
+    size-adjust: 98.1%;
+}
+
+.archivo {
+    --font-archivo: '__Archivo_v4', '__Archivo_Fallback_v4';
+}
