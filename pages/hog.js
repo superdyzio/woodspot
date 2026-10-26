@@ -1,50 +1,48 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import styles from '../styles/Home.module.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { COOKIE, isSessionValid } from '../lib/hogAuth';
 
-export const getStaticProps = () => {
+// The password is checked by /api/hog and never reaches the browser; the session
+// cookie is verified here on every request. Anything protected should be passed
+// as props from here, only when the session is valid.
+export const getServerSideProps = ({ req }) => {
     return {
         props: {
-            hogPassword: process.env.HOG_PASSWORD || ''
+            isAuthenticated: isSessionValid(req.cookies[COOKIE])
         }
     };
 }
 
 
-export default function Hog({ hogPassword }) {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+export default function Hog({ isAuthenticated }) {
+    const router = useRouter();
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    const handleSubmit = (e) => {
+    // Re-runs getServerSideProps, which re-reads the session cookie.
+    const refresh = () => router.replace(router.asPath);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(hogPassword);
-        if (password === hogPassword) {
-            setIsAuthenticated(true);
+        const response = await fetch('/api/hog', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password })
+        }).catch(() => null);
+        if (response?.ok) {
+            setPassword('');
             setError('');
+            refresh();
         } else {
             setError('Incorrect password');
         }
     };
 
-    // Check if already authenticated
-    useEffect(() => {
-        const auth = localStorage.getItem('hogAuth');
-        if (auth === 'true') {
-            setIsAuthenticated(true);
-        }
-    }, []);
-
-    // Save authentication state
-    useEffect(() => {
-        if (isAuthenticated) {
-            localStorage.setItem('hogAuth', 'true');
-        }
-    }, [isAuthenticated]);
-
-    const handleLogout = () => {
-        setIsAuthenticated(false);
-        localStorage.removeItem('hogAuth');
+    const handleLogout = async () => {
+        await fetch('/api/hog', { method: 'DELETE' }).catch(() => null);
+        refresh();
     };
 
     if (!isAuthenticated) {
