@@ -96,6 +96,45 @@
     cursor: pointer;
 }
 
+/* Burger menu panel (not in the design). Hidden unless open, and never shown with the full nav. */
+.panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 32px 16px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E3ECE2;
+    box-shadow: 0 24px 32px -16px rgba(0, 41, 2, 0.18);
+}
+
+.panel[hidden] {
+    display: none;
+}
+
+.panel a {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    color: #0F1A10;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #E3ECE2;
+}
+
+.panel a:last-child {
+    border-bottom: 0;
+}
+
+@media (min-width: 1081px) {
+    .panel {
+        display: none;
+    }
+}
+
 /* The design collapses the nav at 900px, but the full nav needs ~1010px; collapse earlier to avoid overflow. */
 @media (max-width: 1080px) {
     .nav,
@@ -137,5 +176,9 @@
         display: flex;
         width: 44px;
         height: 44px;
+    }
+
+    .panel {
+        padding: 4px 16px 12px;
     }
 }
