@@ -71,6 +71,17 @@ export default function Home() {
                     background: #002902;
                 }
 
+                /* Anchor jumps stop below the sticky header. */
+                html {
+                    scroll-padding-top: 77px;
+                }
+
+                @media (max-width: 640px) {
+                    html {
+                        scroll-padding-top: 62px;
+                    }
+                }
+
                 *,
                 *::before,
                 *::after {
