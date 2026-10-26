@@ -1,0 +1,2008 @@
+/*
+ * V1 "Ewolucja" homepage.
+ * Desktop-first, matching the 1440 px design. Breakpoints:
+ *   ≤1080 px  main nav collapses into the burger (from the design)
+ *   ≤900 px   diagonal photo panels become full overlays (from the design)
+ *   ≤640 px   mobile layout (matches the 390 px design)
+ */
+
+.root {
+    --accent: #8cc63f;
+    --green: #002902;
+    --green-dark: #001a02;
+    --green-events: #001f02;
+    --ink: #0f1a10;
+    --label: #2f4a30;
+    --muted-ink: #3b4e3c;
+    --field-border: #93a893;
+    font-family: 'Trebuchet MS', var(--font-fira), -apple-system, 'Segoe UI', sans-serif;
+    background: var(--green-dark);
+    color: #ffffff;
+}
+
+/* Responsive copy: exactly one of each pair is visible. */
+@media (max-width: 640px) {
+    .dOnly {
+        display: none !important;
+    }
+}
+@media (min-width: 641px) {
+    .mOnly {
+        display: none !important;
+    }
+}
+
+/* Plain text links get the design's hover tint; buttons keep their colours. */
+.link {
+    color: #ffffff;
+}
+.link:hover {
+    color: #d4ecb4;
+}
+
+/* ---------- shared type ---------- */
+
+.eyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.h2 {
+    font-size: clamp(30px, 3.4vw, 48px);
+    line-height: 1.08;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.h3Panel {
+    font-size: clamp(28px, 2.8vw, 40px);
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.body {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.lead {
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chip,
+.chipSoft {
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.chip {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.chipSoft {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.statsRow,
+.statsGrid {
+    display: grid;
+}
+
+.statsRow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.statsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 24px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.statsGrid .stat {
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.statValue {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.statLabel {
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.statsGrid .statLabel {
+    line-height: normal;
+}
+
+/* ---------- buttons ---------- */
+
+.btnWhite,
+.btnOutline,
+.btnDark,
+.btnDarkOutline {
+    display: inline-flex;
+    align-items: center;
+    height: 52px;
+    padding: 0 26px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btnWhite {
+    background: #ffffff;
+    color: var(--green);
+}
+
+.btnOutline {
+    gap: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    color: #ffffff;
+}
+
+.btnDark {
+    height: 56px;
+    padding: 0 30px;
+    background: var(--green);
+    color: #ffffff;
+}
+
+.btnDarkOutline {
+    gap: 10px;
+    height: 56px;
+    border: 2px solid var(--green);
+    color: var(--green);
+}
+
+.alignStart {
+    align-self: flex-start;
+}
+
+/* ---------- header ---------- */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    height: 80px;
+    background: rgba(0, 41, 2, 0.97);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.headerBg,
+.cover {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.headerBg {
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.headerInner {
+    position: relative;
+    max-width: 1360px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+    flex: none;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.nav a,
+.footerNav a,
+.menu a {
+    text-decoration: none;
+}
+
+.nav a {
+    white-space: nowrap;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex: none;
+}
+
+.headerPhone {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.headerPhoneIcon {
+    display: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.headerCta {
+    display: inline-flex;
+    align-items: center;
+    height: 44px;
+    padding: 0 22px;
+    background: #ffffff;
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.burger {
+    display: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Dropdown behind the burger (not part of the static design; closed by default). */
+.menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 40px 16px;
+    background: var(--green);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.menu a {
+    padding: 14px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu a:first-child {
+    border-top: 0;
+}
+
+@media (min-width: 1081px) {
+    .menu {
+        display: none;
+    }
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+    position: relative;
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--green);
+}
+
+.heroShade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 41, 2, 0.28) 0%, rgba(0, 41, 2, 0.2) 55%, rgba(0, 41, 2, 0.9) 100%);
+}
+
+.heroContent {
+    position: relative;
+    width: 100%;
+    max-width: 1120px;
+    padding: 64px 40px 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+}
+
+.heroEyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.heroTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.heroLine1 {
+    font-size: clamp(42px, 7vw, 104px);
+    letter-spacing: 0.01em;
+}
+
+.heroLine2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    font-size: clamp(16px, 2.9vw, 42px);
+}
+
+.heroRule {
+    flex: 0 1 150px;
+    height: 4px;
+    background: #ffffff;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.heroLine3 {
+    font-size: clamp(34px, 6vw, 88px);
+    letter-spacing: 0.01em;
+}
+
+.heroText {
+    max-width: 640px;
+    font-size: 20px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* ---------- booking bar ---------- */
+
+.booking {
+    position: relative;
+    z-index: 3;
+    margin-top: -80px;
+    padding: 0 40px;
+}
+
+.bookingCard,
+.eventCard {
+    background: #ffffff;
+    color: var(--ink);
+    border-top: 6px solid var(--accent);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.bookingCard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 32px;
+    gap: 16px;
+}
+
+.bookingHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.bookingTitle {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green);
+}
+
+.darkLink {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.bookingGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 16px;
+    align-items: end;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--label);
+}
+
+.input {
+    height: 52px;
+    padding: 0 14px;
+    border: 1px solid var(--field-border);
+    border-radius: 2px;
+    background: #ffffff;
+    color: var(--ink);
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.submit {
+    height: 52px;
+    padding: 0 24px;
+    background: var(--green);
+    color: #ffffff;
+    border: 0;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.notice {
+    padding: 12px 16px;
+    border-left: 4px solid var(--accent);
+    background: rgba(140, 198, 63, 0.14);
+    color: var(--green);
+    font-size: 15px;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.notice a {
+    color: var(--green);
+    font-weight: 700;
+}
+
+/* Mobile quick actions, fixed to the bottom of the screen. */
+.quickBar {
+    display: none;
+}
+
+/* ---------- offer ---------- */
+
+.offer {
+    background: var(--green);
+    padding: 72px 40px 96px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.offerInner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.offerHead {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.offerHeading {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.offerIntro {
+    max-width: 420px;
+    font-size: 17px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+    gap: 16px;
+}
+
+.tile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 24px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.tileOn {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--accent);
+}
+
+.tileIcon {
+    width: 76px;
+    height: 76px;
+    flex: none;
+}
+
+.tileFlag {
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tileFlag svg {
+    width: 36px;
+    height: 36px;
+}
+
+.tileText {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.tileTitle {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.tileDesc {
+    font-size: 15px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.tilePrice {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* ---------- photo + diagonal panel sections ---------- */
+
+.panelSection {
+    position: relative;
+    min-height: var(--min-h, 680px);
+    overflow: hidden;
+    background: var(--green);
+}
+
+.panelPhoto {
+    position: absolute;
+    inset: 0;
+}
+
+.panelPhoto img,
+.cropImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.diag {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 41, 2, 0.86);
+    clip-path: polygon(46% 0, 100% 0, 100% 100%, 28% 100%);
+}
+
+.panelLeft .diag {
+    clip-path: polygon(0 0, 54% 0, 72% 100%, 0 100%);
+}
+
+.panelWrap {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 96px 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.panelLeft .panelWrap {
+    justify-content: flex-start;
+}
+
+.panelText {
+    width: 46%;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ctaRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.arrowLink {
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* ---------- centred section intros (Bush & Fun, Paintball) ---------- */
+
+.intro {
+    background: var(--green);
+    padding: 96px 40px 56px;
+}
+
+.introRule {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.introInner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.introIcons {
+    display: flex;
+    gap: 12px;
+}
+
+.introIcons img {
+    width: 56px;
+    height: 56px;
+}
+
+.introIcon {
+    width: 96px;
+    height: 96px;
+}
+
+.introTitle {
+    font-size: clamp(44px, 6vw, 80px);
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.introText {
+    font-size: 20px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+/* ---------- sport & kids ---------- */
+
+.sportKids {
+    background: var(--green);
+    padding: 96px 40px;
+}
+
+.sportGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr));
+    gap: 48px;
+    align-items: start;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Photo crops with a slanted bottom edge; --cut sets where the slant starts. */
+.slantA,
+.slantB {
+    overflow: hidden;
+    --cut: 84%;
+}
+
+.slantA {
+    clip-path: polygon(0 0, 100% 0, 100% var(--cut), 0 100%);
+}
+
+.slantB {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 var(--cut));
+}
+
+.sportPhoto {
+    height: 320px;
+}
+
+.articleTitle {
+    font-size: 32px;
+    line-height: 1.15;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.articleText {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.inlineLink {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.sasLink {
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ---------- paintball details ---------- */
+
+.details {
+    background: var(--green);
+    padding: 72px 40px 96px;
+}
+
+.detailsInner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.detailsHead {
+    padding: 0 20px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.detailsHeadTitle {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.detailsHeadHint {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.detailsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: 32px;
+    align-items: start;
+}
+
+.detailCard {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.detailPhoto {
+    height: 240px;
+    --cut: 82%;
+}
+
+.detailTitle {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.detailText {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.package {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 28px 32px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.packageText {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 760px;
+}
+
+.packageTitle {
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.packageBody {
+    font-size: 16px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+/* ---------- fishing ---------- */
+
+.fishLabel {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.fishLabel img {
+    width: 48px;
+    height: 48px;
+}
+
+.fishTrap {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 600px;
+    background: var(--green);
+    clip-path: polygon(110px 0, 100% 0, 100% 100%, 0 100%);
+    padding: 24px 40px 24px 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fishBox {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fishTitle {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.fishList {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+/* ---------- events ---------- */
+
+.events {
+    position: relative;
+    background: var(--green-events);
+    padding: 112px 40px;
+    overflow: hidden;
+}
+
+.eventsBg {
+    opacity: 0.07;
+    pointer-events: none;
+}
+
+.eventsGrid {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr));
+    gap: 56px;
+    align-items: start;
+}
+
+.eventsStory,
+.eventsText {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.eventsPhoto {
+    height: 280px;
+    --cut: 80%;
+}
+
+.extras {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.extrasTitle {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.extrasList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 10px 24px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.extrasList li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.eventCard {
+    padding: 36px;
+    gap: 20px;
+}
+
+.eventHead {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.eventTitle {
+    font-size: 28px;
+    line-height: 1.15;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--green);
+}
+
+.eventIntro {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--muted-ink);
+}
+
+.eventGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 16px;
+}
+
+.eventCard .field {
+    letter-spacing: 0.06em;
+}
+
+.eventCard .input {
+    height: 50px;
+    font-size: 16px;
+}
+
+.eventCard select.input {
+    padding: 0 12px;
+}
+
+.eventCard textarea.input {
+    height: auto;
+    padding: 12px 14px;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+.consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--muted-ink);
+}
+
+.consent input {
+    width: 20px;
+    height: 20px;
+    margin: 1px 0 0;
+    flex: none;
+}
+
+.eventCard .submit {
+    height: 56px;
+}
+
+/* ---------- eco ---------- */
+
+.ecoList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.ecoList li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ecoList svg {
+    width: 26px;
+    height: 26px;
+    flex: none;
+}
+
+/* ---------- contact ---------- */
+
+.contact {
+    background: var(--green);
+    padding: 112px 40px 96px;
+}
+
+.contactInner {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.contactHead {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contactLead {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+.map {
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 1 / 1;
+    display: block;
+}
+
+.contactCol {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.contactBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contactBlock + .contactBlock {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contactLabel {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.address {
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.mapsLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.hours {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+}
+
+.contactText {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.season {
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.bigPhone {
+    font-size: 34px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+
+.mail {
+    font-size: 18px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.socials a {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.socials img {
+    width: 24px;
+    height: 24px;
+}
+
+/* ---------- closing call to action ---------- */
+
+.cta {
+    position: relative;
+    margin-top: -64px;
+    padding: 128px 40px 96px;
+    background: #ffffff;
+    color: var(--green);
+    clip-path: polygon(0 64px, 100% 0, 100% 100%, 0 100%);
+}
+
+.ctaInner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+}
+
+.ctaText {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--label);
+}
+
+.ctaButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+/* ---------- footer ---------- */
+
+.footer {
+    background: var(--green-dark);
+    padding: 56px 40px 40px;
+}
+
+.footerInner {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footerTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footerLogo {
+    height: 36px;
+    width: auto;
+}
+
+.footerNav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.copyright {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.quickBarSpacer {
+    display: none;
+}
+
+/* Below ~1235 px the full nav plus phone number no longer fits (the design
+ * overflows between 1081 and 1180 px), so the phone number goes first. */
+@media (max-width: 1239px) {
+    .headerPhone {
+        display: none;
+    }
+}
+
+/* =====================================================================
+ * ≤1080 px: burger instead of the main nav (from the design)
+ * ===================================================================== */
+@media (max-width: 1080px) {
+    .nav {
+        display: none;
+    }
+    .burger {
+        display: inline-flex;
+    }
+}
+
+/* =====================================================================
+ * ≤900 px: tablet fallbacks (from the design)
+ * ===================================================================== */
+@media (max-width: 900px) {
+    .diag,
+    .panelLeft .diag {
+        clip-path: none;
+        background: rgba(0, 41, 2, 0.9);
+    }
+    .panelText {
+        width: 100%;
+        max-width: none;
+    }
+    .fishTrap {
+        position: relative;
+        width: auto;
+        clip-path: none;
+        padding: 20px 24px;
+    }
+    .headerPhone {
+        display: none;
+    }
+}
+
+@media (min-width: 641px) {
+    .root [id] {
+        scroll-margin-top: 80px;
+    }
+}
+
+/* =====================================================================
+ * ≤640 px: mobile layout (390 px design)
+ * ===================================================================== */
+@media (max-width: 640px) {
+    .root {
+        overflow-x: clip;
+    }
+
+    .eyebrow {
+        font-size: 13px;
+    }
+    .h2 {
+        font-size: 28px;
+        line-height: 1.1;
+    }
+    .h3Panel {
+        font-size: 24px;
+        line-height: 1.15;
+    }
+    .body {
+        font-size: 16px;
+    }
+    .lead {
+        font-size: 17px;
+    }
+    .chips {
+        gap: 8px;
+    }
+    .chip,
+    .chipSoft {
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+    .statsRow {
+        gap: 12px;
+        padding-top: 16px;
+    }
+    .statsGrid {
+        gap: 12px 16px;
+    }
+    .stat {
+        gap: 2px;
+    }
+    .statsGrid .stat {
+        padding-top: 10px;
+    }
+    .statValue {
+        font-size: 22px;
+    }
+    .statLabel {
+        font-size: 12px;
+        line-height: 1.35;
+    }
+    .statsGrid .statLabel {
+        font-size: 13px;
+    }
+    .plainLabels .statLabel {
+        line-height: normal;
+    }
+
+    .btnWhite,
+    .btnOutline {
+        height: 48px;
+        padding: 0 22px;
+        font-size: 14px;
+    }
+
+    /* header */
+    .header {
+        position: relative;
+        z-index: 5;
+        height: 64px;
+        background: var(--green);
+    }
+    .headerInner {
+        height: 63px;
+        padding: 0 12px 0 20px;
+    }
+    .logo {
+        height: 30px;
+    }
+    .headerActions {
+        gap: 6px;
+    }
+    .headerCta {
+        display: none;
+    }
+    .headerPhoneIcon,
+    .burger {
+        display: flex;
+    }
+    .menu {
+        padding: 4px 20px 12px;
+    }
+
+    /* hero */
+    .hero {
+        min-height: 0;
+        height: 420px;
+    }
+    .heroImg {
+        object-position: 30% 50%;
+    }
+    .heroShade {
+        background: linear-gradient(180deg, rgba(0, 41, 2, 0.3) 0%, rgba(0, 41, 2, 0.3) 50%, rgba(0, 41, 2, 0.92) 100%);
+    }
+    .heroContent {
+        padding: 24px 20px 84px;
+        gap: 12px;
+    }
+    .heroEyebrow {
+        font-size: 12px;
+        letter-spacing: 0.18em;
+    }
+    .heroTitle {
+        gap: 8px;
+    }
+    .heroLine1 {
+        font-size: 36px;
+        letter-spacing: 0;
+    }
+    .heroLine2 {
+        gap: 12px;
+        font-size: 15px;
+    }
+    .heroRule {
+        flex-basis: 56px;
+        height: 2px;
+    }
+    .heroLine3 {
+        font-size: 31px;
+        letter-spacing: 0;
+    }
+    .heroText {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* booking */
+    .booking {
+        margin-top: -56px;
+        padding: 0 16px;
+    }
+    .bookingCard {
+        padding: 20px;
+        gap: 14px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
+    .bookingTitle {
+        font-size: 14px;
+    }
+    .bookingGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 12px;
+    }
+    .field {
+        font-size: 12px;
+    }
+    .input {
+        height: 50px;
+        padding: 0 12px;
+        font-size: 16px;
+        min-width: 0;
+    }
+    .bookingGrid input[type='date'] {
+        padding: 0 10px;
+    }
+    .wide {
+        grid-column: 1 / -1;
+    }
+    .submit {
+        font-size: 15px;
+    }
+    .darkLink {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .quickBar {
+        position: fixed;
+        z-index: 30;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 72px;
+        padding: 12px 16px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        background: var(--green);
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.4);
+    }
+    .quickCall,
+    .quickBook {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    .quickCall {
+        border: 2px solid rgba(255, 255, 255, 0.75);
+        color: #ffffff;
+    }
+    .quickBook {
+        background: #ffffff;
+        color: var(--green);
+    }
+    /* Keeps the end of the page reachable above the fixed quick-action bar. */
+    .quickBarSpacer {
+        display: block;
+        height: 72px;
+    }
+
+    /* offer */
+    .offer {
+        padding: 104px 20px 48px;
+    }
+    .offerInner {
+        gap: 20px;
+    }
+    .offerHeading {
+        gap: 10px;
+    }
+    .tiles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+    .tile,
+    .tileOn {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 16px 14px;
+        background: rgba(255, 255, 255, 0.06);
+    }
+    .tileIcon {
+        width: 56px;
+        height: 56px;
+    }
+    .tileFlag svg {
+        width: 28px;
+        height: 28px;
+    }
+    .tileText {
+        gap: 8px;
+    }
+    .tileTitle {
+        font-size: 15px;
+        line-height: 1.2;
+        letter-spacing: 0;
+    }
+    .tileDesc {
+        display: none;
+    }
+    .tilePrice {
+        font-size: 13px;
+    }
+
+    /* photo panels: photo on top, slanted panel overlapping it */
+    .panelSection {
+        min-height: 0;
+        overflow: visible;
+    }
+    .panelPhoto {
+        position: relative;
+        height: var(--photo-h, 280px);
+        overflow: hidden;
+    }
+    .diag {
+        display: none;
+    }
+    .panelWrap,
+    .eventsText {
+        margin-top: -56px;
+        padding: 72px 20px 44px;
+        background: var(--green);
+        clip-path: polygon(0 48px, 100% 0, 100% 100%, 0 100%);
+    }
+    .panelWrap {
+        display: block;
+    }
+    .slantDown .panelWrap {
+        clip-path: polygon(0 0, 100% 48px, 100% 100%, 0 100%);
+    }
+    .panelText {
+        gap: 14px;
+    }
+    .ctaRow {
+        gap: 0;
+    }
+    .fishLabel {
+        gap: 12px;
+    }
+    .fishLabel img {
+        width: 40px;
+        height: 40px;
+    }
+    .fishTitle {
+        font-size: 12px;
+    }
+    .fishBox .fishList {
+        font-size: 16px;
+    }
+
+    /* intros */
+    .intro {
+        padding: 64px 20px 28px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .introInner {
+        gap: 12px;
+    }
+    .introIcons {
+        gap: 10px;
+    }
+    .introIcons img {
+        width: 44px;
+        height: 44px;
+    }
+    .introIcon {
+        width: 72px;
+        height: 72px;
+    }
+    .introTitle {
+        font-size: 44px;
+        line-height: 1.05;
+    }
+    .introText {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* sport & kids */
+    .sportKids {
+        padding: 8px 20px 48px;
+    }
+    .sportGrid {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .article {
+        gap: 10px;
+    }
+    .sportPhoto {
+        height: 200px;
+        margin-bottom: 6px;
+    }
+    .articleTitle {
+        font-size: 22px;
+        line-height: 1.2;
+    }
+    .articleText {
+        font-size: 16px;
+    }
+
+    /* paintball details: swipeable cards */
+    .details {
+        padding: 24px 0 48px;
+    }
+    .detailsInner {
+        gap: 16px;
+    }
+    .detailsGrid {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding: 0 20px;
+        scroll-snap-type: x mandatory;
+    }
+    .detailCard {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+        gap: 10px;
+    }
+    .detailPhoto {
+        height: 170px;
+        --cut: 84%;
+    }
+    .detailTitle {
+        font-size: 19px;
+    }
+    .detailText {
+        font-size: 15px;
+        line-height: 1.55;
+    }
+    .package {
+        margin: 8px 20px 0;
+        padding: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .packageText {
+        gap: 10px;
+    }
+    .packageTitle {
+        font-size: 18px;
+    }
+    .packageBody {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .package .btnWhite {
+        justify-content: center;
+        height: 48px;
+        margin-top: 4px;
+    }
+
+    /* events */
+    .events {
+        padding: 0;
+        overflow: visible;
+    }
+    .eventsBg {
+        display: none;
+    }
+    .eventsGrid {
+        display: block;
+    }
+    .eventsStory {
+        gap: 0;
+    }
+    .eventsPhoto {
+        height: 240px;
+        clip-path: none;
+    }
+    .eventsText {
+        position: relative;
+        padding-bottom: 32px;
+        background: var(--green-events);
+        gap: 14px;
+    }
+    .extras {
+        gap: 0;
+        padding-top: 14px;
+    }
+    .extrasList {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 15px;
+    }
+    .eventFormWrap {
+        padding: 8px 16px 48px;
+    }
+    .eventCard {
+        padding: 20px;
+        gap: 12px;
+        box-shadow: none;
+    }
+    .eventHead {
+        gap: 12px;
+    }
+    .eventTitle {
+        font-size: 22px;
+    }
+    .eventIntro {
+        font-size: 14px;
+    }
+    .eventGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+    .eventCard .input {
+        height: 48px;
+    }
+    .eventCard select.input,
+    .eventCard input[type='date'] {
+        padding: 0 10px;
+    }
+    .eventCard textarea.input {
+        height: auto;
+        padding: 10px 12px;
+    }
+    .consent {
+        font-size: 13px;
+    }
+    .eventCard .submit {
+        height: 52px;
+    }
+
+    /* eco */
+    .ecoList {
+        gap: 12px 14px;
+        padding-top: 14px;
+        font-size: 14px;
+    }
+    .ecoList li {
+        gap: 10px;
+    }
+    .ecoList svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* contact */
+    .contact {
+        padding: 56px 20px 48px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .contactInner,
+    .contactGrid {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+    }
+    .contactCol {
+        display: contents;
+    }
+    .contactHead {
+        gap: 10px;
+    }
+    .contactLead {
+        font-size: 16px;
+    }
+    .map {
+        max-width: none;
+    }
+    .contactBlock {
+        gap: 8px;
+    }
+    .contactBlock + .contactBlock,
+    .contactCol + .contactCol .contactBlock:first-child {
+        padding-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .contactLabel {
+        font-size: 13px;
+    }
+    .address {
+        font-size: 17px;
+    }
+    .mapsLink {
+        min-height: 44px;
+        font-size: 15px;
+    }
+    .hours,
+    .contactText {
+        font-size: 16px;
+    }
+    .hours svg {
+        display: none;
+    }
+    .bigPhone {
+        font-size: 28px;
+        letter-spacing: 0;
+    }
+    .mail {
+        font-size: 16px;
+    }
+    .socials {
+        gap: 10px;
+        margin-top: 8px;
+    }
+
+    /* closing call to action */
+    .cta {
+        margin-top: -40px;
+        padding: 84px 20px 56px;
+        clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+    }
+    .ctaInner {
+        align-items: stretch;
+        gap: 12px;
+    }
+    .ctaText {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+    .ctaButtons {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 8px;
+    }
+    .btnDark,
+    .btnDarkOutline {
+        justify-content: center;
+        height: 52px;
+        font-size: 14px;
+    }
+
+    /* footer */
+    .footer {
+        padding: 40px 20px 32px;
+    }
+    .footerInner {
+        gap: 20px;
+    }
+    .footerTop {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .footerLogo {
+        height: 30px;
+    }
+    .footerNav {
+        gap: 10px 20px;
+        font-size: 13px;
+    }
+    .copyright {
+        font-size: 13px;
+        line-height: 1.5;
+        padding-top: 16px;
+    }
+}
