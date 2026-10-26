@@ -3,6 +3,26 @@
 export default function GlobalStyles() {
     return (
         <style jsx global>{`
+          /* Metric-matched fallbacks for the web fonts in fonts.js, with the values next/font/google generated
+             for them (next/font/local would derive different ones from the fonts' default instance). */
+          @font-face {
+            font-family: natura-fraunces-fallback;
+            src: local('Times New Roman');
+            ascent-override: 84.29%;
+            descent-override: 21.98%;
+            line-gap-override: 0.00%;
+            size-adjust: 116.03%;
+          }
+
+          @font-face {
+            font-family: natura-manrope-fallback;
+            src: local('Arial');
+            ascent-override: 102.96%;
+            descent-override: 28.98%;
+            line-gap-override: 0.00%;
+            size-adjust: 103.53%;
+          }
+
           html,
           body {
             margin: 0;
@@ -40,8 +60,8 @@ export default function GlobalStyles() {
           }
 
           .natura {
-            --serif: var(--font-fraunces), Georgia, 'Times New Roman', serif;
-            --sans: var(--font-manrope), 'Segoe UI', system-ui, sans-serif;
+            --serif: var(--font-fraunces-latin), var(--font-fraunces-latin-ext), natura-fraunces-fallback, Georgia, 'Times New Roman', serif;
+            --sans: var(--font-manrope-latin), var(--font-manrope-latin-ext), natura-manrope-fallback, 'Segoe UI', system-ui, sans-serif;
             --gutter: clamp(20px, 2.8vw, 40px);
             --section-y: clamp(64px, 8.4vw, 120px);
             display: flex;
