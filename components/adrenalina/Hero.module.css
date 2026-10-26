@@ -46,11 +46,25 @@
   gap: 28px;
 }
 
+/* Wider than the 1440px design the copy sits in a centred container, while the percentage diagonal
+   would drift left of it and cross the text. From there the diagonal follows the container instead:
+   the same polygons, written as offsets from the centre with their values at 1440px. */
+@media (min-width: 1441px) {
+  .panel {
+    clip-path: polygon(0 0, calc(50% + 28.8px) 0, calc(50% - 144px) 100%, 0 100%);
+  }
+
+  .slash {
+    clip-path: polygon(calc(50% + 28.8px) 0, calc(50% + 47.52px) 0, calc(50% - 125.28px) 100%, calc(50% - 144px) 100%);
+  }
+}
+
 .title {
   margin: 0;
   font-family: var(--cond);
   font-weight: 800;
-  font-size: clamp(72px, 10vw, 150px);
+  /* Capped at its 1440px size (10vw), so wider screens keep the 1440px clearance from the diagonal. */
+  font-size: clamp(72px, 10vw, 144px);
   line-height: 0.86;
   letter-spacing: -0.01em;
   text-transform: uppercase;
