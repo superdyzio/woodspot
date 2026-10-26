@@ -1,5 +1,5 @@
 // Responsive WebP versions of the page's photos and pictograms, served as
-// public/img/<name>-<width>.webp (the originals in public/ stay untouched).
+// public/img/<name>-<width>.webp.
 
 const ICON = [128, 256];
 
