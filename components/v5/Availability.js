@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Icon from './Icon';
 import { R, cx, onlyDesktop, onlyMobile } from './Responsive';
 import { DAYS, DAY_NAMES, DAY_STATUS, DEFAULT_DAY, LEGEND, SLOT_LABELS, SLOT_TIMES } from './data';
+import { responsive } from './images';
 import ui from './ui.module.css';
 import s from './Availability.module.css';
 
@@ -47,7 +48,7 @@ export default function Availability() {
                 <div className={s.card}>
                     <div className={s.cardTop}>
                         <span className={s.picker}>
-                            <img src="/paintball.png" alt="" />
+                            <img loading="lazy" decoding="async" {...responsive('paintball', '(max-width: 640px) 22px, 26px')} alt="" />
                             Paintball – duże pole
                             <Icon name="chevronDown" size={16} stroke={2} className={onlyDesktop} />
                         </span>
@@ -69,10 +70,12 @@ export default function Availability() {
                                 type="button"
                                 className={cx(s.day, s[status])}
                                 aria-pressed={i === day}
-                                aria-label={`${DAY_NAMES[dow]} ${num} – ${DAY_STATUS[status].toLowerCase()}`}
+                                // The name starts with the visible "Pn 12" (label in name), then spells it out.
+                                aria-label={`${dow} ${num}, ${DAY_NAMES[dow].toLowerCase()} – ${DAY_STATUS[status].toLowerCase()}`}
                                 onClick={() => setDay(i)}
                             >
-                                <span className={s.dow}>{dow}</span>
+                                {/* The space keeps the visible text "Pn 12" rather than "Pn12"; a flex container does not render it. */}
+                                <span className={s.dow}>{dow}</span>{' '}
                                 <span className={s.num}>{num}</span>
                                 <span className={s.dot} />
                             </button>

@@ -1,6 +1,7 @@
 import Icon from './Icon';
 import { R, cx, onlyDesktop, onlyMobile } from './Responsive';
 import { ABOUT_POINTS } from './data';
+import { responsive } from './images';
 import ui from './ui.module.css';
 import s from './About.module.css';
 
@@ -37,10 +38,13 @@ export default function About() {
                     </div>
                     <div className={s.photo}>
                         <img
-                            src="/about-section-2.jpg"
-                            alt="Panele fotowoltaiczne na łące zasilające teren Woodspotu"
                             loading="lazy"
                             decoding="async"
+                            {...responsive(
+                                'about-section-2',
+                                '(max-width: 640px) calc(100vw - 40px), (max-width: 1079px) calc(100vw - 64px), (max-width: 1239px) 560px, (max-width: 1303px) calc(50vw - 60px), 592px'
+                            )}
+                            alt="Panele fotowoltaiczne na łące zasilające teren Woodspotu"
                         />
                     </div>
                 </div>

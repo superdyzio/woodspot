@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { R, cx } from './Responsive';
 import { EVENT_FIELDS, EVENT_TYPES, PHONE, PHONE_HREF, PREVIEW_NOTICE, SAS_URL } from './data';
+import { responsive } from './images';
 import ui from './ui.module.css';
 import s from './Events.module.css';
 
@@ -82,7 +83,15 @@ export default function Events() {
             <div className={s.grid}>
                 <div className={s.intro}>
                     <div className={s.photo}>
-                        <img src="/bush-section-3.jpg" alt="Grupa znajomych na słonecznej polanie wśród sosen" loading="lazy" decoding="async" />
+                        <img
+                            loading="lazy"
+                            decoding="async"
+                            {...responsive(
+                                'bush-section-3',
+                                '(max-width: 640px) 100vw, (max-width: 739px) 676px, (max-width: 1119px) calc(100vw - 64px), 676px'
+                            )}
+                            alt="Grupa znajomych na słonecznej polanie wśród sosen"
+                        />
                     </div>
                     <p className={cx(ui.eyebrow, s.eyebrow)}>Wydarzenia</p>
                     <h2 className={cx(ui.title, ui.balance)}>Cały teren nawet na wyłączność</h2>

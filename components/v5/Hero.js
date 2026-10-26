@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Icon from './Icon';
 import { R, cx, onlyDesktop } from './Responsive';
 import { BOOKING, CATEGORIES, PHONE, PHONE_HREF, PREVIEW_NOTICE } from './data';
+import { responsive } from './images';
 import ui from './ui.module.css';
 import s from './Hero.module.css';
 
@@ -105,9 +106,16 @@ export default function Hero() {
 
                 <div className={s.visual}>
                     <div className={s.photo}>
+                        {/* The LCP element at every width. object-fit: cover in a box taller than 4:3,
+                            so on desktop it is drawn wider than the box (841px tall -> 1122px wide). */}
                         <img
-                            src="/bush-section-4.jpg"
+                            {...responsive(
+                                'bush-section-4',
+                                '(max-width: 640px) 100vw, (max-width: 890px) 827px, (max-width: 1159px) calc(100vw - 64px), 1122px'
+                            )}
                             alt="Drewniana wiata i siedziska z palet wokół miejsca na ognisko na leśnej polanie"
+                            loading="eager"
+                            fetchpriority="high"
                         />
                     </div>
                     <span className={s.badge}>

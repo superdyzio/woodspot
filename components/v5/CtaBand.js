@@ -1,12 +1,14 @@
 import Icon from './Icon';
 import { R, onlyDesktop } from './Responsive';
 import { PHONE, PHONE_HREF } from './data';
+import { responsive } from './images';
 import s from './CtaBand.module.css';
 
 export default function CtaBand() {
     return (
         <section aria-label="Rezerwacja" className={s.band} data-section="kontakt-2">
-            <img src="/header-background.png" alt="" className={s.texture} loading="lazy" decoding="async" />
+            {/* An 11.7:1 strip under object-fit: cover in a 300px+ tall band: drawn 3500px+ wide at every width. */}
+            <img loading="lazy" decoding="async" {...responsive('header-background', '3560px')} alt="" className={s.texture} />
             <div className={s.inner}>
                 <div className={s.text}>
                     <h2>Gotowi na dzień w lesie?</h2>

@@ -8,7 +8,7 @@ export default function Footer() {
             <div className={s.wrap}>
                 <div className={s.grid}>
                     <div className={s.brand}>
-                        <img src="/logo-white.svg" alt="Woodspot bush&fun" />
+                        <img src="/logo-white.svg" alt="Woodspot bush&fun" loading="lazy" decoding="async" />
                         <p>Natura i zabawa napełnia to miejsce pozytywną energią.</p>
                     </div>
                     {FOOTER_NAV.map(({ title, links }) => (

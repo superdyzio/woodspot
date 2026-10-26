@@ -25,7 +25,7 @@ export default function Header() {
         <header className={s.header} data-section="header">
             <div className={s.inner}>
                 <a href="#start" aria-label="Woodspot – strona główna" className={s.logo}>
-                    <img src="/logo-green.svg" alt="Woodspot bush&fun" />
+                    <img src="/logo-green.svg" alt="Woodspot bush&fun" loading="lazy" decoding="async" />
                 </a>
                 <nav className={s.nav} aria-label="Główna nawigacja">
                     {NAV.map(({ href, label }) => (

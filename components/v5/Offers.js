@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Icon from './Icon';
 import { R, cx, onlyDesktop, onlyMobile } from './Responsive';
 import { OFFERS, OFFER_FILTERS } from './data';
+import { responsive } from './images';
 import ui from './ui.module.css';
 import s from './Offers.module.css';
 
@@ -10,6 +11,10 @@ function countLabel(count) {
     if (count === 1) return '1 atrakcja';
     return `${count} ${count >= 2 && count <= 4 ? 'atrakcje' : 'atrakcji'}`;
 }
+
+// Card photo width: 280px cards on mobile; on desktop a 1-, 2- or 3-column grid (gap 24px, 1px borders).
+const CARD_SIZES =
+    '(max-width: 640px) 280px, (max-width: 767px) calc(100vw - 66px), (max-width: 1131px) calc(50vw - 46px), (max-width: 1303px) calc(33.33vw - 39px), 395px';
 
 function OfferCard({ offer }) {
     const { tag, title, image, alt, placeholder, bullets, blurb, price, quote, dark } = offer;
@@ -20,12 +25,12 @@ function OfferCard({ offer }) {
                     <>
                         <div className={s.dashed} />
                         <div className={s.placeholderInner}>
-                            <img src={placeholder.icon} alt="" />
+                            <img loading="lazy" decoding="async" {...responsive(placeholder.icon, '(max-width: 640px) 60px, 76px')} alt="" />
                             <span>{placeholder.label}</span>
                         </div>
                     </>
                 ) : (
-                    <img src={image} alt={alt} loading="lazy" decoding="async" />
+                    <img loading="lazy" decoding="async" {...responsive(image, CARD_SIZES)} alt={alt} />
                 )}
                 <span className={s.tag}>{tag}</span>
             </div>

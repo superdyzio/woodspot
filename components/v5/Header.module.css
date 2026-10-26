@@ -25,6 +25,8 @@
 .logo img {
     height: 40px;
     width: auto;
+    /* The logo's viewBox ratio: keeps its width before the lazy SVG arrives, so the nav never shifts. */
+    aspect-ratio: 5577 / 973;
     display: block;
 }
 

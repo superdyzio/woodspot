@@ -1,5 +1,6 @@
 import { R, cx, onlyDesktop } from './Responsive';
 import { EMAIL, EMAIL_HREF, MAPS_URL, PHONE, PHONE_HREF, PRACTICAL_INFO, SOCIALS } from './data';
+import { responsive } from './images';
 import ui from './ui.module.css';
 import s from './Contact.module.css';
 
@@ -25,7 +26,7 @@ export default function Contact() {
                         <div className={s.socials}>
                             {SOCIALS.map(({ href, label, icon }) => (
                                 <a key={href} href={href} aria-label={label}>
-                                    <img src={icon} alt="" />
+                                    <img src={icon} alt="" loading="lazy" decoding="async" />
                                 </a>
                             ))}
                         </div>
@@ -33,10 +34,13 @@ export default function Contact() {
 
                     <div className={s.map}>
                         <img
-                            src="/contact-map.png"
-                            alt="Mapa dojazdu: Woodspot na północ od Obornik Śląskich, nad Wrocławiem"
                             loading="lazy"
                             decoding="async"
+                            {...responsive(
+                                'contact-map',
+                                '(max-width: 640px) calc(100vw - 70px), (max-width: 727px) calc(100vw - 106px), (max-width: 1071px) calc(50vw - 86px), (max-width: 1303px) calc(33.33vw - 79px), 355px'
+                            )}
+                            alt="Mapa dojazdu: Woodspot na północ od Obornik Śląskich, nad Wrocławiem"
                         />
                         <div className={s.address}>
                             <span>
