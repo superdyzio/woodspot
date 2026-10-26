@@ -14,6 +14,10 @@ export default function Home() {
         <div className={styles.container}>
             <Head>
                 <title>Woodspot</title>
+                <meta
+                    name="description"
+                    content="Niemal 10 hektarów lasów, polan i stawów w Siemianicach pod Wrocławiem: Spoty i wiaty, pole namiotowe, paintball, łowiska no-kill i imprezy na wyłączność."
+                />
                 <link rel="icon" href="/logo.svg"/>
             </Head>
 
@@ -29,7 +33,7 @@ export default function Home() {
                     </nav>
                     <div className="hamburger">
                         <Dropdown placement="bottom-right">
-                            <Dropdown.Button light iconRight={<span></span>}>
+                            <Dropdown.Button light iconRight={<span></span>} aria-label="Menu">
                                 <div className="hamburger__icon">
                                     <svg className="w-8 h-8 text-gray-500" fill="none" strokeLinecap="round"
                                          strokeLinejoin="round" strokeWidth="2"
@@ -81,7 +85,7 @@ export default function Home() {
                 <hr />
 
                 <section id="about1" className="section-wrapper">
-                    <h3>O NAS</h3>
+                    <h2>O NAS</h2>
                     <div className="section-container">
                         <img {...cover('about-section-1', PHOTO_HEIGHT)} alt=""/>
                     </div>
@@ -112,7 +116,7 @@ export default function Home() {
                 <hr />
 
                 <section id="bush1" className="section-wrapper">
-                    <h3>BUSH & FUN</h3>
+                    <h2>BUSH & FUN</h2>
                     <div className="subheader-text">
                         Wizja połączenia natury i zabawy jest tym, co napełnia to miejsce pozytywna energią.
                     </div>
@@ -179,7 +183,7 @@ export default function Home() {
                 <hr />
 
                 <section id="paintball1" className="section-wrapper">
-                    <h3>PAINTBALL</h3>
+                    <h2>PAINTBALL</h2>
                     <div className="section-container">
                         <img {...cover('paintball-section-1', PHOTO_HEIGHT)} alt=""/>
                     </div>
@@ -240,7 +244,7 @@ export default function Home() {
                 <hr />
 
                 <section id="fishing" className="section-wrapper">
-                    <h3>ŁOWISKA</h3>
+                    <h2>ŁOWISKA</h2>
                     <div className="section-container">
                         <img {...cover('fishing-section', PHOTO_HEIGHT)} alt=""/>
                     </div>
@@ -265,7 +269,7 @@ export default function Home() {
                 <hr />
 
                 <section id="contact" className="section-wrapper contact">
-                    <h3>KONTAKT</h3>
+                    <h2>KONTAKT</h2>
                     <div className="contact-container">
                         <div className="contact-column">
                             <div className="contact-map-container">
@@ -281,13 +285,13 @@ export default function Home() {
                             </div>
                             <div className="contact-socials">
                                 <a href="https://www.facebook.com/woodspotpl/" target="_blank">
-                                    <img src={'/facebook-logo.png'} alt={'facebook icon'}/>
+                                    <img src={'/facebook-logo.png'} width={48} height={48} alt={'facebook icon'}/>
                                 </a>
                                 <a href="https://www.instagram.com/explore/locations/101079862755451/woodspot-bush-fun/" target="_blank">
-                                    <img src={'/instagram-logo.png'} alt={'instagram icon'}/>
+                                    <img src={'/instagram-logo.png'} width={50} height={50} alt={'instagram icon'}/>
                                 </a>
                                 <a href="https://goo.gl/maps/ME1aduGAakvzNnbm8" target="_blank">
-                                    <img src={'/google-logo.png'} alt={'google icon'}/>
+                                    <img src={'/google-logo.png'} width={50} height={50} alt={'google icon'}/>
                                 </a>
                             </div>
                         </div>
@@ -311,6 +315,7 @@ export default function Home() {
 
               header img {
                 height: 50px;
+                aspect-ratio: 5577 / 973; /* the SVG's viewBox; lets the browser reserve the width */
                 z-index: 9;
               }
 
@@ -473,7 +478,7 @@ export default function Home() {
                 background-color: #002902;
               }
 
-              .section-wrapper h3 {
+              .section-wrapper h2 {
                 height: 100px;
                 text-align: center;
                 color: white;
@@ -482,7 +487,7 @@ export default function Home() {
               }
 
               @media (max-width: 500px) {
-                .section-wrapper h3 {
+                .section-wrapper h2 {
                   font-size: 3rem;
                 }
               }
