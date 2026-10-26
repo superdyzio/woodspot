@@ -16,7 +16,7 @@ export default function Header() {
         <header data-section="header" className="header">
             <div className="bar">
                 <a href="#top" aria-label="Woodspot – strona główna" className="logo">
-                    <img src="/logo-green.svg" alt="Woodspot bush&fun" />
+                    <img src="/logo-green.svg" alt="Woodspot bush&fun" loading="lazy" decoding="async" />
                 </a>
 
                 <nav className="nav" aria-label="Główna nawigacja">
@@ -80,6 +80,7 @@ export default function Header() {
               .logo img {
                 height: 44px;
                 width: auto;
+                aspect-ratio: auto 5577 / 973;
                 display: block;
               }
 

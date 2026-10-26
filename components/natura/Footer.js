@@ -14,7 +14,7 @@ export default function Footer() {
                 </div>
 
                 <div className="meta">
-                    <img className="logo" src="/logo-white.svg" alt="Woodspot bush&fun" />
+                    <img className="logo" src="/logo-white.svg" alt="Woodspot bush&fun" loading="lazy" decoding="async" />
                     <nav className="links" aria-label="Stopka">
                         {NAV_LINKS.map(({ href, label }) => (
                             <a key={href} href={href}>{label}</a>
@@ -96,6 +96,7 @@ export default function Footer() {
               .logo {
                 height: 40px;
                 width: auto;
+                aspect-ratio: auto 5577 / 973;
                 display: block;
               }
 

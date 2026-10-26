@@ -1,4 +1,5 @@
 import { FISH, FISHING_FACTS } from './content';
+import { photo } from './images';
 import { Swap } from './ui';
 
 export default function Fishing() {
@@ -6,9 +7,11 @@ export default function Fishing() {
         <section id="lowiska" data-section="lowiska" className="fishing">
             <img
                 className="banner"
-                src="/fishing-section.jpg"
-                alt="Słoneczny staw z wędkarzami na brzegu, brzoza i linia lasu"
+                sizes="100vw"
                 loading="lazy"
+                decoding="async"
+                {...photo('fishing-section')}
+                alt="Słoneczny staw z wędkarzami na brzegu, brzoza i linia lasu"
             />
             <div className="container inner">
                 <div className="card">

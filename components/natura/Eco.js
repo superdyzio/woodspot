@@ -1,4 +1,5 @@
 import { ECO_STEPS, padIndex } from './content';
+import { photo } from './images';
 import { Copy, Swap } from './ui';
 
 export default function Eco() {
@@ -24,7 +25,13 @@ export default function Eco() {
                     </ol>
                 </div>
                 <figure className="photo">
-                    <img src="/about-section-2.jpg" alt="Panele fotowoltaiczne na łące, w tle drzewa" loading="lazy" />
+                    <img
+                        sizes="(max-width: 640px) 100vw, (max-width: 1123px) 95vw, (max-width: 1280px) 48vw, 594px"
+                        loading="lazy"
+                        decoding="async"
+                        {...photo('about-section-2')}
+                        alt="Panele fotowoltaiczne na łące, w tle drzewa"
+                    />
                 </figure>
             </div>
 

@@ -46,7 +46,7 @@ export const OFFERS = [
     {
         title: 'Spoty w lesie',
         teaser: 'Hamaki, ławki i stół wśród drzew',
-        image: { src: '/bush-section-1.jpg', alt: 'Spot w sosnowym lesie: hamaki, ławki na oponach i drewniany stół' },
+        image: { name: 'bush-section-1', alt: 'Spot w sosnowym lesie: hamaki, ławki na oponach i drewniany stół' },
         text: 'W lesie czekają przygotowane Spoty, które stają się Waszym kątem wśród drzew – z hamakami, drewnianymi ławkami i stołem.',
         bullets: [
             'Hamaki, ławki i stół w cieniu sosen',
@@ -59,7 +59,7 @@ export const OFFERS = [
     {
         title: 'Wiaty i ogniska',
         teaser: 'Wieczory przy ogniu ze znajomymi',
-        image: { src: '/bush-section-4.jpg', alt: 'Wiata z siedziskami z palet wokół miejsca na ognisko' },
+        image: { name: 'bush-section-4', alt: 'Wiata z siedziskami z palet wokół miejsca na ognisko' },
         text: {
             d: 'Przy każdej z naszych wiat przygotowane jest miejsce na ognisko. To właśnie tam wieczory ze znajomymi i rodziną stają się klimatyczne.',
             m: 'Przy każdej z naszych wiat przygotowane jest miejsce na ognisko. To tam wieczory ze znajomymi i rodziną stają się klimatyczne.',
@@ -90,7 +90,7 @@ export const OFFERS = [
     {
         title: 'Paintball',
         teaser: 'Dwa poligony, fort i strzelnice',
-        image: { src: '/paintball-section-3.jpg', alt: 'Dwóch graczy w maskach za drewnianą zasłoną na leśnym polu paintballowym' },
+        image: { name: 'paintball-section-3', alt: 'Dwóch graczy w maskach za drewnianą zasłoną na leśnym polu paintballowym' },
         text: 'Dwa poligony w naturalnym otoczeniu drzew: duży, z fortem w centrum, dla nawet 12 osób naraz i mały – do pojedynków 1v1.',
         bullets: [
             { d: 'Strefa otwarta i strefa leśna pełne zasłon', m: 'Strefa otwarta i strefa leśna' },
@@ -102,7 +102,7 @@ export const OFFERS = [
     {
         title: 'Łowiska no-kill',
         teaser: 'Dwa stawy, 1,5 ha i łódki',
-        image: { src: '/main-section.png', alt: 'Staw z wierzbą płaczącą na brzegu i zieloną łąką' },
+        image: { name: 'main-section', alt: 'Staw z wierzbą płaczącą na brzegu i zieloną łąką' },
         text: 'Dwa stawy o łącznej powierzchni 1,5 hektara, wiele stanowisk wędkarskich i łódki do wynajęcia.',
         bullets: [
             'Łowienie w formule no-kill',
@@ -115,7 +115,7 @@ export const OFFERS = [
     {
         title: 'Boiska i sport',
         teaser: 'Siatkówka i piłka na piasku',
-        image: { src: '/bush-section-2.jpg', alt: 'Boiska do siatkówki plażowej z żółtymi siatkami, ludzie w trakcie gry' },
+        image: { name: 'bush-section-2', alt: 'Boiska do siatkówki plażowej z żółtymi siatkami, ludzie w trakcie gry' },
         text: 'Na Woodspocie każdy może wykorzystać swoją energię na różne sposoby – na piasku, na trawie i między drzewami.',
         bullets: [
             'Dwa boiska do siatkówki plażowej',

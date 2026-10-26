@@ -1,4 +1,10 @@
+import { photo } from './images';
 import { Copy, PhotoPlaceholder } from './ui';
+
+// Rendered image widths: the desktop panel sits beside the index from ~1085px and wraps under it below;
+// the mobile accordion spans the container.
+const PANEL_SIZES = '(max-width: 1085px) 95vw, (max-width: 1280px) 52vw, 622px';
+const ACCORDION_SIZES = 'calc(100vw - 40px)';
 
 // One attraction's details. "panel" is the desktop detail column next to the index,
 // "accordion" is the body that unfolds under a row on mobile.
@@ -10,7 +16,13 @@ export default function OfferDetail({ offer, variant }) {
         <article className={`detail ${variant}`} aria-label={title}>
             <div className="media">
                 {image ? (
-                    <img src={image.src} alt={image.alt} loading="lazy" />
+                    <img
+                        sizes={isPanel ? PANEL_SIZES : ACCORDION_SIZES}
+                        loading="lazy"
+                        decoding="async"
+                        {...photo(image.name)}
+                        alt={image.alt}
+                    />
                 ) : (
                     <PhotoPlaceholder {...placeholder} />
                 )}

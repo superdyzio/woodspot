@@ -1,5 +1,6 @@
 import InquiryForm from './InquiryForm';
 import { EVENT_TYPES } from './content';
+import { photo } from './images';
 import { Swap } from './ui';
 
 export default function Events() {
@@ -8,7 +9,13 @@ export default function Events() {
             <div className="container">
                 <div className="intro">
                     <figure className="photo">
-                        <img src="/bush-section-3.jpg" alt="Grupa znajomych na słonecznej polanie wśród sosen" loading="lazy" />
+                        <img
+                            sizes="(max-width: 640px) 100vw, (max-width: 1093px) 95vw, (max-width: 1280px) 48vw, 608px"
+                            loading="lazy"
+                            decoding="async"
+                            {...photo('bush-section-3')}
+                            alt="Grupa znajomych na słonecznej polanie wśród sosen"
+                        />
                     </figure>
                     <div className="copy">
                         <p className="eyebrow">Wydarzenia i wyłączność</p>

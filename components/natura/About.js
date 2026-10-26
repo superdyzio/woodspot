@@ -1,4 +1,5 @@
 import { STATS } from './content';
+import { photo } from './images';
 import { Copy } from './ui';
 
 export default function About() {
@@ -32,9 +33,11 @@ export default function About() {
 
                 <figure className="aerial">
                     <img
-                        src="/about-section-1.jpg"
-                        alt="Widok z lotu ptaka: złote jesienne brzozy, polana z przeszkodami i las"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1280px) 95vw, 1200px"
                         loading="lazy"
+                        decoding="async"
+                        {...photo('about-section-1')}
+                        alt="Widok z lotu ptaka: złote jesienne brzozy, polana z przeszkodami i las"
                     />
                     <figcaption>Widok z lotu ptaka – jesień na Woodspocie: brzozy, polany i las.</figcaption>
                 </figure>

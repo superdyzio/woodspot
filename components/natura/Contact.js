@@ -1,5 +1,6 @@
 import { EMAIL, MAPS_URL, PHONE, PRACTICAL_INFO } from './content';
 import { PinIcon } from './icons';
+import { photo } from './images';
 import { SocialLinks } from './ui';
 
 export default function Contact() {
@@ -13,9 +14,11 @@ export default function Contact() {
                     <div className="col">
                         <img
                             className="map"
-                            src="/contact-map.png"
-                            alt="Mapa dojazdu: Woodspot na północ od Obornik Śląskich, Wrocław na południowym wschodzie"
+                            sizes="(max-width: 640px) 350px, 380px"
                             loading="lazy"
+                            decoding="async"
+                            {...photo('contact-map')}
+                            alt="Mapa dojazdu: Woodspot na północ od Obornik Śląskich, Wrocław na południowym wschodzie"
                         />
                         <address>
                             <strong>Woodspot Bush &amp; Fun</strong>

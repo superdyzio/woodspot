@@ -1,5 +1,6 @@
 import BookingForm from './BookingForm';
 import { ArrowIcon } from './icons';
+import { photo } from './images';
 import { Swap } from './ui';
 
 export default function Hero() {
@@ -29,8 +30,13 @@ export default function Hero() {
                         </div>
                     </div>
                     <figure className="photo">
+                        {/* The LCP element on desktop and mobile: the only eagerly loaded image on the page.
+                            React 18.2 drops camelCase fetchPriority, so the attribute is written in lowercase. */}
                         <img
-                            src="/bush-section-4.jpg"
+                            sizes="(max-width: 640px) 100vw, (max-width: 991px) 95vw, (max-width: 1280px) calc(95vw - 376px), 832px"
+                            loading="eager"
+                            fetchpriority="high"
+                            {...photo('bush-section-4')}
                             alt="Drewniana wiata, siedziska z palet wokół miejsca na ognisko, w tle sosnowy las"
                         />
                         <figcaption className="only-d">Wiata z miejscem na ognisko</figcaption>
