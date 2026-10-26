@@ -1,12 +1,13 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { Dropdown } from '@nextui-org/react';
-import fireplace from '../public/fireplace.png';
-import tent from '../public/tent.png';
-import paintball from '../public/paintball.png';
-import fishing from '../public/fishing.png';
-import football from '../public/football.png';
+import { cover, responsive } from '../lib/images';
+
+// Height of the hero and of every .section-container; their photos cover it.
+const PHOTO_HEIGHT = 600;
+// Rendered pictogram widths: the #icons row and the icons on the section photos.
+const ICON_ROW_SIZES = '(max-width: 800px) 50px, 150px';
+const SECTION_ICON_SIZES = '100px';
 
 export default function Home() {
     return (
@@ -59,6 +60,7 @@ export default function Home() {
                 </header>
 
                 <section id="main">
+                    <img {...cover('main-section', PHOTO_HEIGHT, { priority: true })} alt=""/>
                     <h1>NATURA I ZABAWA</h1>
                     <h2>
                         <span></span>
@@ -69,18 +71,20 @@ export default function Home() {
                 </section>
 
                 <section id="icons">
-                    <Image src={fireplace} width={150} height={150} alt='fireplace icon'/>
-                    <Image src={tent} width={150} height={150} alt='tent icon'/>
-                    <Image src={paintball} width={150} height={150} alt='paintball icon'/>
-                    <Image src={fishing} width={150} height={150} alt='fishing icon'/>
-                    <Image src={football} width={150} height={150} alt='football icon'/>
+                    <img {...responsive('fireplace', ICON_ROW_SIZES)} width={150} height={150} alt='fireplace icon'/>
+                    <img {...responsive('tent', ICON_ROW_SIZES)} width={150} height={150} alt='tent icon'/>
+                    <img {...responsive('paintball', ICON_ROW_SIZES)} width={150} height={150} alt='paintball icon'/>
+                    <img {...responsive('fishing', ICON_ROW_SIZES)} width={150} height={150} alt='fishing icon'/>
+                    <img {...responsive('football', ICON_ROW_SIZES)} width={150} height={150} alt='football icon'/>
                 </section>
 
                 <hr />
 
                 <section id="about1" className="section-wrapper">
                     <h3>O NAS</h3>
-                    <div className="section-container"></div>
+                    <div className="section-container">
+                        <img {...cover('about-section-1', PHOTO_HEIGHT)} alt=""/>
+                    </div>
                     <div className="rectangle"></div>
                     <div className="triangle"></div>
                     <div className="text">
@@ -91,7 +95,9 @@ export default function Home() {
                 </section>
                 <section id="about2" className="section-wrapper smaller">
                     <div className="bar"></div>
-                    <div className="section-container"></div>
+                    <div className="section-container">
+                        <img {...cover('about-section-2', PHOTO_HEIGHT)} alt=""/>
+                    </div>
                     <div className="rectangle inverse"></div>
                     <div className="triangle inverse"></div>
                     <div className="text inverse">
@@ -110,7 +116,9 @@ export default function Home() {
                     <div className="subheader-text">
                         Wizja połączenia natury i zabawy jest tym, co napełnia to miejsce pozytywna energią.
                     </div>
-                    <div className="section-container"></div>
+                    <div className="section-container">
+                        <img {...cover('bush-section-1', PHOTO_HEIGHT)} alt=""/>
+                    </div>
                     <div className="rectangle section-with-subheader"></div>
                     <div className="triangle section-with-subheader"></div>
                     <div className="text section-with-subheader">
@@ -122,7 +130,9 @@ export default function Home() {
                 </section>
                 <section id="bush2" className="section-wrapper smaller">
                     <div className="bar"></div>
-                    <div className="section-container"></div>
+                    <div className="section-container">
+                        <img {...cover('bush-section-2', PHOTO_HEIGHT)} alt=""/>
+                    </div>
                     <div className="rectangle inverse"></div>
                     <div className="triangle inverse"></div>
                     <div className="text inverse">
@@ -133,7 +143,9 @@ export default function Home() {
                 </section>
                 <section id="bush3" className="section-wrapper smaller">
                     <div className="bar"></div>
-                    <div className="section-container"></div>
+                    <div className="section-container">
+                        <img {...cover('bush-section-3', PHOTO_HEIGHT)} alt=""/>
+                    </div>
                     <div className="rectangle"></div>
                     <div className="triangle"></div>
                     <div className="text">
@@ -149,7 +161,9 @@ export default function Home() {
                 </section>
                 <section id="bush4" className="section-wrapper smaller">
                     <div className="bar"></div>
-                    <div className="section-container"></div>
+                    <div className="section-container">
+                        <img {...cover('bush-section-4', PHOTO_HEIGHT)} alt=""/>
+                    </div>
                     <div className="rectangle inverse"></div>
                     <div className="triangle inverse"></div>
                     <div className="text inverse">
@@ -166,8 +180,10 @@ export default function Home() {
 
                 <section id="paintball1" className="section-wrapper">
                     <h3>PAINTBALL</h3>
-                    <div className="section-container"></div>
-                    <Image src={paintball} width={150} height={150} alt='paintball icon'/>
+                    <div className="section-container">
+                        <img {...cover('paintball-section-1', PHOTO_HEIGHT)} alt=""/>
+                    </div>
+                    <img {...responsive('paintball', SECTION_ICON_SIZES)} width={150} height={150} alt='paintball icon'/>
                     <div className="rectangle"></div>
                     <div className="triangle"></div>
                     <div className="text">
@@ -182,7 +198,9 @@ export default function Home() {
                 </section>
                 <section id="paintball2" className="section-wrapper smaller">
                     <div className="bar"></div>
-                    <div className="section-container"></div>
+                    <div className="section-container">
+                        <img {...cover('paintball-section-2', PHOTO_HEIGHT)} alt=""/>
+                    </div>
                     <div className="rectangle inverse"></div>
                     <div className="triangle inverse"></div>
                     <div className="text inverse">
@@ -193,7 +211,9 @@ export default function Home() {
                 </section>
                 <section id="paintball3" className="section-wrapper smaller">
                     <div className="bar"></div>
-                    <div className="section-container"></div>
+                    <div className="section-container">
+                        <img {...cover('paintball-section-3', PHOTO_HEIGHT)} alt=""/>
+                    </div>
                     <div className="rectangle"></div>
                     <div className="triangle"></div>
                     <div className="text">
@@ -205,7 +225,9 @@ export default function Home() {
                 </section>
                 <section id="paintball4" className="section-wrapper smaller">
                     <div className="bar"></div>
-                    <div className="section-container"></div>
+                    <div className="section-container">
+                        <img {...cover('paintball-section-4', PHOTO_HEIGHT)} alt=""/>
+                    </div>
                     <div className="rectangle inverse"></div>
                     <div className="triangle inverse"></div>
                     <div className="text inverse">
@@ -219,8 +241,10 @@ export default function Home() {
 
                 <section id="fishing" className="section-wrapper">
                     <h3>ŁOWISKA</h3>
-                    <div className="section-container"></div>
-                    <Image src={fishing} width={150} height={150} alt='fishing icon'/>
+                    <div className="section-container">
+                        <img {...cover('fishing-section', PHOTO_HEIGHT)} alt=""/>
+                    </div>
+                    <img {...responsive('fishing', SECTION_ICON_SIZES)} width={150} height={150} alt='fishing icon'/>
                     <div className="gradient-text">
                         <b>Wpadnij do nas powędkować!</b><br/>Zabierz dzieci, dziadków czy kółko wędkarskie i wpadajcie
                         sprawdzić co skrywa duma naszej miejscówki.
@@ -244,7 +268,9 @@ export default function Home() {
                     <h3>KONTAKT</h3>
                     <div className="contact-container">
                         <div className="contact-column">
-                            <div className="contact-map-container"></div>
+                            <div className="contact-map-container">
+                                <img {...responsive('contact-map', '(max-width: 600px) 200px, (max-width: 1000px) 300px, 500px')} alt=""/>
+                            </div>
                         </div>
                         <div className="contact-column">
                             <div className="contact-address">
@@ -321,13 +347,20 @@ export default function Home() {
                 justify-content: center;
                 width: 100%;
                 height: 600px;
-                background-image: url('/main-section.png');
-                background-repeat: no-repeat;
-                background-position: 50% 50%;
-                background-size: cover;
+                position: relative;
+              }
+
+              #main > img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
               }
 
               #main h1, #main h2 {
+                position: relative;
                 margin: 0;
                 text-align: center;
                 color: white;
@@ -405,53 +438,13 @@ export default function Home() {
               .section-container {
                 width: 100%;
                 height: 600px;
-                background-repeat: no-repeat;
-                background-position: 50% 50%;
-                background-size: cover;
               }
 
-              #about1 .section-container {
-                background-image: url('/about-section-1.jpg');
-              }
-
-              #about2 .section-container {
-                background-image: url('/about-section-2.jpg');
-              }
-
-              #bush1 .section-container {
-                background-image: url('/bush-section-1.jpg');
-              }
-
-              #bush2 .section-container {
-                background-image: url('/bush-section-2.jpg');
-              }
-
-              #bush3 .section-container {
-                background-image: url('/bush-section-3.jpg');
-              }
-
-              #bush4 .section-container {
-                background-image: url('/bush-section-4.jpg');
-              }
-
-              #paintball1 .section-container {
-                background-image: url('/paintball-section-1.jpg');
-              }
-
-              #paintball2 .section-container {
-                background-image: url('/paintball-section-2.jpg');
-              }
-
-              #paintball3 .section-container {
-                background-image: url('/paintball-section-3.jpg');
-              }
-
-              #paintball4 .section-container {
-                background-image: url('/paintball-section-4.jpg');
-              }
-
-              #fishing .section-container {
-                background-image: url('/fishing-section.jpg');
+              .section-container > img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
               }
 
               .section-wrapper {
@@ -612,8 +605,13 @@ export default function Home() {
               .contact-map-container {
                 height: 500px;
                 width: 500px;
-                background-image: url('/contact-map.png');
-                background-size: contain;
+              }
+
+              .contact-map-container > img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
               }
               
               .contact-address {
@@ -774,7 +772,7 @@ export default function Home() {
                 }
               }
 
-              .section-wrapper:not(.contact) img {
+              .section-wrapper:not(.contact) > img {
                 width: 100px;
                 height: 100px;
                 position: absolute;
@@ -786,12 +784,12 @@ export default function Home() {
                 z-index: 9;
               }
               
-              #fishing img {
+              #fishing > img {
                 top: 10px;
               }
 
               @media (max-width: 630px) {
-                #fishing img {
+                #fishing > img {
                   display: none;
                 }
               }
