@@ -1,7 +1,10 @@
 import s from './Ewolucja.module.css';
 import { OFFER_TILES } from './content';
 import { FlagIcon } from './icons';
+import { responsive } from './images';
 import { Eyebrow, Txt, cx } from './ui';
+
+const TILE_ICON_SIZES = '(max-width: 640px) 56px, 76px';
 
 // Offer tiles. Picking a tile puts its first option into the booking bar; a
 // tile stays highlighted while any of its options is selected there.
@@ -30,7 +33,7 @@ export default function Offers({ offer, onOfferChange }) {
                                 onClick={() => onOfferChange(tile.options[0])}
                             >
                                 {tile.icon ? (
-                                    <img src={tile.icon} alt="" className={s.tileIcon} />
+                                    <img {...responsive(tile.icon, TILE_ICON_SIZES)} alt="" className={s.tileIcon} />
                                 ) : (
                                     <span aria-hidden="true" className={cx(s.tileIcon, s.tileFlag)}>
                                         <FlagIcon />

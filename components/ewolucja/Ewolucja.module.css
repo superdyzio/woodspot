@@ -233,6 +233,7 @@
 .logo {
     height: 40px;
     width: auto;
+    aspect-ratio: 5577 / 973; /* the SVG's viewBox; lets the browser reserve the width */
     display: block;
 }
 
@@ -1319,6 +1320,7 @@
 .footerLogo {
     height: 36px;
     width: auto;
+    aspect-ratio: 5577 / 973;
 }
 
 .footerNav {

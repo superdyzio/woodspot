@@ -50,7 +50,7 @@ export const OFFER_TILES = [
     {
         key: 'spot',
         options: ['spot', 'wiata'],
-        icon: '/fireplace.png',
+        icon: 'fireplace',
         title: 'Spoty i wiaty',
         desc: 'Hamaki, stoły i ognisko przy wiacie w sercu lasu',
         price: 'od [CENA] / dzień',
@@ -58,7 +58,7 @@ export const OFFER_TILES = [
     {
         key: 'namiot',
         options: ['namiot'],
-        icon: '/tent.png',
+        icon: 'tent',
         title: 'Pole namiotowe',
         desc: 'Nocleg na skraju lasu, z prądem i namiotem na życzenie',
         price: 'od [CENA] / noc',
@@ -66,7 +66,7 @@ export const OFFER_TILES = [
     {
         key: 'paintball',
         options: ['pb-duze', 'pb-male', 'strzelnice'],
-        icon: '/paintball.png',
+        icon: 'paintball',
         title: 'Paintball',
         desc: 'Dwa poligony w lesie, strzelnice i tor przeszkód',
         price: 'pakiety od [CENA]',
@@ -74,7 +74,7 @@ export const OFFER_TILES = [
     {
         key: 'lowisko',
         options: ['lowisko', 'lodka'],
-        icon: '/fishing.png',
+        icon: 'fishing',
         title: 'Łowiska no-kill',
         desc: 'Dwa stawy na 1,5 ha, stanowiska i łódki',
         price: 'od [CENA] / dzień',
@@ -82,7 +82,7 @@ export const OFFER_TILES = [
     {
         key: 'boiska',
         options: ['boiska'],
-        icon: '/football.png',
+        icon: 'football',
         title: 'Boiska i sport',
         desc: 'Siatkówka i piłka plażowa, frisbee, bule, dart',
         price: 'od [CENA]',
@@ -112,7 +112,7 @@ export const SAS_URL = 'https://www.sas.org.pl';
 export const SPORT_KIDS = [
     {
         key: 'sport',
-        image: '/bush-section-2.jpg',
+        image: 'bush-section-2',
         alt: 'Mecz siatkówki plażowej na boiskach Woodspot',
         eyebrow: 'Sport',
         title: 'Boiska plażowe i sprzęt',
@@ -120,7 +120,7 @@ export const SPORT_KIDS = [
     },
     {
         key: 'dzieci',
-        image: '/bush-section-3.jpg',
+        image: 'bush-section-3',
         alt: 'Grupa młodzieży na słonecznej polanie wśród sosen',
         eyebrow: 'Dzieci',
         title: 'Bezpiecznie dla najmłodszych',
@@ -137,7 +137,7 @@ export const PAINTBALL_STATS = [
 
 export const PAINTBALL_DETAILS = [
     {
-        image: '/paintball-section-1.jpg',
+        image: 'paintball-section-1',
         alt: 'Pole paintballowe z przeszkodami z opon wśród brzóz',
         title: 'Strzelnice i tor przeszkód',
         body: dm(
@@ -146,7 +146,7 @@ export const PAINTBALL_DETAILS = [
         ),
     },
     {
-        image: '/paintball-section-4.jpg',
+        image: 'paintball-section-4',
         alt: 'Dwóch uśmiechniętych graczy w maskach z markerami',
         title: 'Markery jak M4',
         body: dm(
@@ -155,7 +155,7 @@ export const PAINTBALL_DETAILS = [
         ),
     },
     {
-        image: '/paintball-section-3.jpg',
+        image: 'paintball-section-3',
         alt: 'Dwóch graczy w maskach za drewnianą zasłoną w lesie',
         title: 'Strefa kibica',
         body: dm(

@@ -2,6 +2,7 @@ import s from './Ewolucja.module.css';
 import PhotoPanel from './PhotoPanel';
 import SectionIntro from './SectionIntro';
 import { SAS_URL, SPORT_KIDS, SPOT_CHIPS, dm } from './content';
+import { responsive } from './images';
 import { Chips, Eyebrow, Txt, cx } from './ui';
 
 const SAS_LINK = (
@@ -9,6 +10,11 @@ const SAS_LINK = (
         Szkołę Przygody i Przetrwania SAS
     </a>
 );
+
+// Phones: full width minus 20 px gutters. Wider: the 1200 px container with
+// 40 px padding, one column up to 1007 px, then two columns 48 px apart.
+const SPORT_PHOTO_SIZES =
+    '(max-width: 640px) calc(100vw - 40px), (max-width: 1007px) calc(100vw - 80px), (max-width: 1280px) calc(50vw - 64px), 576px';
 
 const ARTICLE_TEXT = {
     sport: dm(
@@ -32,7 +38,7 @@ export default function BushFun() {
             <SectionIntro
                 id="bush-fun"
                 section="bush-fun"
-                icons={['/fireplace.png', '/tent.png', '/football.png']}
+                icons={['fireplace', 'tent', 'football']}
                 title="Bush & Fun"
                 text="Wizja połączenia natury i zabawy jest tym, co napełnia to miejsce pozytywną energią."
             />
@@ -40,7 +46,7 @@ export default function BushFun() {
             <PhotoPanel
                 section="bush-fun-2"
                 labelledBy="spoty"
-                image="/bush-section-1.jpg"
+                image="bush-section-1"
                 alt="Spot w sosnowym lesie – hamaki, ławki z opon i drewniany stół"
                 slant="down"
                 photoHeight={260}
@@ -71,7 +77,7 @@ export default function BushFun() {
                     {SPORT_KIDS.map((article, index) => (
                         <article key={article.key} className={s.article}>
                             <div className={cx(s.sportPhoto, index % 2 ? s.slantB : s.slantA)}>
-                                <img src={article.image} alt={article.alt} loading="lazy" className={s.cropImg} />
+                                <img {...responsive(article.image, SPORT_PHOTO_SIZES)} alt={article.alt} className={s.cropImg} />
                             </div>
                             <Eyebrow>{article.eyebrow}</Eyebrow>
                             <h3 className={s.articleTitle}>{article.title}</h3>

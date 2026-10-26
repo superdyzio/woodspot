@@ -1,5 +1,6 @@
 import s from './Ewolucja.module.css';
 import { NAV, PHONE } from './content';
+import { LAZY } from './images';
 import { cx } from './ui';
 
 export default function Footer() {
@@ -7,7 +8,7 @@ export default function Footer() {
         <footer data-section="footer" className={s.footer}>
             <div className={cx(s.container, s.footerInner)}>
                 <div className={s.footerTop}>
-                    <img src="/logo-white.svg" alt="Woodspot bush&fun" className={s.footerLogo} />
+                    <img src="/logo-white.svg" {...LAZY} alt="Woodspot bush&fun" className={s.footerLogo} />
                     <nav aria-label="Menu w stopce" className={s.footerNav}>
                         {NAV.filter((item) => item.inFooter !== false).map((item) => (
                             <a key={item.href} href={item.href} className={s.link}>

@@ -9,7 +9,7 @@ export function About() {
         <PhotoPanel
             id="o-nas"
             section="o-nas"
-            image="/about-section-1.jpg"
+            image="about-section-1"
             alt="Teren Woodspot z lotu ptaka jesienią – złote brzozy, polana i las"
             slant="up"
             photoHeight={280}
@@ -39,7 +39,7 @@ export function Eco() {
         <PhotoPanel
             section="imprezy-2"
             labelledBy="eko"
-            image="/about-section-2.jpg"
+            image="about-section-2"
             alt="Panele fotowoltaiczne na łące, za nimi drzewa"
             slant="down"
             minHeight={640}

@@ -1,7 +1,11 @@
 import s from './Ewolucja.module.css';
 import { EMAIL, MAPS_URL, ON_SITE, PHONE, SOCIALS } from './content';
 import { ClockIcon, PinIcon } from './icons';
+import { LAZY, responsive } from './images';
 import { Eyebrow, cx } from './ui';
+
+// Square map: full width minus the 20 px gutters on phones, at most 360 px wider up.
+const MAP_IMG = responsive('contact-map', '(max-width: 640px) calc(100vw - 40px), 360px');
 
 const Block = ({ label, children }) => (
     <div className={s.contactBlock}>
@@ -21,9 +25,8 @@ export function Contact() {
                 </div>
                 <div className={s.contactGrid}>
                     <img
-                        src="/contact-map.png"
+                        {...MAP_IMG}
                         alt="Mapa dojazdu: Woodspot na północ od Obornik Śląskich, między Wołowem a Trzebnicą, nad Wrocławiem"
-                        loading="lazy"
                         className={s.map}
                     />
                     <div className={s.contactCol}>
@@ -59,7 +62,7 @@ export function Contact() {
                             <div className={s.socials}>
                                 {SOCIALS.map((social) => (
                                     <a key={social.label} href={social.href} aria-label={social.label}>
-                                        <img src={social.icon} alt="" />
+                                        <img src={social.icon} {...LAZY} alt="" />
                                     </a>
                                 ))}
                             </div>

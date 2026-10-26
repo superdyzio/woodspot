@@ -2,12 +2,18 @@ import s from './Ewolucja.module.css';
 import PhotoPanel from './PhotoPanel';
 import SectionIntro from './SectionIntro';
 import { PAINTBALL_DETAILS, PAINTBALL_STATS, dm } from './content';
+import { responsive } from './images';
 import { Eyebrow, Stats, Txt, cx } from './ui';
 
 const FIELDS_TEXT = dm(
     'Nasza strefa paintballa mieści aż dwa poligony zaaranżowane w naturalnym otoczeniu drzew. W centrum dużego pola stoi fort, a wokół niego dwie strefy pełne zasłon i przeszkód. Ich układ pozwala rozgrywać mecze według wielu różnych scenariuszy.',
     'Dwa poligony zaaranżowane wśród drzew. W centrum dużego pola stoi fort, a wokół niego dwie strefy pełne zasłon i przeszkód – bardziej otwarta i zamknięta, leśna.'
 );
+
+// Phones: 280 px swipeable cards. Wider: the 1200 px container with 40 px
+// padding holds one, two (from 752 px) or three (from 1104 px) columns, 32 px apart.
+const DETAIL_PHOTO_SIZES =
+    '(max-width: 640px) 280px, (max-width: 751px) calc(100vw - 80px), (max-width: 1103px) calc(50vw - 56px), (max-width: 1280px) calc(33.33vw - 48px), 379px';
 
 const PACKAGE_TITLE = dm('Pakiety paintballowe od [CENA]', 'Pakiety od [CENA]');
 const PACKAGE_TEXT = dm(
@@ -21,7 +27,7 @@ export default function Paintball() {
             <SectionIntro
                 id="paintball"
                 section="paintball"
-                icons={['/paintball.png']}
+                icons={['paintball']}
                 title="Paintball"
                 text="Dwa poligony w lesie, strzelnice dla początkujących i markery wyglądające jak M4."
                 ruled
@@ -30,7 +36,7 @@ export default function Paintball() {
             <PhotoPanel
                 section="paintball-2"
                 labelledBy="poligony"
-                image="/paintball-section-2.jpg"
+                image="paintball-section-2"
                 alt="Gracz paintballowy celuje przy drewnianym forcie w lesie"
                 slant="up"
                 photoHeight={260}
@@ -58,7 +64,7 @@ export default function Paintball() {
                         {PAINTBALL_DETAILS.map((card, index) => (
                             <article key={card.title} className={s.detailCard}>
                                 <div className={cx(s.detailPhoto, index % 2 ? s.slantB : s.slantA)}>
-                                    <img src={card.image} alt={card.alt} loading="lazy" className={s.cropImg} />
+                                    <img {...responsive(card.image, DETAIL_PHOTO_SIZES)} alt={card.alt} className={s.cropImg} />
                                 </div>
                                 <h3 className={s.detailTitle}>{card.title}</h3>
                                 <p className={s.detailText}>

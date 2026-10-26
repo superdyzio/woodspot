@@ -1,8 +1,10 @@
 import s from './Ewolucja.module.css';
+import { responsive } from './images';
 import { cx } from './ui';
 
 // Full-bleed photo with a translucent diagonal panel holding the text (desktop);
 // on phones the photo becomes a block above a panel with a slanted top edge.
+//   image     name of a responsive image (see images.js); full viewport width
 //   side      'right' | 'left'  – where the text panel sits on desktop
 //   slant     'up' | 'down'     – direction of the mobile panel's top edge
 //   minHeight desktop section height, photoHeight mobile photo height
@@ -28,7 +30,7 @@ export default function PhotoPanel({
             style={{ '--min-h': `${minHeight}px`, '--photo-h': `${photoHeight}px` }}
         >
             <div className={s.panelPhoto}>
-                <img src={image} alt={alt} loading="lazy" />
+                <img {...responsive(image, '100vw')} alt={alt} />
             </div>
             <div aria-hidden="true" className={s.diag} />
             <div className={s.panelWrap}>

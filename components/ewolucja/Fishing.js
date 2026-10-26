@@ -1,6 +1,7 @@
 import s from './Ewolucja.module.css';
 import PhotoPanel from './PhotoPanel';
 import { FISH_SPECIES, FISHING_STATS, dm } from './content';
+import { responsive } from './images';
 import { Eyebrow, Stats, Txt, cx } from './ui';
 
 const FISHING_TEXT = dm(
@@ -22,7 +23,7 @@ export default function Fishing() {
         <PhotoPanel
             id="lowiska"
             section="lowiska"
-            image="/fishing-section.jpg"
+            image="fishing-section"
             alt="Słoneczny staw z wędkarzami na brzegu i brzozą"
             side="left"
             slant="down"
@@ -31,7 +32,7 @@ export default function Fishing() {
             after={<FishSpecies className={cx(s.fishTrap, s.dOnly)} />}
         >
             <div className={s.fishLabel}>
-                <img src="/fishing.png" alt="" />
+                <img {...responsive('fishing', '(max-width: 640px) 40px, 48px')} alt="" />
                 <Eyebrow>Łowiska</Eyebrow>
             </div>
             <h2 className={s.h2}>Wpadnij do nas powędkować!</h2>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import s from './Ewolucja.module.css';
 import { NAV, PHONE } from './content';
 import { CloseIcon, MenuIcon, PhoneIcon } from './icons';
+import { HEADER_BG, LAZY } from './images';
 import { cx } from './ui';
 
 export default function Header() {
@@ -10,10 +11,10 @@ export default function Header() {
 
     return (
         <header data-section="header" className={s.header}>
-            <img src="/header-background.png" alt="" className={s.headerBg} />
+            <img {...HEADER_BG} alt="" className={s.headerBg} />
             <div className={s.headerInner}>
                 <a href="#start" className={s.logoLink}>
-                    <img src="/logo-white.svg" alt="Woodspot bush&fun – strona główna" className={s.logo} />
+                    <img src="/logo-white.svg" {...LAZY} alt="Woodspot bush&fun – strona główna" className={s.logo} />
                 </a>
                 <nav className={s.nav} aria-label="Menu główne">
                     {NAV.map((item) => (
