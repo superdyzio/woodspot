@@ -68,6 +68,19 @@ export default function Home() {
                     color: #0F1A10;
                     font-family: var(--font-archivo), Arial, Helvetica, sans-serif;
                 }
+                /* Anchor jumps stop below the sticky header. */
+                html {
+                    scroll-padding-top: 77px;
+                }
+                @media (max-width: 640px) {
+                    html {
+                        scroll-padding-top: 0;
+                    }
+                    /* Room for the fixed mobile bar, so it never covers the end of the footer. */
+                    .page {
+                        padding-bottom: 72px;
+                    }
+                }
             `}</style>
         </div>
     );
