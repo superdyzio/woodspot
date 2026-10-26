@@ -1,5 +1,4 @@
-// Responsive WebP copies of the photos in /public, stored as /public/img/<name>-<width>.webp.
-// The originals stay in /public for the other pages; this page only uses the WebP set.
+// Responsive WebP versions of the photos, stored as /public/img/<name>-<width>.webp.
 export const PHOTO_WIDTHS = {
     'about-section-1': [480, 800, 1200, 1600, 2000],
     'about-section-2': [480, 800, 1200, 1600, 2048],
