@@ -1,5 +1,5 @@
-// Responsive WebP copies of the photos and icons in public/, stored as public/img/<name>-<width>.webp.
-// The originals in public/ stay untouched; content keeps referring to them by their original path.
+// Responsive WebP versions of the photos and icons, stored as public/img/<name>-<width>.webp.
+// Content names each image by its original file name (e.g. '/fishing-section.jpg'), which maps to that set.
 const WIDTHS = {
     'about-section-2': [480, 800, 1200, 1600, 2048],
     'bush-section-1': [480, 800, 1200, 1600, 2048],
@@ -39,7 +39,7 @@ export const SIZES = {
     eventIcon: '60px',
 };
 
-// Returns `{ srcSet, src }` for an original public path such as '/fishing-section.jpg'.
+// Returns `{ srcSet, src }` for an image named by its original path, such as '/fishing-section.jpg'.
 export function webp(path) {
     const name = path.replace(/^\//, '').replace(/\.(jpe?g|png)$/i, '');
     const widths = WIDTHS[name];
