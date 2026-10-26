@@ -1,0 +1,14 @@
+.root {
+  --accent: #f2c230;
+  --ink: #07140a;
+  --forest: #002902;
+  --card: #0d1f10;
+  --text-soft: #d5ddd3;
+  --text-muted: #c9d3c7;
+  --cond: var(--font-barlow-condensed), 'Arial Narrow', sans-serif;
+
+  background: var(--ink);
+  color: #ffffff;
+  font-family: var(--font-barlow), 'Segoe UI', Arial, sans-serif;
+  overflow: clip;
+}

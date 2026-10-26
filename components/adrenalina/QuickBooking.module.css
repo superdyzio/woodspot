@@ -1,0 +1,129 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  color: var(--accent);
+}
+
+.control {
+  height: 52px;
+  padding: 0 14px;
+  background: #ffffff;
+  color: var(--ink);
+  border: 0;
+  border-radius: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.control::placeholder {
+  color: #55624f;
+}
+
+.check {
+  height: 52px;
+  padding: 0 24px;
+  background: var(--accent);
+  color: var(--ink);
+  border: 0;
+  cursor: pointer;
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Desktop: bar at the bottom of the hero. */
+.bar {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 22px 24px;
+  background: var(--forest);
+  border-top: 4px solid var(--accent);
+}
+
+.bar .what {
+  flex: 1.4 1 240px;
+}
+
+.bar .when {
+  flex: 1 1 180px;
+}
+
+.bar .count {
+  flex: 0.7 1 140px;
+}
+
+.bar .check {
+  flex: 1 1 240px;
+}
+
+.notice {
+  flex: 1 1 100%;
+}
+
+/* Mobile: its own section under the hero. */
+.section {
+  display: none;
+  padding: 0 20px 32px;
+}
+
+.card {
+  padding: 20px;
+  background: var(--forest);
+  border-top: 4px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.card .what .control {
+  padding: 0 12px;
+}
+
+.pair {
+  display: flex;
+  gap: 12px;
+}
+
+.pair .when {
+  flex: 1.3;
+  min-width: 0;
+}
+
+.pair .count {
+  flex: 1;
+  min-width: 0;
+}
+
+.pair .control {
+  width: 100%;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+.card .check {
+  height: 56px;
+}
+
+@media (max-width: 767px) {
+  .section {
+    display: block;
+  }
+}

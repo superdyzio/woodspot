@@ -1,0 +1,349 @@
+.paintball {
+  background: var(--ink);
+  padding: 112px 0 120px;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* Photo + description row. */
+.feature {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+}
+
+.photo {
+  flex: 7 1 520px;
+  position: relative;
+  min-height: 620px;
+}
+
+.photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  bottom: 32px;
+  margin: 0;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: var(--ink);
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.details {
+  flex: 5 1 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+}
+
+.body {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  text-wrap: pretty;
+}
+
+.facts {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 2px solid rgba(255, 255, 255, 0.14);
+}
+
+.fact {
+  background: var(--ink);
+  padding: 24px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+
+.fact dt {
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.fact dd {
+  margin: 0;
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 0.9;
+  color: var(--accent);
+}
+
+/* Three cards under the feature row. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+  gap: 24px;
+}
+
+.card {
+  min-height: 460px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardEyebrow {
+  margin: 0;
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  margin: 0;
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.cardText {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+.ranges {
+  background: var(--forest);
+  gap: 16px;
+}
+
+.ranges .cardEyebrow {
+  color: var(--accent);
+}
+
+.ranges .rangesLink {
+  margin-top: auto;
+  gap: 10px;
+  font-size: 19px;
+}
+
+.gear {
+  background: var(--accent);
+  color: var(--ink);
+  gap: 20px;
+}
+
+.mags {
+  display: flex;
+  gap: 28px;
+}
+
+.mag {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.magValue {
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 88px;
+  line-height: 0.9;
+}
+
+.magLabel {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.gearNote {
+  margin: 0;
+  margin-top: auto;
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.fans {
+  position: relative;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.fans img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fansPanel {
+  position: relative;
+  padding: 56px 32px 32px;
+  background: var(--ink);
+  clip-path: polygon(0 32px, 100% 0, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Avoid a 3 + 1 split of the facts grid once it spans the full width. */
+@media (max-width: 1199px) {
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .paintball {
+    padding: 56px 0 64px;
+  }
+
+  .layout,
+  .feature,
+  .details,
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .paintball .lead {
+    margin-top: 4px;
+  }
+
+  .photo {
+    flex: none;
+    min-height: 0;
+    height: 260px;
+  }
+
+  .photo img {
+    position: static;
+    clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%);
+  }
+
+  .caption {
+    bottom: 28px;
+    padding: 8px 14px;
+    font-size: 16px;
+  }
+
+  .details {
+    flex: none;
+  }
+
+  .body {
+    font-size: 17px;
+    line-height: 1.55;
+    text-wrap: wrap;
+  }
+
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fact {
+    padding: 16px;
+    gap: 6px;
+  }
+
+  .fact dt {
+    font-size: 14px;
+  }
+
+  .fact dd {
+    font-size: 48px;
+  }
+
+  .card {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .cardEyebrow {
+    font-size: 13px;
+  }
+
+  .cardTitle {
+    font-size: 32px;
+  }
+
+  .cardText {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .ranges {
+    gap: 12px;
+  }
+
+  /* Mobile link is plain text "Sprawdź termin →" (space instead of a 10px gap). */
+  .ranges .rangesLink {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 0;
+    line-height: 44px;
+    font-size: 18px;
+  }
+
+  .gear {
+    gap: 14px;
+  }
+
+  .mags {
+    gap: 20px;
+  }
+
+  .magValue {
+    font-size: 64px;
+  }
+
+  .magLabel {
+    font-size: 15px;
+  }
+
+  .gearNote {
+    margin-top: 0;
+    font-size: 15px;
+  }
+
+  .fans {
+    min-height: 380px;
+  }
+
+  .fansPanel {
+    padding: 44px 24px 24px;
+    clip-path: polygon(0 24px, 100% 0, 100% 100%, 0 100%);
+    gap: 10px;
+  }
+}

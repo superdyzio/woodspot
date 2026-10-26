@@ -1,0 +1,283 @@
+.packages {
+  background: var(--forest);
+  clip-path: polygon(0 96px, 100% 0, 100% 100%, 0 100%);
+  padding: 176px 0 120px;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.head .lead {
+  max-width: 440px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  gap: 24px;
+}
+
+/* Card colours: dark by default, yellow when selected (as in the design's logic). */
+.card {
+  --card-bg: var(--ink);
+  --card-fg: #ffffff;
+  --card-border: rgba(255, 255, 255, 0.18);
+  --card-rule: rgba(255, 255, 255, 0.14);
+  --card-label: var(--accent);
+  --btn-bg: var(--accent);
+  --btn-fg: var(--ink);
+
+  min-height: 560px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--card-bg);
+  color: var(--card-fg);
+  border: 2px solid var(--card-border);
+}
+
+.selected {
+  --card-bg: var(--accent);
+  --card-fg: var(--ink);
+  --card-border: var(--accent);
+  --card-rule: rgba(7, 20, 10, 0.25);
+  --card-label: var(--ink);
+  --btn-bg: var(--ink);
+  --btn-fg: var(--accent);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 24px;
+}
+
+.title {
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--card-label);
+}
+
+.badge {
+  padding: 4px 10px;
+  background: var(--ink);
+  color: var(--accent);
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.rows {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--card-rule);
+  font-size: 17px;
+}
+
+.row dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.rowStacked {
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px solid var(--card-rule);
+}
+
+.bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.price {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--cond);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.priceFrom {
+  font-size: 22px;
+}
+
+.priceValue {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.priceUnit {
+  font-size: 20px;
+}
+
+.pick {
+  height: 56px;
+  border: 0;
+  cursor: pointer;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hint {
+  display: none;
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.footnote {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.footnote a {
+  font-weight: 700;
+}
+
+/* Mobile: cards in a horizontal, snapping scroller. */
+@media (max-width: 767px) {
+  .packages {
+    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+    padding: 80px 0 56px;
+  }
+
+  .packages .layout {
+    padding: 0;
+    gap: 20px;
+  }
+
+  .head,
+  .hint,
+  .footnote {
+    padding: 0 20px;
+  }
+
+  .head .heading {
+    font-size: 52px;
+  }
+
+  .head .lead {
+    font-size: 16px;
+  }
+
+  .list {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 4px 20px;
+    scrollbar-width: none;
+  }
+
+  .list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    flex: 0 0 290px;
+    scroll-snap-align: start;
+    min-height: 500px;
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .top {
+    gap: 8px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .badge {
+    padding: 3px 8px;
+    font-size: 13px;
+  }
+
+  .name {
+    font-size: 32px;
+  }
+
+  .row {
+    gap: 12px;
+    padding: 12px 0;
+    font-size: 15px;
+  }
+
+  .rowStacked {
+    gap: 4px;
+  }
+
+  .bottom {
+    gap: 12px;
+  }
+
+  .price {
+    gap: 6px;
+  }
+
+  .priceFrom {
+    font-size: 18px;
+  }
+
+  .priceValue {
+    font-size: 40px;
+  }
+
+  .priceUnit {
+    font-size: 17px;
+  }
+
+  .pick {
+    height: 52px;
+    font-size: 19px;
+  }
+
+  .hint {
+    display: block;
+  }
+
+  .footnote {
+    font-size: 16px;
+  }
+}

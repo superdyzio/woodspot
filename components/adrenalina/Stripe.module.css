@@ -1,0 +1,63 @@
+.stripe {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.band {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background: var(--accent);
+  color: var(--ink);
+  white-space: nowrap;
+  font-family: var(--cond);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.sep {
+  opacity: 0.45;
+}
+
+.desktop {
+  height: 220px;
+}
+
+.desktop .band {
+  left: -6%;
+  width: 112%;
+  top: 62px;
+  height: 96px;
+  transform: rotate(-2deg);
+  gap: 32px;
+  padding: 0 64px;
+  font-size: 42px;
+  letter-spacing: 0.01em;
+}
+
+.mobile {
+  display: none;
+  height: 120px;
+}
+
+.mobile .band {
+  left: -10%;
+  width: 260%;
+  top: 30px;
+  height: 60px;
+  transform: rotate(-3deg);
+  gap: 18px;
+  padding: 0 48px;
+  font-size: 28px;
+}
+
+@media (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}

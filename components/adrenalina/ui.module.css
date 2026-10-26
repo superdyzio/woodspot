@@ -1,0 +1,216 @@
+/* Shared building blocks of the V3 "Adrenalina" homepage.
+   Breakpoints: mobile layout <= 767px, compact desktop <= 960px. */
+
+.container {
+  max-width: 1376px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* Small uppercase label above section headings ("01 / Paintball"). */
+.eyebrow {
+  margin: 0;
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Big condensed section heading. */
+.display {
+  margin: 0;
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: clamp(52px, 8.4vw, 120px);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Two-line heading: each <span> on its own line. */
+.lines {
+  display: flex;
+  flex-direction: column;
+}
+
+.accentText {
+  color: var(--accent);
+}
+
+/* Paragraph next to a section heading. */
+.lead {
+  margin: 0;
+  max-width: 420px;
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--text-soft);
+}
+
+/* Heading on the left, lead on the right, bottom-aligned. */
+.sectionHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.headTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Yellow button with slanted sides. */
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 32px;
+  border: 0;
+  background: var(--accent);
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+}
+
+/* White outline button. */
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 28px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 21px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Uppercase condensed text link ("Sprawdź termin →"). */
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* Form field label text. */
+.fieldLabel {
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Woods texture behind dark-green sections. */
+.topo {
+  position: relative;
+  isolation: isolate;
+}
+
+.topo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url(/header-background.png);
+  background-repeat: repeat;
+  background-size: 1400px auto;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Inline confirmation shown after a (preview-only) form action. */
+.notice {
+  margin: 0;
+  padding: 12px 16px;
+  border-left: 4px solid var(--accent);
+  background: rgba(7, 20, 10, 0.6);
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.noticeOnAccent {
+  border-left-color: var(--ink);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--ink);
+}
+
+/* Copy variants (see <Copy>): desktop text by default, mobile text <= 767px. */
+.copyMobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .eyebrow {
+    font-size: 15px;
+  }
+
+  .display {
+    font-size: 54px;
+    letter-spacing: 0;
+  }
+
+  .lead {
+    max-width: none;
+    font-size: 17px;
+  }
+
+  .sectionHead,
+  .headTitles {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .fieldLabel {
+    font-size: 14px;
+  }
+
+  .topo::before {
+    background-size: 900px auto;
+  }
+
+  .copyDesktop {
+    display: none;
+  }
+
+  .copyMobile {
+    display: inline;
+  }
+
+  /* Blocks that exist only in the desktop design. */
+  .desktopOnly {
+    display: none !important;
+  }
+
+  .notice {
+    font-size: 15px;
+  }
+}

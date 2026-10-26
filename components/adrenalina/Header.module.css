@@ -1,0 +1,173 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--ink);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.inner {
+  max-width: 1376px;
+  margin: 0 auto;
+  padding: 0 48px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+  justify-content: center;
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.phoneIcon {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 28px;
+  margin-left: auto;
+  background: var(--accent);
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+
+.burger {
+  display: none;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Dropdown opened by the hamburger (not part of the design's static states). */
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0 16px;
+  background: var(--ink);
+  border-bottom: 2px solid var(--accent);
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.menu a {
+  padding: 12px 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Compact desktop: below 1200px the full nav no longer fits next to the phone and CTA. */
+@media (max-width: 1199px) {
+  .nav,
+  .phone {
+    display: none;
+  }
+
+  .burger {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .inner {
+    min-height: 63px;
+    padding: 0 16px 0 20px;
+    gap: 8px;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .phoneIcon {
+    display: flex;
+  }
+
+  .book {
+    display: none;
+  }
+
+  .burger {
+    width: 44px;
+    height: 44px;
+  }
+
+  .burger svg {
+    width: 22px;
+    height: 22px;
+  }
+}

@@ -1,0 +1,154 @@
+.events {
+  background: var(--ink);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.photo {
+  flex: 1 1 560px;
+  position: relative;
+  min-height: 440px;
+}
+
+.photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%);
+}
+
+.content {
+  flex: 1 1 560px;
+  max-width: 760px;
+  padding: 112px 48px 112px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.text {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  text-wrap: pretty;
+}
+
+.types {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.types li {
+  padding: 10px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.types .typeHighlight {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: var(--accent);
+  font-weight: 800;
+}
+
+.extras {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.call {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 19px;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .events {
+    display: block;
+  }
+
+  .photo {
+    min-height: 0;
+    height: 280px;
+  }
+
+  .photo img {
+    position: static;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%);
+  }
+
+  .content {
+    max-width: none;
+    padding: 32px 20px 56px;
+    gap: 16px;
+  }
+
+  .content .heading {
+    font-size: 56px;
+  }
+
+  .text {
+    font-size: 17px;
+    line-height: 1.55;
+    text-wrap: wrap;
+  }
+
+  .types {
+    margin-top: 4px;
+    gap: 8px;
+  }
+
+  .types li {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .extras {
+    margin-top: 4px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding-top: 8px;
+  }
+
+  .ctas .ask {
+    display: flex;
+    padding: 0;
+    font-size: 20px;
+  }
+
+  .call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,182 @@
+.contact {
+  background: var(--ink);
+  padding: 120px 0;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+  gap: 48px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.columnTitle {
+  margin: 0;
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.facts {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 17px;
+}
+
+.facts div:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.facts dt {
+  color: var(--text-muted);
+}
+
+.facts dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+}
+
+.address {
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+.phone {
+  font-family: var(--cond);
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.email {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.socials a {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.socials img {
+  width: 24px;
+  height: 24px;
+}
+
+.map img {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  display: block;
+}
+
+.map .route {
+  font-size: 20px;
+}
+
+/* Mobile: contact details first, then the practical facts, then the map. */
+@media (max-width: 767px) {
+  .contact {
+    padding: 56px 0;
+  }
+
+  .layout {
+    gap: 24px;
+  }
+
+  .columns {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .reach {
+    order: -1;
+    gap: 12px;
+  }
+
+  .practical {
+    gap: 4px;
+    padding-top: 8px;
+  }
+
+  .columnTitle {
+    margin-bottom: 6px;
+    font-size: 24px;
+  }
+
+  .facts div {
+    gap: 12px;
+    padding: 14px 0;
+    font-size: 15px;
+  }
+
+  .address {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .phone {
+    font-size: 40px;
+  }
+
+  .email {
+    font-size: 17px;
+  }
+
+  .socials {
+    padding-top: 4px;
+  }
+
+  .map {
+    gap: 8px;
+    padding-top: 8px;
+  }
+
+  .map img {
+    max-width: none;
+  }
+
+  .map .route {
+    font-size: 19px;
+  }
+}
