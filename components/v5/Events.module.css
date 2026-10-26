@@ -1,0 +1,303 @@
+.section {
+    background: #FFFFFF;
+    border-top: 1px solid #E3ECE2;
+}
+
+.grid {
+    max-width: 1304px;
+    margin: 0 auto;
+    padding: 96px 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
+    gap: 56px;
+    align-items: start;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.photo {
+    position: relative;
+    height: 380px;
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+    border-radius: 24px 0 0 24px;
+    overflow: hidden;
+    background: #DCE5DA;
+}
+
+.photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.eyebrow {
+    margin-top: 8px;
+}
+
+.lead {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #3D4D3E;
+}
+
+.chips {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chips li {
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: #E3ECE2;
+    color: #002902;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.extras {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #3D4D3E;
+}
+
+.extras a {
+    color: #002902;
+    font-weight: 700;
+}
+
+/* Inquiry form */
+
+.form {
+    background: #F4F7F3;
+    border: 1px solid #DCE5DA;
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form h3 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 800;
+    color: #0F1A10;
+}
+
+.formLead {
+    margin: 0 0 4px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #3D4D3E;
+}
+
+.fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 14px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #3D4D3E;
+}
+
+.field input,
+.field select,
+.field textarea {
+    border-radius: 12px;
+    border: 1px solid #C9D6C7;
+    background: #FFFFFF;
+    font-size: 16px;
+    color: #0F1A10;
+}
+
+.field input,
+.field select {
+    height: 50px;
+    padding: 0 14px;
+}
+
+.field select,
+.data input {
+    padding: 0 12px;
+}
+
+.message {
+    padding: 12px 14px;
+    resize: vertical;
+}
+
+.consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.consent input {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    margin: 2px 0 0;
+    accent-color: #002902;
+}
+
+.consent label {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #3D4D3E;
+}
+
+.send {
+    min-height: 54px;
+    border: 0;
+    border-radius: 14px;
+    background: #002902;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.formFoot {
+    margin: 0;
+    font-size: 14px;
+    color: #4A5A4B;
+}
+
+.formFoot a {
+    color: #002902;
+    font-weight: 700;
+}
+
+@media (max-width: 640px) {
+    .grid {
+        max-width: none;
+        padding: 0 20px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .intro {
+        gap: 14px;
+    }
+
+    .photo {
+        height: 220px;
+        margin: 0 -20px 6px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 82%);
+        border-radius: 0;
+    }
+
+    .eyebrow {
+        margin-top: 0;
+    }
+
+    .lead {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .chips li {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .extras {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .form {
+        margin-top: 8px;
+        border-radius: 20px;
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .form h3 {
+        font-size: 21px;
+    }
+
+    .formLead {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .fields {
+        grid-template-columns: 1.45fr 1fr;
+        gap: 12px 10px;
+    }
+
+    .wide {
+        grid-column: 1 / -1;
+    }
+
+    .data,
+    .osoby {
+        min-width: 0;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+        color: FieldText;
+    }
+
+    .field input,
+    .field select {
+        height: 48px;
+        padding: 0 12px;
+        min-width: 0;
+    }
+
+    .field select {
+        padding: 0 10px;
+    }
+
+    .data input {
+        padding: 0 8px;
+    }
+
+    .message {
+        /* The mobile design uses rows="3" (desktop rows="4"): 3 lines × 21px + padding + border. */
+        height: 85px;
+        padding: 10px 12px;
+    }
+
+    .consent label {
+        font-size: 12px;
+    }
+
+    .send {
+        min-height: 52px;
+    }
+
+    .formFoot {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}

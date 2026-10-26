@@ -1,0 +1,165 @@
+.section {
+    background: #F4F7F3;
+}
+
+.wrap {
+    max-width: 1304px;
+    margin: 0 auto;
+    padding: 96px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr));
+    gap: 56px;
+    align-items: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.para {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #3D4D3E;
+}
+
+.photo {
+    position: relative;
+    height: 420px;
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+    border-radius: 0 24px 24px 0;
+    overflow: hidden;
+    background: #DCE5DA;
+}
+
+.photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 24px;
+}
+
+.point {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 28px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    border: 1px solid #DCE5DA;
+}
+
+.icon {
+    flex: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #E3ECE2;
+    color: #002902;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pointText {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pointText h3 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.pointText p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #3D4D3E;
+}
+
+@media (max-width: 640px) {
+    .wrap {
+        max-width: none;
+        padding: 40px 20px;
+        gap: 14px;
+    }
+
+    .top {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .text {
+        gap: 14px;
+    }
+
+    .para {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .photo {
+        height: 200px;
+        margin: 6px 0;
+        clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+        border-radius: 0 18px 18px 0;
+    }
+
+    .points {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .point {
+        flex-direction: row;
+        gap: 12px;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+    }
+
+    .icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .pointText {
+        gap: 4px;
+    }
+
+    .pointText h3 {
+        font-size: 15px;
+    }
+
+    .pointText p {
+        font-size: 13.5px;
+        line-height: 1.5;
+    }
+}

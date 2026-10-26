@@ -1,0 +1,94 @@
+/* Shared building blocks. Breakpoints: mobile layout up to 640px, desktop layout above. */
+
+@media (min-width: 641px) {
+    .onlyMobile {
+        display: none !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .onlyDesktop {
+        display: none !important;
+    }
+}
+
+.eyebrow {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2E6B33;
+}
+
+.title {
+    margin: 0;
+    font-size: 42px;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #0F1A10;
+}
+
+.balance {
+    text-wrap: balance;
+}
+
+/* Toggle chip used for booking tabs and offer filters. */
+.pill {
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: 999px;
+    border: 1.5px solid #C9D6C7;
+    background: #FFFFFF;
+    color: #002902;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pill[aria-pressed='true'] {
+    border-color: #002902;
+    background: #002902;
+    color: #FFFFFF;
+}
+
+/* Horizontal scroller without a visible scrollbar (mobile chips and cards). */
+.scroller {
+    scrollbar-width: none;
+}
+
+.scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.notice {
+    margin: 0;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #E3ECE2;
+    color: #002902;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+    .eyebrow {
+        font-size: 12px;
+    }
+
+    .title {
+        font-size: 27px;
+        line-height: 1.12;
+    }
+
+    .balance {
+        text-wrap: wrap;
+    }
+
+    .pill {
+        flex: none;
+        padding: 0 16px;
+    }
+}

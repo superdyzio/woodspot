@@ -1,0 +1,132 @@
+.footer {
+    background: #002902;
+    color: #FFFFFF;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.wrap {
+    max-width: 1304px;
+    margin: 0 auto;
+    padding: 56px 32px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 32px;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.brand img {
+    height: 38px;
+    width: auto;
+    align-self: flex-start;
+    display: block;
+}
+
+.brand p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #CFE0CC;
+    max-width: 30ch;
+}
+
+.nav,
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.contact {
+    line-height: 1.5;
+}
+
+.nav strong,
+.contact strong {
+    font-size: 14px;
+    color: #CFE0CC;
+}
+
+.nav a,
+.contact a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.contact .phone {
+    font-weight: 700;
+}
+
+.bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    font-size: 13px;
+    color: #CFE0CC;
+}
+
+@media (max-width: 640px) {
+    .wrap {
+        max-width: none;
+        padding: 36px 20px 28px;
+        gap: 24px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 20px;
+    }
+
+    .brand {
+        grid-column: 1 / -1;
+        gap: 24px;
+    }
+
+    .brand img {
+        height: 30px;
+    }
+
+    .brand p {
+        font-size: 14px;
+        max-width: none;
+    }
+
+    .nav {
+        gap: 4px;
+        font-size: 14px;
+    }
+
+    .nav strong {
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+
+    .nav a {
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+    }
+
+    .bottom {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 6px;
+        padding-top: 18px;
+        font-size: 12px;
+    }
+}

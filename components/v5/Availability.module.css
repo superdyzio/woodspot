@@ -1,0 +1,442 @@
+.section {
+    background: #F4F7F3;
+}
+
+.grid {
+    max-width: 1304px;
+    margin: 0 auto;
+    padding: 96px 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr));
+    gap: 56px;
+    align-items: center;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.lead {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #3D4D3E;
+    max-width: 50ch;
+}
+
+/* Legend (left column on desktop, bottom of the card on mobile) */
+
+.legend {
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3D4D3E;
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legendDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legendDot.free {
+    background: #002902;
+}
+
+.legendDot.last {
+    background: #E39A1F;
+}
+
+.legendDot.full {
+    border: 2px solid #8E968F;
+}
+
+.cta {
+    align-self: flex-start;
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 0 26px;
+    border-radius: 999px;
+    background: #002902;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* Calendar card */
+
+.card {
+    background: #FFFFFF;
+    border: 1px solid #DCE5DA;
+    border-radius: 24px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 28px 56px -32px rgba(0, 41, 2, 0.3);
+}
+
+.cardTop {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.picker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 12px;
+    border: 1px solid #C9D6C7;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F1A10;
+}
+
+.picker img {
+    width: 26px;
+    height: 26px;
+    display: block;
+}
+
+.sample {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1.5px dashed #9DB39A;
+    color: #2E6B33;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.week {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.week button {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid #DCE5DA;
+    background: #FFFFFF;
+    color: #002902;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.week strong {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F1A10;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.day {
+    min-height: 82px;
+    padding: 10px 0;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.dow {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.num {
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 0;
+}
+
+.day.free {
+    background: #E3ECE2;
+    color: #002902;
+}
+
+.day.free .dot {
+    background: #002902;
+}
+
+.day.last {
+    background: #FBE7C2;
+    color: #6B3F00;
+}
+
+.day.last .dot {
+    background: #E39A1F;
+}
+
+.day.full {
+    background: #F1F2F0;
+    color: #5C625D;
+}
+
+.day.full .dot {
+    background: transparent;
+    border: 1.5px solid #8E968F;
+}
+
+.day[aria-pressed='true'] {
+    background: #002902;
+    color: #FFFFFF;
+    border-color: #002902;
+}
+
+.day.free[aria-pressed='true'] .dot {
+    background: #FFFFFF;
+}
+
+.day.last[aria-pressed='true'] .dot {
+    background: #F2B544;
+}
+
+.day.full[aria-pressed='true'] .dot {
+    border-color: #FFFFFF;
+}
+
+.dayHead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.dayHead strong {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0F1A10;
+}
+
+.dayHead span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4A5A4B;
+}
+
+.slots {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.slot {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 56px;
+    padding: 6px 8px 6px 16px;
+    border-radius: 12px;
+}
+
+.slotFree {
+    background: #E3ECE2;
+    color: #002902;
+}
+
+.slotTaken {
+    background: #F1F2F0;
+    color: #5C625D;
+}
+
+.time {
+    min-width: 58px;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.slotTaken .time {
+    text-decoration: line-through;
+}
+
+.slotLabel {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pick {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: 10px;
+    background: #002902;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+@media (max-width: 640px) {
+    .grid {
+        max-width: none;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .intro {
+        gap: 14px;
+    }
+
+    .lead {
+        font-size: 15px;
+        line-height: 1.6;
+        max-width: none;
+    }
+
+    .card {
+        margin-top: 6px;
+        border-radius: 20px;
+        padding: 16px;
+        gap: 14px;
+        box-shadow: none;
+    }
+
+    .cardTop {
+        gap: 8px;
+    }
+
+    .picker {
+        gap: 8px;
+        padding: 0 12px;
+        font-size: 14px;
+    }
+
+    .picker img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .sample {
+        display: inline;
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+
+    .days {
+        gap: 5px;
+    }
+
+    .day {
+        min-height: 70px;
+        padding: 8px 0;
+        border-radius: 12px;
+        gap: 3px;
+    }
+
+    .dow {
+        font-size: 11px;
+    }
+
+    .num {
+        font-size: 18px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .dayHead {
+        gap: 8px;
+        flex-wrap: nowrap;
+    }
+
+    .dayHead strong {
+        font-size: 15px;
+    }
+
+    .dayHead span {
+        font-size: 13px;
+    }
+
+    .slot {
+        gap: 12px;
+        min-height: 52px;
+        padding: 4px 4px 4px 14px;
+    }
+
+    .time {
+        min-width: 50px;
+        font-size: 15px;
+    }
+
+    .slotLabel {
+        font-size: 13px;
+    }
+
+    .pick {
+        padding: 0 14px;
+        font-size: 13px;
+    }
+
+    .legend {
+        font-size: 12px;
+        gap: 8px 16px;
+    }
+
+    .legend li {
+        gap: 6px;
+    }
+
+    .legendDot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .legendInCard {
+        margin: 0;
+        padding: 12px 0 0;
+        border-top: 1px solid #E3ECE2;
+    }
+}

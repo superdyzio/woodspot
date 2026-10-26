@@ -1,0 +1,397 @@
+.hero {
+    background: linear-gradient(#F4F7F3, #F4F7F3) top / 100% 62% no-repeat, #FFFFFF;
+}
+
+.grid {
+    max-width: 1304px;
+    margin: 0 auto;
+    padding: 56px 32px 64px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(520px, 100%), 1fr));
+    gap: 56px;
+    align-items: stretch;
+}
+
+.copy {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    justify-content: center;
+}
+
+.location {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: #E3ECE2;
+    color: #002902;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.h1 {
+    margin: 0;
+    font-size: 58px;
+    line-height: 1.04;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #0F1A10;
+    text-wrap: balance;
+}
+
+.lead {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #3D4D3E;
+    max-width: 54ch;
+}
+
+/* Booking card */
+
+.booking {
+    margin-top: 6px;
+    background: #FFFFFF;
+    border: 1px solid #DCE5DA;
+    border-radius: 24px;
+    box-shadow: 0 28px 56px -28px rgba(0, 41, 2, 0.32);
+    padding: 26px 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.bookingHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.bookingHead h2 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 800;
+    color: #0F1A10;
+}
+
+.bookingHead span {
+    font-size: 13px;
+    color: #4A5A4B;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.desc {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #3D4D3E;
+}
+
+.fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #3D4D3E;
+}
+
+.field select,
+.field input {
+    height: 52px;
+    padding: 0 12px;
+    border-radius: 12px;
+    border: 1px solid #C9D6C7;
+    background: #FFFFFF;
+    color: #0F1A10;
+    font-size: 16px;
+}
+
+.what {
+    flex: 2 1 220px;
+}
+
+.what select {
+    padding: 0 14px;
+}
+
+.when {
+    flex: 1 1 150px;
+}
+
+.people {
+    flex: 1 1 110px;
+}
+
+.submit {
+    min-height: 54px;
+    border: 0;
+    border-radius: 14px;
+    background: #002902;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.bookingFoot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 16px;
+    font-size: 14px;
+}
+
+.bookingFoot > a {
+    color: #002902;
+    font-weight: 700;
+}
+
+.bookingFoot span {
+    color: #4A5A4B;
+}
+
+.bookingFoot span a {
+    color: #002902;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Photo column */
+
+.visual {
+    position: relative;
+    min-height: 620px;
+}
+
+.photo {
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(17% 0, 100% 0, 100% 100%, 0 100%);
+    border-radius: 0 28px 28px 0;
+    overflow: hidden;
+    background: #DCE5DA;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    color: #002902;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 10px 24px -12px rgba(0, 41, 2, 0.4);
+}
+
+.nextDate {
+    position: absolute;
+    left: 24px;
+    bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px 16px 16px;
+    border-radius: 18px;
+    background: #FFFFFF;
+    box-shadow: 0 20px 40px -20px rgba(0, 41, 2, 0.45);
+}
+
+.nextIcon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: #E3ECE2;
+    color: #002902;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nextText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.nextText span:first-child {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4A5A4B;
+}
+
+.nextText span:last-child {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F1A10;
+}
+
+@media (max-width: 640px) {
+    .hero {
+        background: #F4F7F3;
+        padding-bottom: 28px;
+    }
+
+    .grid {
+        max-width: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .copy {
+        padding: 6px 20px 0;
+        gap: 14px;
+        justify-content: flex-start;
+    }
+
+    .location {
+        gap: 6px;
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .h1 {
+        font-size: 31px;
+        line-height: 1.08;
+        text-wrap: wrap;
+    }
+
+    .lead {
+        font-size: 15px;
+        line-height: 1.55;
+        max-width: none;
+    }
+
+    .booking {
+        border-radius: 22px;
+        box-shadow: 0 22px 44px -26px rgba(0, 41, 2, 0.35);
+        padding: 18px 16px;
+        gap: 14px;
+    }
+
+    .bookingHead {
+        gap: 0;
+        flex-wrap: nowrap;
+    }
+
+    .bookingHead h2 {
+        font-size: 17px;
+    }
+
+    .bookingHead span {
+        font-size: 12px;
+    }
+
+    .tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        margin: 0 -16px;
+        padding: 0 16px;
+    }
+
+    .desc {
+        font-size: 13px;
+    }
+
+    .fields {
+        display: grid;
+        grid-template-columns: 1.45fr 1fr;
+        gap: 14px 10px;
+    }
+
+    .what {
+        grid-column: 1 / -1;
+    }
+
+    .when,
+    .people {
+        min-width: 0;
+    }
+
+    .field select,
+    .field input {
+        height: 50px;
+        min-width: 0;
+    }
+
+    .what select {
+        padding: 0 12px;
+    }
+
+    .when input {
+        padding: 0 10px;
+    }
+
+    .submit {
+        min-height: 52px;
+        gap: 8px;
+    }
+
+    .bookingFoot {
+        display: block;
+        text-align: center;
+    }
+
+    .visual {
+        order: -1;
+        min-height: 0;
+        height: 230px;
+    }
+
+    .photo {
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        border-radius: 0;
+    }
+
+    .badge {
+        top: 14px;
+        right: 14px;
+        gap: 6px;
+        padding: 8px 12px;
+        font-size: 12px;
+        box-shadow: none;
+    }
+
+    .badge svg {
+        width: 14px;
+        height: 14px;
+    }
+}

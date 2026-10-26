@@ -1,0 +1,289 @@
+.section {
+    background: #FFFFFF;
+}
+
+.wrap {
+    max-width: 1304px;
+    margin: 0 auto;
+    padding: 96px 32px 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Phone and e-mail card */
+
+.reach {
+    padding: 30px;
+    border-radius: 24px;
+    background: #002902;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.reachLabel {
+    font-size: 14px;
+    font-weight: 700;
+    color: #CFE0CC;
+}
+
+.phone {
+    color: #FFFFFF;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+}
+
+.email {
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.socials {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.socials a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials img {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+/* Map card */
+
+.map {
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid #DCE5DA;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.map > img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+    background: #0B1F0D;
+}
+
+.address {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 0 6px 4px;
+}
+
+.address span {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #3D4D3E;
+}
+
+.address strong {
+    color: #0F1A10;
+}
+
+.address a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: 999px;
+    border: 1.5px solid #002902;
+    color: #002902;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* Practical information */
+
+.info {
+    padding: 30px;
+    border-radius: 24px;
+    background: #F4F7F3;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info h3 {
+    margin: 0 0 10px;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.info dl {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #DCE5DA;
+}
+
+.row:last-child {
+    border-bottom: 0;
+}
+
+.row dt {
+    font-size: 15px;
+    color: #4A5A4B;
+}
+
+.row dd {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: right;
+}
+
+@media (max-width: 640px) {
+    .wrap {
+        max-width: none;
+        padding: 40px 20px 96px;
+        gap: 14px;
+    }
+
+    .title {
+        margin: 0 0 4px;
+        line-height: normal;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .reach {
+        padding: 22px;
+        border-radius: 20px;
+        gap: 12px;
+    }
+
+    .reachLabel {
+        font-size: 13px;
+    }
+
+    .phone {
+        font-size: 30px;
+        letter-spacing: normal;
+    }
+
+    .email {
+        font-size: 15px;
+    }
+
+    .socials {
+        margin-top: 4px;
+    }
+
+    .socials a {
+        width: 46px;
+        height: 46px;
+    }
+
+    .socials img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .map {
+        padding: 14px;
+        border-radius: 20px;
+        gap: 12px;
+    }
+
+    .map > img {
+        border-radius: 14px;
+    }
+
+    .address {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .address span {
+        padding: 0 4px;
+        font-size: 14px;
+    }
+
+    .address a {
+        display: flex;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0;
+    }
+
+    .info {
+        display: block;
+        padding: 18px 20px;
+        border-radius: 20px;
+    }
+
+    .info h3 {
+        margin: 0 0 6px;
+        font-size: 17px;
+    }
+
+    .row {
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .row.lastMobile {
+        border-bottom: 0;
+    }
+
+    .row dt,
+    .row dd {
+        font-size: 14px;
+    }
+
+    .row dd {
+        text-align: left;
+    }
+}
