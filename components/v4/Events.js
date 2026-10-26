@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ACCENT, EVENT_EXTRAS, EVENT_FORM_TYPES, EVENT_ICONS, EVENT_TYPES, PREVIEW_NOTICE } from './data';
 import { PlusIcon } from './icons';
 import { V, cx } from './Variant';
+import { SIZES, lazyImage } from './images';
 import shared from './shared.module.css';
 import styles from './Events.module.css';
 
@@ -47,7 +48,7 @@ export default function Events() {
                         </ul>
                     </div>
                     <div className={cx(styles.icons, shared.dOnly)} aria-hidden="true">
-                        {EVENT_ICONS.map((src) => <img key={src} src={src} alt="" className={styles.icon} loading="lazy" />)}
+                        {EVENT_ICONS.map((src) => <img key={src} {...lazyImage(src, SIZES.eventIcon)} alt="" className={styles.icon} />)}
                     </div>
                 </div>
 

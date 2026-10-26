@@ -1,5 +1,6 @@
 import { ArrowLeftIcon, ArrowRightIcon } from './icons';
 import { V, byLayout, cx, pick } from './Variant';
+import { SIZES, lazyImage } from './images';
 import shared from './shared.module.css';
 import styles from './ZoneCard.module.css';
 
@@ -13,7 +14,7 @@ export default function ZoneCard({ zone, index, total, onPrev, onNext, onCta }) 
             <div className={styles.media}>
                 {zone.photo ? (
                     <img
-                        src={zone.photo}
+                        {...lazyImage(zone.photo, SIZES.card)}
                         alt={zone.photoAlt}
                         className={styles.photo}
                         style={{ '--pos-d': pick(zone.photoPos, 'd'), '--pos-m': pick(zone.photoPos, 'm') }}

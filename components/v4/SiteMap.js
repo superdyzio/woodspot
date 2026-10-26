@@ -224,7 +224,9 @@ function Hotspot({ zone, selected, onSelect, mobile }) {
                 {selected && <span className={styles.pulse} aria-hidden="true" />}
                 {zone.id}
             </span>
-            {!mobile && <span className={styles.label}>{zone.name}</span>}
+            {/* The space keeps the visible text ("B Stawy i łowiska") inside the accessible name;
+                whitespace between flex items is not rendered. */}
+            {!mobile && <>{' '}<span className={styles.label}>{zone.name}</span></>}
         </button>
     );
 }

@@ -1,14 +1,15 @@
 import { PAINTBALL, ZONE_ARTICLES } from './data';
 import { MiniMap } from './SiteMap';
 import { V, byLayout, cx, pick } from './Variant';
+import { SIZES, lazyImage } from './images';
 import shared from './shared.module.css';
 import styles from './Zones.module.css';
 
 const anchorId = (id) => `strefa-${id.toLowerCase()}`;
 const photoVars = (pos) => ({ '--pos-d': pick(pos, 'd'), '--pos-m': pick(pos, 'm') });
 
-function Photo({ image }) {
-    return <img src={image.src} alt={image.alt} className={styles.photo} style={photoVars(image.pos)} loading="lazy" decoding="async" />;
+function Photo({ image, sizes = SIZES.article }) {
+    return <img {...lazyImage(image.src, sizes)} alt={image.alt} className={styles.photo} style={photoVars(image.pos)} />;
 }
 
 // Zone label with a thumbnail of the plan (desktop) and a link that selects the zone on the big map.
@@ -71,17 +72,17 @@ function PaintballArticle({ onShow, onBook }) {
             <div className={shared.contours} aria-hidden="true" />
             <div className={cx(styles.gallery, shared.dOnly)}>
                 <div className={styles.galleryMain}>
-                    <Photo image={mainImage} />
+                    <Photo image={mainImage} sizes={SIZES.galleryMain} />
                     <span className={cx(styles.badge, styles.badgeAccent)}>{id}</span>
                 </div>
                 <div className={styles.galleryRow}>
                     {sideImages.map((image) => (
-                        <div key={image.src} className={styles.galleryThumb}><Photo image={image} /></div>
+                        <div key={image.src} className={styles.galleryThumb}><Photo image={image} sizes={SIZES.galleryThumb} /></div>
                     ))}
                 </div>
             </div>
             <div className={cx(styles.media, styles.paintballMedia, shared.mOnly)}>
-                <Photo image={sideImages[0]} />
+                <Photo image={sideImages[0]} sizes={SIZES.mobileMedia} />
                 <span className={cx(styles.badge, styles.badgeAccent)}>{id}</span>
             </div>
             <div className={cx(styles.body, styles.paintballBody)}>

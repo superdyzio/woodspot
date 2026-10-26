@@ -12,7 +12,8 @@ import Footer from '../components/v4/Footer';
 import MobileBar from '../components/v4/MobileBar';
 
 const archivo = Archivo({ subsets: ['latin', 'latin-ext'], axes: ['wdth'], variable: '--font-archivo' });
-const plexMono = IBM_Plex_Mono({ subsets: ['latin', 'latin-ext'], weight: ['400', '500', '600'], variable: '--font-mono' });
+// Only the weights the CSS uses: 400 and 600 (bold text in mono resolves to 600).
+const plexMono = IBM_Plex_Mono({ subsets: ['latin', 'latin-ext'], weight: ['400', '600'], variable: '--font-mono' });
 
 export default function Home() {
     const selection = useZoneSelection();

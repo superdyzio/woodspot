@@ -1,5 +1,6 @@
 import { ECO_ITEMS } from './data';
 import { byLayout, cx } from './Variant';
+import { SIZES, lazyImage } from './images';
 import shared from './shared.module.css';
 import styles from './Eco.module.css';
 
@@ -9,7 +10,7 @@ export default function Eco() {
         <section className={styles.section} data-section="wydarzenia-2">
             <div className={cx(shared.container, styles.inner)}>
                 <div className={styles.media}>
-                    <img src="/about-section-2.jpg" alt="Panele fotowoltaiczne na łące, w tle drzewa" className={styles.photo} loading="lazy" decoding="async" />
+                    <img {...lazyImage('/about-section-2.jpg', SIZES.eco)} alt="Panele fotowoltaiczne na łące, w tle drzewa" className={styles.photo} />
                 </div>
                 <div className={styles.body}>
                     <p className={styles.eyebrow}>ENERGIA Z NATURY</p>
