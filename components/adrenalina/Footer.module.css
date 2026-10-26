@@ -18,6 +18,7 @@
 .logo {
   height: 36px;
   width: auto;
+  aspect-ratio: auto 5577 / 973;
   display: block;
 }
 

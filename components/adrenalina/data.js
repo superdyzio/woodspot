@@ -32,7 +32,7 @@ export const HERO = {
     m: 'Paintball w lesie, teren na wyłączność dla Twojej ekipy, ognisko, boiska i łowiska. Niemal 10 hektarów natury i zabawy pod Wrocławiem.',
   },
   photo: {
-    src: '/paintball-section-4.jpg',
+    image: 'paintball-section-4',
     alt: 'Dwóch uśmiechniętych graczy w maskach i moro, z markerami, maski z żółtymi śladami farby',
   },
 };
@@ -73,7 +73,7 @@ export const PAINTBALL = {
     m: 'Duży poligon pozwala na rywalizację nawet 12 osobom naraz, mały idealnie nadaje się do pojedynków 1v1. W centrum dużego pola stoi fort, a wokół niego dwie strefy pełne zasłon i przeszkód: bardziej otwarta i zamknięta, leśna.',
   },
   photo: {
-    src: '/paintball-section-2.jpg',
+    image: 'paintball-section-2',
     alt: 'Gracz w czarno-czerwonym stroju celuje zza drewnianego domku na oponach w lesie',
     caption: 'Fort w centrum dużego pola',
   },
@@ -107,7 +107,7 @@ export const PAINTBALL = {
       d: 'Po grze odpoczywasz w otoczeniu natury, ale wciąż blisko znajomych – możesz kibicować swojej drużynie i emocjonować się wynikiem.',
       m: 'Po grze odpoczywasz w otoczeniu natury, wciąż blisko znajomych – i dalej kibicujesz swojej drużynie.',
     },
-    photo: { src: '/paintball-section-3.jpg', alt: 'Dwóch graczy w maskach za drewnianą zasłoną z opon w lesie' },
+    photo: { image: 'paintball-section-3', alt: 'Dwóch graczy w maskach za drewnianą zasłoną z opon w lesie' },
   },
 };
 
@@ -140,7 +140,7 @@ export const EVENTS = {
     d: 'Na życzenie: animatorzy, zajęcia survivalowe ze Szkołą Przygody i Przetrwania SAS, sprzęt sportowy, namiot rozłożony za Was.',
     m: 'Na życzenie: animatorzy, zajęcia survivalowe SAS, sprzęt sportowy, namiot rozłożony za Was.',
   },
-  photo: { src: '/bush-section-4.jpg', alt: 'Drewniana wiata, sofy z palet wokół miejsca na ognisko, sosnowy las i chmury' },
+  photo: { image: 'bush-section-4', alt: 'Drewniana wiata, sofy z palet wokół miejsca na ognisko, sosnowy las i chmury' },
 };
 
 export const INQUIRY_EVENT_OPTIONS = [
@@ -163,8 +163,8 @@ export const GROUNDS = [
     },
     note: 'Karp królewski i pełnołuski, lin, sandacz, amur, szczupak.',
     price: { d: 'stanowisko od [CENA]', m: 'od [CENA]' },
-    photo: { src: '/fishing-section.jpg', alt: 'Słoneczny staw, wędkarze na brzegu, brzoza i linia lasu' },
-    icon: { type: 'img', src: '/fishing.png' },
+    photo: { image: 'fishing-section', alt: 'Słoneczny staw, wędkarze na brzegu, brzoza i linia lasu' },
+    icon: { type: 'img', image: 'fishing' },
   },
   {
     key: 'boiska',
@@ -175,11 +175,11 @@ export const GROUNDS = [
     },
     price: 'od [CENA]',
     photo: {
-      src: '/bush-section-2.jpg',
+      image: 'bush-section-2',
       alt: 'Boiska do siatkówki plażowej z żółtymi siatkami, ludzie w trakcie gry',
       position: '50% 70%',
     },
-    icon: { type: 'img', src: '/football.png' },
+    icon: { type: 'img', image: 'football' },
   },
   {
     key: 'spot',
@@ -189,7 +189,7 @@ export const GROUNDS = [
       m: 'Wasz kąt wśród drzew: hamaki, drewniane ławki i stoły.',
     },
     price: 'od [CENA] / dzień',
-    photo: { src: '/bush-section-1.jpg', alt: 'Spot w sosnowym lesie: hamaki, ławki z opon i drewniany stół' },
+    photo: { image: 'bush-section-1', alt: 'Spot w sosnowym lesie: hamaki, ławki z opon i drewniany stół' },
     icon: { type: 'tree' },
   },
   {
@@ -200,8 +200,8 @@ export const GROUNDS = [
       m: 'Miejsce na ognisko przy każdej wiacie – klimatyczne wieczory.',
     },
     price: 'od [CENA]',
-    photo: { src: '/bush-section-4.jpg', alt: 'Wiata z miejscem na ognisko i sofami z palet' },
-    icon: { type: 'img', src: '/fireplace.png' },
+    photo: { image: 'bush-section-4', alt: 'Wiata z miejscem na ognisko i sofami z palet' },
+    icon: { type: 'img', image: 'fireplace' },
   },
   {
     key: 'namiot',
@@ -212,7 +212,7 @@ export const GROUNDS = [
     },
     price: 'od [CENA] / noc',
     placeholder: '[Zdjęcie: pole namiotowe]',
-    icon: { type: 'img', src: '/tent.png' },
+    icon: { type: 'img', image: 'tent' },
   },
   {
     key: 'dzieci',
@@ -222,7 +222,7 @@ export const GROUNDS = [
       m: 'Teren ogrodzony, plac zabaw, animatorzy i zajęcia survivalowe SAS.',
     },
     price: 'wycena indywidualna',
-    photo: { src: '/bush-section-3.jpg', alt: 'Grupa młodych ludzi na słonecznej polanie wśród sosen' },
+    photo: { image: 'bush-section-3', alt: 'Grupa młodych ludzi na słonecznej polanie wśród sosen' },
     icon: { type: 'compass' },
     cta: { href: '#zapytanie', label: 'Zapytaj →' },
   },
@@ -241,7 +241,7 @@ export const ECO = {
     { d: 'Zarybianie stawów', m: 'Zarybianie' },
     'Szkółka choinek',
   ],
-  photo: { src: '/about-section-2.jpg', alt: 'Panele fotowoltaiczne na łące, w tle drzewa' },
+  photo: { image: 'about-section-2', alt: 'Panele fotowoltaiczne na łące, w tle drzewa' },
 };
 
 // Attractions in the "Zaklep termin" picker (ported from the design's logic class).

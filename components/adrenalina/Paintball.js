@@ -2,6 +2,7 @@ import s from './Paintball.module.css';
 import ui from './ui.module.css';
 import { PAINTBALL } from './data';
 import { Copy } from './ui';
+import Img from './Img';
 
 export default function Paintball() {
   const { ranges, gear, fans } = PAINTBALL;
@@ -21,7 +22,12 @@ export default function Paintball() {
 
         <div className={s.feature}>
           <div className={s.photo}>
-            <img src={PAINTBALL.photo.src} alt={PAINTBALL.photo.alt} loading="lazy" />
+            {/* Drawn width under object-fit: cover; a 620px tall box needs 827px of the 4:3 photo. */}
+            <Img
+              name={PAINTBALL.photo.image}
+              alt={PAINTBALL.photo.alt}
+              sizes="(max-width: 767px) calc(100vw - 40px), (min-width: 924px) and (max-width: 1099px) calc(100vw - 96px), 827px"
+            />
             <p className={s.caption}>{PAINTBALL.photo.caption}</p>
           </div>
           <div className={s.details}>
@@ -62,7 +68,13 @@ export default function Paintball() {
           </article>
 
           <article className={s.fans}>
-            <img src={fans.photo.src} alt={fans.photo.alt} loading="lazy" />
+            {/* Desktop: drawn width under object-fit: cover of the 460px tall card. Mobile: the box width,
+                since this photo already loads with the hero and the drawn width (507px) costs 2x the bytes. */}
+            <Img
+              name={fans.photo.image}
+              alt={fans.photo.alt}
+              sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 839px) calc(100vw - 96px), 614px"
+            />
             <div className={s.fansPanel}>
               <h3 className={s.cardTitle}>{fans.title}</h3>
               <p className={s.cardText}><Copy text={fans.text} /></p>

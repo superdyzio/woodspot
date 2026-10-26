@@ -7,7 +7,7 @@ export default function Header({ menuOpen, onToggleMenu, onCloseMenu }) {
     <header className={s.header} data-section="header">
       <div className={s.inner}>
         <a href="#start" aria-label="Woodspot – początek strony" className={s.logo}>
-          <img src="/logo-white.svg" alt="Woodspot bush&fun" />
+          <img loading="lazy" decoding="async" src="/logo-white.svg" alt="Woodspot bush&fun" />
         </a>
 
         <nav aria-label="Menu główne" className={s.nav}>

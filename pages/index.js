@@ -74,6 +74,10 @@ export default function Home() {
     <div className={`${barlow.variable} ${barlowCondensed.variable} ${page.root}`}>
       <Head>
         <title>Woodspot bush&amp;fun – paintball i teren na wyłączność pod Wrocławiem</title>
+        <meta
+          name="description"
+          content="Paintball w lesie na dwóch poligonach, teren na wyłączność dla Twojej ekipy, ognisko, boiska i łowiska. Niemal 10 hektarów natury i zabawy w Siemianicach pod Wrocławiem."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.svg" />
       </Head>

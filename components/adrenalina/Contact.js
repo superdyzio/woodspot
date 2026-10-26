@@ -1,6 +1,7 @@
 import s from './Contact.module.css';
 import ui from './ui.module.css';
 import { EMAIL, MAPS_URL, PHONE, PRACTICAL, SOCIALS } from './data';
+import Img from './Img';
 
 export default function Contact() {
   return (
@@ -34,17 +35,17 @@ export default function Contact() {
             <div className={s.socials}>
               {SOCIALS.map((social) => (
                 <a key={social.href + social.label} href={social.href} aria-label={social.label}>
-                  <img src={social.icon} alt="" />
+                  <img loading="lazy" decoding="async" src={social.icon} alt="" />
                 </a>
               ))}
             </div>
           </div>
 
           <div className={`${s.column} ${s.map}`}>
-            <img
-              src="/contact-map.png"
+            <Img
+              name="contact-map"
               alt="Mapa dojazdu: Woodspot na północ od Obornik Śląskich, Wrocław na południowym wschodzie"
-              loading="lazy"
+              sizes="(max-width: 767px) calc(100vw - 40px), 400px"
             />
             <a href={MAPS_URL} className={`${ui.textLink} ${s.route}`}>Wyznacz trasę →</a>
           </div>

@@ -2,9 +2,19 @@ import s from './Grounds.module.css';
 import ui from './ui.module.css';
 import { GROUNDS, GROUNDS_CTA } from './data';
 import { CompassIcon, Copy, TreeIcon } from './ui';
+import Img, { imageAspect } from './Img';
+
+// Drawn width of a card photo under object-fit: cover. Mobile: a 120px wide, ~190px tall thumbnail;
+// desktop: 1, 2 or 3 columns of a 240px tall strip.
+function photoSizes(name) {
+  const aspect = imageAspect(name);
+  const mobile = Math.ceil(190 * aspect);
+  const desktop = Math.max(411, Math.ceil(240 * aspect));
+  return `(max-width: 767px) ${mobile}px, (max-width: 879px) calc(100vw - 96px), (max-width: 1283px) calc(50vw - 60px), ${desktop}px`;
+}
 
 function Badge({ icon }) {
-  if (icon.type === 'img') return <img src={icon.src} alt="" className={s.badge} />;
+  if (icon.type === 'img') return <Img name={icon.image} sizes="72px" className={s.badge} />;
   return (
     <span aria-hidden="true" className={`${s.badge} ${s.badgeDrawn}`}>
       {icon.type === 'tree' ? <TreeIcon /> : <CompassIcon />}
@@ -22,10 +32,10 @@ function GroundCard({ item }) {
         </div>
       ) : (
         <div className={s.media}>
-          <img
-            src={item.photo.src}
+          <Img
+            name={item.photo.image}
             alt={item.photo.alt}
-            loading="lazy"
+            sizes={photoSizes(item.photo.image)}
             style={item.photo.position ? { objectPosition: item.photo.position } : undefined}
           />
         </div>

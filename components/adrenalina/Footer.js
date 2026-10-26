@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className={s.footer} data-section="footer">
       <div className={s.inner}>
-        <img src="/logo-white.svg" alt="Woodspot bush&fun" className={s.logo} />
+        <img loading="lazy" decoding="async" src="/logo-white.svg" alt="Woodspot bush&fun" className={s.logo} />
         <nav aria-label="Stopka" className={s.nav}>
           {FOOTER_LINKS.map((link) => (
             <a key={link.href} href={link.href} className={link.mobileOnly ? s.mobileLink : undefined}>

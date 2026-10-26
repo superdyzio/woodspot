@@ -2,12 +2,18 @@ import s from './Events.module.css';
 import ui from './ui.module.css';
 import { EVENTS, PHONE } from './data';
 import { Copy } from './ui';
+import Img from './Img';
 
 export default function Events() {
   return (
     <section id="imprezy" className={s.events} data-section="imprezy">
       <div className={s.photo}>
-        <img src={EVENTS.photo.src} alt={EVENTS.photo.alt} loading="lazy" />
+        {/* Drawn width under object-fit: cover; on desktop the box is as tall as the copy (~1000px). */}
+        <Img
+          name={EVENTS.photo.image}
+          alt={EVENTS.photo.alt}
+          sizes="(max-width: 373px) 373px, (max-width: 1199px) 100vw, 1470px"
+        />
       </div>
       <div className={s.content}>
         <p className={ui.eyebrow}><Copy text={EVENTS.eyebrow} /></p>

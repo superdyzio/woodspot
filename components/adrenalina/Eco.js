@@ -2,6 +2,7 @@ import s from './Eco.module.css';
 import ui from './ui.module.css';
 import { ECO } from './data';
 import { Copy } from './ui';
+import Img from './Img';
 
 export default function Eco() {
   return (
@@ -23,7 +24,12 @@ export default function Eco() {
         </ul>
       </div>
       <div className={s.photo}>
-        <img src={ECO.photo.src} alt={ECO.photo.alt} loading="lazy" />
+        {/* Drawn width under object-fit: cover; on desktop the box is as tall as the copy (~770px). */}
+        <Img
+          name={ECO.photo.image}
+          alt={ECO.photo.alt}
+          sizes="(max-width: 1199px) 100vw, (max-width: 1800px) 1040px, calc(100vw - 760px)"
+        />
       </div>
     </section>
   );
